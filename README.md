@@ -22,6 +22,13 @@ development would be preferable.
 
 ## Installation
 
+Clone me into a project directory and `cd`
+
+```
+~/code § git clone https://github.com/hipikat/pdjn.git myproject && cd myproject
+~/code/myproject §
+```
+
 You should have [Docker](https://www.docker.com) and 
 [PostgreSQL](https://www.postgresql.org) installed.
 Then get the correct versions of Python and Node installed -
@@ -41,8 +48,7 @@ virtualenv (with Pyenv), and installs all the Python and Node dependencies
 (from [Pipfile](Pipfile) and [package.json](package.json)).
 
 ```
-~/code § git clone https://github.com/hipikat/pdjn.git ./myproject
-~/code § cd myproject && npm run init
+~/code/myproject § npm run init
 [...]
 Installing dependencies from Pipfile.lock (b48720)...
   🐍   ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉▉ 61/61 — 00:00:47
