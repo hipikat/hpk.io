@@ -16,6 +16,7 @@
 import path from "path";
 import { fileURLToPath } from "url";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import BundleTracker from "webpack-bundle-tracker";
 import CssMinimizerPlugin from "css-minimizer-webpack-plugin";
 import TerserPlugin from "terser-webpack-plugin";
 
@@ -36,6 +37,7 @@ export default (env) => {
   const min = mode === "production" || env.minify ? true : false;
   const clean = mode === "production" || env.clean ? true : false;
   const suffix = min ? ".min" : "";
+  const stats_suffix = min ? "-minified" : "";
 
   // Announce intentions
   console.log(
@@ -47,22 +49,22 @@ export default (env) => {
     minimize: min,
     // Note: Chunking requires configuring https://github.com/django-webpack/django-webpack-loader
     // ... and for now, our built assets just aren't big enough to warrant it.
-    // chunkIds: "named",
-    // splitChunks: {
-    //   chunks: "all",
-    //   minSize: 0,
-    //   maxSize: 240000,
-    //   maxInitialRequests: Infinity,
-    //   cacheGroups: {
-    //     default: false,
-    //     commons: {
-    //       test: /[\\/]node_modules[\\/]/,
-    //       name: "vendors",
-    //       chunks: "all",
-    //     },
-    //   },
-    // },
-    // runtimeChunk: "single",
+    chunkIds: "named",
+    splitChunks: {
+      chunks: "all",
+      minSize: 0,
+      maxSize: 240000,
+      maxInitialRequests: Infinity,
+      cacheGroups: {
+        default: false,
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
+    runtimeChunk: "single",
   };
 
   if (min) {
@@ -108,15 +110,16 @@ export default (env) => {
     },
     output: {
       path: path.join(PROJECT_PATH, ASSET_PATH),
-      filename: `[name]${suffix}.js`,
+      publicPath: `${STATIC_PATH}/`,
+      filename: `[id]${suffix}.js`,
       chunkFilename: `[name]-chunk${suffix}.js`,
       hashDigestLength: 8,
-      publicPath: `${STATIC_PATH}/`,
     },
     plugins: [
       new MiniCssExtractPlugin({
         filename: `[name]${suffix}.css`,
       }),
+      new BundleTracker({ path: `${ASSET_PATH}/`, filename: `webpack-stats${stats_suffix}.json` }),
     ],
     module: {
       rules: [

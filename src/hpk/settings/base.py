@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     "wagtail",
     "modelcluster",
     "taggit",
+    # Other third-party apps
+    "webpack_loader",
     # Django apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -249,6 +251,16 @@ STORAGES = {
     "staticfiles": {
         "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
+}
+
+WEBPACK_LOADER = {
+    "DEFAULT": {
+        "BUNDLE_DIR_NAME": "webpack_bundles/",
+        "CACHE": False,  # TODO(<Ada>): change this for production  # noqa: FIX002, TD003
+        "STATS_FILE": BASE_DIR / "build/webpack/webpack-stats.json",
+        "POLL_INTERVAL": 0.1,
+        "IGNORE": [r".+\.hot-update.js", r".+\.map"],
+    }
 }
 
 
