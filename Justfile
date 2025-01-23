@@ -683,7 +683,7 @@ scp-get source target='':
 [no-exit-message]
 scp-get-in env source target='':
     #!/usr/bin/env bash
-    server_ip=$(just -q tofu-in "$env" output server_ip 2> /dev/null)
+    server_ip=$(just -q tofu-in {{ env }} output server_ip 2> /dev/null)
     if [ $(echo "$server_ip" | wc -l) -ne 1 ]; then
       echo "error: Could not determine server IP for $env environment." >&2
       exit 1
@@ -703,11 +703,12 @@ scp-put source target:
 [no-exit-message]
 scp-put-in env source target:
     #!/usr/bin/env bash
-    server_ip=$(just -q tofu-in "$env" output server_ip 2> /dev/null)
+    server_ip=$(just -q tofu-in "{{ env }}" output server_ip 2> /dev/null)
     if [ $(echo "$server_ip" | wc -l) -ne 1 ]; then
-      echo "error: Could not determine server IP for $env environment." >&2
+      echo "error: Could not determine server IP for {{ env }} environment." >&2
       exit 1
     fi
+    echo scp "{{ source }}" "{{ user }}@${server_ip}:{{ target }}"
     scp "{{ source }}" "{{ user }}@${server_ip}:{{ target }}"
 
 # Build assets, collect them in /static, and watch for changes
@@ -766,3 +767,13 @@ load-emergency-dump:
 check:
     just dj check
     uv run pre-commit run --all-files
+
+# Upload ~/.ssh/ephemeral-* keys and ~/.ssh/config to the environment's server
+[group('workflow')]
+setup-ssh env:
+    #!/usr/bin/env bash
+    just ssh-in dev "mkdir -p ~/.ssh && chmod 700 ~/.ssh"
+    for file in ls ~/.ssh/ephemeral-*; do
+        just scp-put-in dev "$file" "~/.ssh/"
+    done
+    just scp-put-in dev ~/.ssh/config "~/.ssh/"
