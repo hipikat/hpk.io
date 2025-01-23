@@ -101,10 +101,11 @@ body
       > .tagline
         @apply text-lg font-normal text-base-content -mt-3 mb-0.5
   nav
-    @apply flex flex-wrap justify-center grow pt-4
+    @apply flex flex-wrap justify-center grow pt-4 gap-x-3
     a
-      @apply btn btn-ghost px-4 h-8 min-h-8
-      font-size: 1.125rem
+      @apply btn btn-ghost px-2 h-8 min-h-8 text-base
+      &.current
+        @apply btn-active
 
 body
   @apply min-h-screen

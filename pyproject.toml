@@ -28,9 +28,9 @@ dependencies = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/hipikat/hpkio#readme"
-Issues        = "https://github.com/hipikat/hpkio/issues"
-Source        = "https://github.com/hipikat/hpkio"
+Documentation = "https://github.com/hipikat/hpk.io#readme"
+Issues        = "https://github.com/hipikat/hpk.io/issues"
+Source        = "https://github.com/hipikat/hpk.io"
 
 [dependency-groups]
 dev = [
