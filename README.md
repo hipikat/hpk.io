@@ -58,7 +58,7 @@ ADMIN_EMAIL_NAME=majordomo
   - Using `(env).for.TLD` for all other environments
 - Admin emails will be set to `ADMIN_EMAIL_NAME@TLD`
 
-and `infra/secrets.tfvars`
+and `infra/secrets.tfvars`:
 
 ```
 do_token          = "dop_v1_[your_DigitalOcean_API_token]"
@@ -179,6 +179,6 @@ just ssh  # or `just ssh-in (env)`
 ```
 
 This will get the IP of the box for the current `tofu` workspace (set this with
-`just tofu workspace select (env)` and ssh in with the username set by `DEVELOPER`,
+`just tofu workspace select (env)` and ssh in with the username set by `DEVELOPER`
 above (in case DNS has flushed through yet; for most purposes you can use the
-`(env).for.TLD` A record set by `just deploy`.
+`(env).for.TLD` DNS A record set by `just deploy`.
