@@ -13,8 +13,8 @@ import contextlib
 from os import getenv
 from pathlib import Path
 
-from hpk.helpers import get_public_ip
-from hpk.log_utils import FormatterWithEverything
+from picata.helpers import get_public_ip
+from picata.log_utils import FormatterWithEverything
 
 SRC_DIR = Path(__file__).resolve().parent.parent.parent
 BASE_DIR = Path(SRC_DIR).parent
@@ -34,8 +34,10 @@ SECRET_KEY = getenv("SECRET_KEY")
 # Application definition
 
 INSTALLED_APPS = [
-    # Local apps
-    "hpk.apps.Config",
+    # Local app
+    "hpk",
+    # Picata
+    "picata",
     # Wagtail
     "wagtail.contrib.forms",
     "wagtail.contrib.redirects",
@@ -72,10 +74,10 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "wagtail.contrib.redirects.middleware.RedirectMiddleware",
-    "hpk.middleware.HTMLProcessingMiddleware",
+    "picata.middleware.HTMLProcessingMiddleware",
 ]
 
-ROOT_URLCONF = "hpk.urls"
+ROOT_URLCONF = "picata.urls"
 
 TEMPLATES = [
     {
@@ -158,13 +160,19 @@ LOGGING = {
         },
         "django_log": {
             "level": "INFO",
-            "class": "hpk.log_utils.RotatingDailyFileHandler",
+            "class": "picata.log_utils.RotatingDailyFileHandler",
             "filename": LOG_DIR / "django.log",
+            "formatter": "verbose",
+        },
+        "picata_log": {
+            "level": "INFO",
+            "class": "picata.log_utils.RotatingDailyFileHandler",
+            "filename": LOG_DIR / "picata.log",
             "formatter": "verbose",
         },
         "hpk_log": {
             "level": "INFO",
-            "class": "hpk.log_utils.RotatingDailyFileHandler",
+            "class": "picata.log_utils.RotatingDailyFileHandler",
             "filename": LOG_DIR / "hpk.log",
             "formatter": "verbose",
         },
@@ -180,6 +188,11 @@ LOGGING = {
     "loggers": {
         "hpk": {
             "handlers": ["hpk_log"],
+            "level": "INFO",
+            "propagate": True,
+        },
+        "picata": {
+            "handlers": ["picata_log"],
             "level": "INFO",
             "propagate": True,
         },
