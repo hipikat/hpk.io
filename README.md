@@ -2,7 +2,11 @@
 
 Wherein I set up a little website, and learn a bunch of stuff as I go.
 
-## What it's made of
+## History & architecture
+
+This repository started life as a Wagtail-based blog & general CMS for the personal website I was
+developing at [https://hpk.io/](https://hpk.io/). Circa January 2025 I forked most of the generic
+"blog and CMS stuff" out into its own FLOSS package, [Picata](https://pypi.org/project/picata/).
 
 ### Inside the box
 
