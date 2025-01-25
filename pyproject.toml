@@ -17,14 +17,8 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: CPython",
 ]
 dependencies = [
-  "wagtail>=6.2",
+  "picata>=0.0.2",
   "gunicorn>=23.0.0",
-  "psycopg>=3.2.3",
-  "psutil>=6.1.0",
-  "python-slugify>=8.0.4",
-  "wagtail-modeladmin>=2.1.0",
-  "pygments>=2.18.0",
-  "lxml>=5.3.0",
 ]
 
 [project.urls]
@@ -34,14 +28,14 @@ Source        = "https://github.com/hipikat/hpk.io"
 
 [dependency-groups]
 dev = [
-  "django-debug-toolbar>=4.4.6",
+  "django-debug-toolbar>=5.0.1",
   "django-extensions>=3.2.3",
   "django-stubs[compatible-mypy]>=5.1.2",
-  "ipython>=8.29.0",
-  "mypy>=1.14.0",
+  "ipython>=8.31.0",
+  "mypy>=1.14.1",
   "pre-commit>=4.0.1",
   "py-spy>=0.4.0",
-  "ruff>=0.7.3",
+  "ruff>=0.9.3",
   "watchdog>=6.0.0",
   "werkzeug>=3.1.3",
 ]

@@ -12,6 +12,7 @@ packages:
   - neovim
   - snapd
   - tree
+  - unzip
   - zsh
 
 write_files:

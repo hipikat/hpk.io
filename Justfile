@@ -7,7 +7,7 @@ set positional-arguments := true
 
 user := "${DEVELOPER}"
 editables := '''
-repos="django pre-commit"
+repos="picata django"
 declare -A upstreams origins extras
 upstreams=(
     [django]="https://github.com/django/django.git"
@@ -19,11 +19,15 @@ upstreams=(
 origins=(
     [django]="git@github.com:hipikat/django.git"
     [wagtail]="git@github.com:hipikat/wagtail.git"
+    [picata]="git@github.com:hipikat/picata.git"
     [pre-commit]="git@github.com:hipikat/pre-commit.git"
 )
 extras=(
     [wagtail]="[testing, docs]"
 )
+post_install_picata() {
+    uv sync --all-groups
+}
 pre_install_wagtail() {
     echo "Installing Node toolchain for Wagtail..."
     npm ci
@@ -306,7 +310,7 @@ nuke-node:
 # Destroy the Python virtual environment
 [group('environment')]
 nuke-python:
-    rm -rf .venv
+    rm -rf .venv .mypy_cache
 
 # Remove local images built by Docker Commpose services
 [group('environment')]
