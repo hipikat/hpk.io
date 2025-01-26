@@ -1,3 +1,4 @@
 tags        = ["production"]
-development = false
 production  = true
+development = false
+monitoring  = true
