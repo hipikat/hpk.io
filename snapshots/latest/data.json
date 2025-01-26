@@ -1,5 +1,285 @@
 [
 {
+  "model": "picata.pagetag",
+  "pk": 1,
+  "fields": {
+    "name": "hpk.io",
+    "slug": "hpkio"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 2,
+  "fields": {
+    "name": "personal",
+    "slug": "personal"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 3,
+  "fields": {
+    "name": "Just",
+    "slug": "just"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 4,
+  "fields": {
+    "name": "Justfile",
+    "slug": "justfile"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 5,
+  "fields": {
+    "name": "shell script",
+    "slug": "shell-script"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 6,
+  "fields": {
+    "name": "software development",
+    "slug": "software-development"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 7,
+  "fields": {
+    "name": "Python",
+    "slug": "python"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 8,
+  "fields": {
+    "name": "pre-commit",
+    "slug": "pre-commit"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 9,
+  "fields": {
+    "name": "type checking",
+    "slug": "type-checking"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 10,
+  "fields": {
+    "name": "virtual environments",
+    "slug": "virtual-environments"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 11,
+  "fields": {
+    "name": "DevOps",
+    "slug": "devops"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 12,
+  "fields": {
+    "name": "OpenTofu",
+    "slug": "opentofu"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 13,
+  "fields": {
+    "name": "Terraform",
+    "slug": "terraform"
+  }
+},
+{
+  "model": "picata.pagetag",
+  "pk": 14,
+  "fields": {
+    "name": "cloud-init",
+    "slug": "cloud-init"
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 7,
+  "fields": {
+    "tag": 7,
+    "content_object": 7
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 8,
+  "fields": {
+    "tag": 8,
+    "content_object": 7
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 9,
+  "fields": {
+    "tag": 9,
+    "content_object": 7
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 10,
+  "fields": {
+    "tag": 10,
+    "content_object": 7
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 11,
+  "fields": {
+    "tag": 11,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 12,
+  "fields": {
+    "tag": 12,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 13,
+  "fields": {
+    "tag": 13,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 14,
+  "fields": {
+    "tag": 14,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 15,
+  "fields": {
+    "tag": 5,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 16,
+  "fields": {
+    "tag": 6,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 23,
+  "fields": {
+    "tag": 1,
+    "content_object": 5
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 24,
+  "fields": {
+    "tag": 2,
+    "content_object": 5
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 29,
+  "fields": {
+    "tag": 3,
+    "content_object": 6
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 30,
+  "fields": {
+    "tag": 4,
+    "content_object": 6
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 31,
+  "fields": {
+    "tag": 5,
+    "content_object": 6
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 32,
+  "fields": {
+    "tag": 6,
+    "content_object": 6
+  }
+},
+{
+  "model": "picata.article",
+  "pk": 5,
+  "fields": {
+    "tagline": "\"What the hell am I doing here?\"",
+    "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify/explain the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+    "content": "[{\"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p><p data-block-key=\\\"cddil\\\">Lorem ipsum dolor sit.</p>\"}]",
+    "page_type": null
+  }
+},
+{
+  "model": "picata.article",
+  "pk": 6,
+  "fields": {
+    "tagline": "Just is a beautiful solution to the problems lurking within the fraught problem-realm known to computer scientists as \"running stuff\"",
+    "summary": "<p data-block-key=\"0j72i\">Just is basically a command-runner. After decades of using other standard (but in retrospect ad-hoc methods), I've settled comfortably into writing just one <code>Justfile</code>, at the root of any given project, for the vast majority of \"shell-scripty\" stuff (aka the glue) required to get anything useful done.</p>",
+    "content": "[{\"id\": \"cb48d52a-4faf-4e72-8c66-a44a91f1d564\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"4r388\\\">Just is basically a command-runner, and a great blessing in my life. What have I done to \\\"just run commands\\\" in the past? I took a relatively standard-looking journey through the problem of \\\"running stuff\\\", which vaguely went:</p><ul><li data-block-key=\\\"bferm\\\">Excessive use of man pages to remember arguments and flags</li><li data-block-key=\\\"eeepu\\\">Abusive grepping of a shell's history to see what I'd done before</li><li data-block-key=\\\"4po5s\\\">A Constant addition of aliases and functions to my shell via startup files</li><li data-block-key=\\\"au3c0\\\">Pipenv <code>[scripts]</code>, npm <code>\\\"scripts\\\"</code>, other and other tool-spcific stuff</li><li data-block-key=\\\"3crud\\\">Make? CMake?!</li><li data-block-key=\\\"a09l8\\\">Maybe just a bunch of .sh files under a <code>scripts/</code> directory?</li></ul>\"}]",
+    "page_type": null
+  }
+},
+{
+  "model": "picata.article",
+  "pk": 7,
+  "fields": {
+    "tagline": "How I learned to stop worrying and love `repo: local`",
+    "summary": "<p data-block-key=\"4qjbz\">[Talk about how you gave up on the mypy pre-commit hook and used local, because of how pre-commit creates a new virtualenv for each hook – and additional_dependencies would have required most of the project to be declared! … but Ruff, being static, runs just fine.</p>",
+    "content": "[]",
+    "page_type": null
+  }
+},
+{
+  "model": "picata.article",
+  "pk": 8,
+  "fields": {
+    "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+    "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+    "content": "[]",
+    "page_type": null
+  }
+},
+{
   "model": "picata.postgrouppage",
   "pk": 4,
   "fields": {
@@ -18,7 +298,7 @@
   "model": "picata.homepage",
   "pk": 3,
   "fields": {
-    "top_content": "[{\"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\", \"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\">About me</h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love most things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little hand-rolled place on the internet where I can rant.</p>\"}, {\"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\", \"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\", \"type\": \"link_list\", \"value\": {\"items\": [{\"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\", \"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"icon\": \"mastodon\", \"label\": \"Mastodon\"}}, {\"id\": \"d2be4414-f648-413e-a38f-07198f143902\", \"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"icon\": \"bluesky\", \"label\": \"Bluesky\"}}, {\"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\", \"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"icon\": \"github\", \"label\": \"GitHub\"}}, {\"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\", \"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"icon\": \"linkedin\", \"label\": \"LinkedIn\"}}, {\"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\", \"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"icon\": \"facebook\", \"label\": \"Facebook\"}}, {\"id\": \"c5d99617-7866-4a97-b0a9-7f386219b540\", \"type\": \"item\", \"value\": {\"href\": \"https://stackoverflow.com/users/218397/hipikat\", \"icon\": \"stackoverflow\", \"label\": \"StackOverflow\"}}, {\"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\", \"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"icon\": \"threads\", \"label\": \"Threads\"}}, {\"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\", \"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"icon\": \"instagram\", \"label\": \"Instagram\"}}, {\"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\", \"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"icon\": \"youtube\", \"label\": \"YouTube\"}}, {\"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\", \"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"icon\": \"twitch\", \"label\": \"Twitch\"}}, {\"id\": \"5544cb23-207e-495c-a657-5c63ab119559\", \"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"icon\": \"twitter\", \"label\": \"\\\"X\\\" (2007-2022)\"}}], \"heading\": \"Socials\", \"heading_level\": 1}}, {\"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\", \"type\": \"link_list\", \"value\": {\"items\": [{\"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\", \"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"icon\": \"email\", \"label\": \"Email\"}}, {\"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\", \"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"icon\": \"telegram\", \"label\": \"Telegram\"}}], \"heading\": \"Contact me\", \"heading_level\": 2}}]}}]",
+    "top_content": "[{\"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\", \"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\"><b>About me</b></h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love all things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little, decentralised, hand-rolled place on the internet where I can post and rant.</p>\"}, {\"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\", \"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\", \"type\": \"link_list\", \"value\": {\"items\": [{\"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\", \"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"icon\": \"mastodon\", \"label\": \"Mastodon\"}}, {\"id\": \"d2be4414-f648-413e-a38f-07198f143902\", \"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"icon\": \"bluesky\", \"label\": \"Bluesky\"}}, {\"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\", \"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"icon\": \"github\", \"label\": \"GitHub\"}}, {\"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\", \"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"icon\": \"linkedin\", \"label\": \"LinkedIn\"}}, {\"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\", \"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"icon\": \"facebook\", \"label\": \"Facebook\"}}, {\"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\", \"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"icon\": \"threads\", \"label\": \"Threads\"}}, {\"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\", \"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"icon\": \"instagram\", \"label\": \"Instagram\"}}, {\"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\", \"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"icon\": \"youtube\", \"label\": \"YouTube\"}}, {\"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\", \"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"icon\": \"twitch\", \"label\": \"Twitch\"}}, {\"id\": \"5544cb23-207e-495c-a657-5c63ab119559\", \"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"icon\": \"twitter\", \"label\": \"\\\"X\\\" (2007-2022)\"}}], \"heading\": \"Socials\", \"heading_level\": 1}}, {\"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\", \"type\": \"link_list\", \"value\": {\"items\": [{\"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\", \"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"icon\": \"email\", \"label\": \"Email\"}}, {\"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\", \"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"icon\": \"telegram\", \"label\": \"Telegram\"}}], \"heading\": \"Contact me\", \"heading_level\": 3}}]}}]",
     "bottom_content": "[]"
   }
 },
@@ -73,6 +353,18 @@
     "width": 165,
     "height": 86,
     "focal_point_key": "",
+    "image": 1
+  }
+},
+{
+  "model": "wagtailimages.rendition",
+  "pk": 2,
+  "fields": {
+    "filter_spec": "fill-1200x630",
+    "file": "images/ada-social-bear.2e16d0ba.fill-1200x630.jpg",
+    "width": 1200,
+    "height": 630,
+    "focal_point_key": "2e16d0ba",
     "image": 1
   }
 },
@@ -260,6 +552,230 @@
   }
 },
 {
+  "model": "wagtailcore.referenceindex",
+  "pk": 18,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "9",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.9.tag",
+    "content_path_hash": "6192591c-068e-5695-9ce2-96b9b1848275"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 19,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "10",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.10.tag",
+    "content_path_hash": "9307753f-f405-523b-a62e-db17e076048a"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 20,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "7",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.7.tag",
+    "content_path_hash": "a4245cab-1223-5258-8e09-836cdc37835a"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 21,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "8",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.8.tag",
+    "content_path_hash": "cc756bbf-cf49-5f28-aed2-1244b0e04866"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 28,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "13",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.13.tag",
+    "content_path_hash": "66d59944-fb9e-5553-9b4d-45ad8b1b11bf"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 29,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "5",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.15.tag",
+    "content_path_hash": "8eff711f-e02b-5b2e-bbe8-e0fd9a55d76a"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 30,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "6",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.16.tag",
+    "content_path_hash": "2e447b0c-bf70-508c-b946-eed69a297109"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 31,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "11",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.11.tag",
+    "content_path_hash": "55d5a30f-3e7f-5401-b8e4-cca376197cce"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 32,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "12",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.12.tag",
+    "content_path_hash": "f20410c7-a795-5a86-a6ee-f72f2ba927e0"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 33,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "14",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.14.tag",
+    "content_path_hash": "4d274764-40ae-53d7-8a77-867edeb0fee3"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 38,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "to_content_type": 31,
+    "to_object_id": "1",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 39,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "to_content_type": 31,
+    "to_object_id": "2",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 44,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "6",
+    "to_content_type": 31,
+    "to_object_id": "6",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.32.tag",
+    "content_path_hash": "b4c7d564-7073-5695-9db3-2ea9aea0f4a5"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 45,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "6",
+    "to_content_type": 31,
+    "to_object_id": "3",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.29.tag",
+    "content_path_hash": "01738ef4-0f5f-5aa2-a596-13297a7d640b"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 46,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "6",
+    "to_content_type": 31,
+    "to_object_id": "4",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.30.tag",
+    "content_path_hash": "83102150-5163-51c9-94d0-0d47c944dee9"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 47,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "6",
+    "to_content_type": 31,
+    "to_object_id": "5",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.31.tag",
+    "content_path_hash": "999edc45-2894-58ff-b45e-d1b4b18f4149"
+  }
+},
+{
   "model": "wagtailcore.page",
   "pk": 1,
   "fields": {
@@ -302,12 +818,12 @@
     "numchild": 1,
     "translation_key": "9581f3d4-7fab-4cc6-84a3-89de1f5870d3",
     "locale": 1,
-    "latest_revision": 4,
+    "latest_revision": 11,
     "live": true,
     "has_unpublished_changes": false,
-    "first_published_at": "2025-01-24T00:54:57.256Z",
-    "last_published_at": "2025-01-24T00:55:22.843Z",
-    "live_revision": 4,
+    "first_published_at": "2025-01-01T00:54:57.256Z",
+    "last_published_at": "2025-01-01T04:12:20.486Z",
+    "live_revision": 11,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -323,7 +839,7 @@
     "seo_title": "Ada Wright writes here",
     "show_in_menus": true,
     "search_description": "I'm a software developer from Perth, Australia, who loves most things Python. This is my little hand-crafted blog-cum-personal website-cum-little decentralised rant-hole on the internet.",
-    "latest_revision_created_at": "2025-01-24T00:55:22.759Z",
+    "latest_revision_created_at": "2025-01-01T04:12:20.430Z",
     "alias_of": null
   }
 },
@@ -333,14 +849,14 @@
   "fields": {
     "path": "000100020001",
     "depth": 3,
-    "numchild": 0,
+    "numchild": 4,
     "translation_key": "8ebae3ed-3893-41e8-bf25-6cff8ecdccaa",
     "locale": 1,
     "latest_revision": 5,
     "live": true,
     "has_unpublished_changes": false,
-    "first_published_at": "2025-01-24T00:56:10.300Z",
-    "last_published_at": "2025-01-24T00:56:10.300Z",
+    "first_published_at": "2025-01-01T00:56:10.300Z",
+    "last_published_at": "2025-01-01T00:56:10.300Z",
     "live_revision": 5,
     "go_live_at": null,
     "expire_at": null,
@@ -357,7 +873,143 @@
     "seo_title": "",
     "show_in_menus": true,
     "search_description": "",
-    "latest_revision_created_at": "2025-01-24T00:56:10.227Z",
+    "latest_revision_created_at": "2025-01-01T00:56:10.227Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 5,
+  "fields": {
+    "path": "0001000200010001",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+    "locale": 1,
+    "latest_revision": 19,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2025-01-01T04:59:33.513Z",
+    "last_published_at": "2025-01-26T07:47:25.922Z",
+    "live_revision": 19,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "So I decided to start a blog",
+    "draft_title": "So I decided to start a blog",
+    "slug": "first-post",
+    "content_type": 34,
+    "url_path": "/home/blog/first-post/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-01-26T07:47:25.817Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 6,
+  "fields": {
+    "path": "0001000200010002",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "d45d4972-76fd-40e7-8b36-486adbb18592",
+    "locale": 1,
+    "latest_revision": 20,
+    "live": false,
+    "has_unpublished_changes": true,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Just using a Justfile",
+    "draft_title": "Just using a Justfile",
+    "slug": "using-just",
+    "content_type": 34,
+    "url_path": "/home/blog/just-using-a-justfile/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-01-26T08:47:45.762Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 7,
+  "fields": {
+    "path": "0001000200010003",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "7411ccc3-82cb-426e-a229-b7af33f5566d",
+    "locale": 1,
+    "latest_revision": 13,
+    "live": false,
+    "has_unpublished_changes": true,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "pre-commit, Python types & virtual envs",
+    "draft_title": "pre-commit, Python types & virtual envs",
+    "slug": "pre-commit-python-types-virtual-envs",
+    "content_type": 34,
+    "url_path": "/home/blog/pre-commit-python-types-virtual-envs/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-01-26T04:49:53.555Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 8,
+  "fields": {
+    "path": "0001000200010004",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+    "locale": 1,
+    "latest_revision": 14,
+    "live": false,
+    "has_unpublished_changes": true,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Deploying Django all at once",
+    "draft_title": "Deploying Django all at once",
+    "slug": "deploying-django-all-at-once",
+    "content_type": 34,
+    "url_path": "/home/blog/deploying-django-all-at-once/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-01-26T04:51:13.264Z",
     "alias_of": null
   }
 },
@@ -591,6 +1243,901 @@
       "wagtail_admin_comments": [],
       "has_unpublished_changes": false,
       "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 6,
+  "fields": {
+    "content_type": 30,
+    "base_content_type": 1,
+    "object_id": "3",
+    "created_at": "2025-01-25T23:32:49.439Z",
+    "user": 2,
+    "object_str": "Home",
+    "content": {
+      "pk": 3,
+      "live": true,
+      "path": "00010002",
+      "slug": "home",
+      "depth": 2,
+      "owner": 2,
+      "title": "Home",
+      "locale": 1,
+      "locked": false,
+      "expired": false,
+      "alias_of": null,
+      "numchild": 1,
+      "url_path": "/home/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "seo_title": "Ada Wright writes here",
+      "go_live_at": null,
+      "draft_title": "Home",
+      "top_content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\"><b>About me</b></h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love most things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little hand-rolled place on the internet where I can rant.</p>\", \"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\"}, {\"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"type\": \"link_list\", \"value\": {\"heading\": \"Socials\", \"heading_level\": 1, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"label\": \"Mastodon\", \"icon\": \"mastodon\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"label\": \"Bluesky\", \"icon\": \"bluesky\"}, \"id\": \"d2be4414-f648-413e-a38f-07198f143902\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"label\": \"GitHub\", \"icon\": \"github\"}, \"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"label\": \"LinkedIn\", \"icon\": \"linkedin\"}, \"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"label\": \"Facebook\", \"icon\": \"facebook\"}, \"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://stackoverflow.com/users/218397/hipikat\", \"label\": \"StackOverflow\", \"icon\": \"stackoverflow\"}, \"id\": \"c5d99617-7866-4a97-b0a9-7f386219b540\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"label\": \"Threads\", \"icon\": \"threads\"}, \"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"label\": \"Instagram\", \"icon\": \"instagram\"}, \"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"label\": \"YouTube\", \"icon\": \"youtube\"}, \"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"label\": \"Twitch\", \"icon\": \"twitch\"}, \"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"label\": \"\\\"X\\\" (2007-2022)\", \"icon\": \"twitter\"}, \"id\": \"5544cb23-207e-495c-a657-5c63ab119559\"}]}, \"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\"}, {\"type\": \"link_list\", \"value\": {\"heading\": \"Contact me\", \"heading_level\": 2, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"label\": \"Email\", \"icon\": \"email\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"label\": \"Telegram\", \"icon\": \"telegram\"}, \"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\"}]}, \"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\"}]}, \"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\"}]",
+      "content_type": 30,
+      "live_revision": 4,
+      "show_in_menus": true,
+      "bottom_content": "[]",
+      "latest_revision": 4,
+      "translation_key": "9581f3d4-7fab-4cc6-84a3-89de1f5870d3",
+      "last_published_at": "2025-01-24T00:55:22.843Z",
+      "first_published_at": "2025-01-24T00:54:57.256Z",
+      "search_description": "I'm a software developer from Perth, Australia, who loves most things Python. This is my little hand-crafted blog-cum-personal website-cum-little decentralised rant-hole on the internet.",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-24T00:55:22.759Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 7,
+  "fields": {
+    "content_type": 30,
+    "base_content_type": 1,
+    "object_id": "3",
+    "created_at": "2025-01-25T23:41:05.182Z",
+    "user": 2,
+    "object_str": "Home",
+    "content": {
+      "pk": 3,
+      "live": true,
+      "path": "00010002",
+      "slug": "home",
+      "depth": 2,
+      "owner": 2,
+      "title": "Home",
+      "locale": 1,
+      "locked": false,
+      "expired": false,
+      "alias_of": null,
+      "numchild": 1,
+      "url_path": "/home/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "seo_title": "Ada Wright writes here",
+      "go_live_at": null,
+      "draft_title": "Home",
+      "top_content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\"><b>About me</b></h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love most things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little hand-rolled place on the internet where I can rant.</p>\", \"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\"}, {\"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"type\": \"link_list\", \"value\": {\"heading\": \"Socials\", \"heading_level\": 1, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"label\": \"Mastodon\", \"icon\": \"mastodon\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"label\": \"Bluesky\", \"icon\": \"bluesky\"}, \"id\": \"d2be4414-f648-413e-a38f-07198f143902\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"label\": \"GitHub\", \"icon\": \"github\"}, \"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"label\": \"LinkedIn\", \"icon\": \"linkedin\"}, \"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"label\": \"Facebook\", \"icon\": \"facebook\"}, \"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://stackoverflow.com/users/218397/hipikat\", \"label\": \"StackOverflow\", \"icon\": \"stackoverflow\"}, \"id\": \"c5d99617-7866-4a97-b0a9-7f386219b540\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"label\": \"Threads\", \"icon\": \"threads\"}, \"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"label\": \"Instagram\", \"icon\": \"instagram\"}, \"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"label\": \"YouTube\", \"icon\": \"youtube\"}, \"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"label\": \"Twitch\", \"icon\": \"twitch\"}, \"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"label\": \"\\\"X\\\" (2007-2022)\", \"icon\": \"twitter\"}, \"id\": \"5544cb23-207e-495c-a657-5c63ab119559\"}]}, \"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\"}, {\"type\": \"link_list\", \"value\": {\"heading\": \"Contact me\", \"heading_level\": 3, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"label\": \"Email\", \"icon\": \"email\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"label\": \"Telegram\", \"icon\": \"telegram\"}, \"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\"}]}, \"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\"}]}, \"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\"}]",
+      "content_type": 30,
+      "live_revision": 6,
+      "show_in_menus": true,
+      "bottom_content": "[]",
+      "latest_revision": 6,
+      "translation_key": "9581f3d4-7fab-4cc6-84a3-89de1f5870d3",
+      "last_published_at": "2025-01-25T23:32:50.018Z",
+      "first_published_at": "2025-01-24T00:54:57.256Z",
+      "search_description": "I'm a software developer from Perth, Australia, who loves most things Python. This is my little hand-crafted blog-cum-personal website-cum-little decentralised rant-hole on the internet.",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-25T23:32:49.439Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 8,
+  "fields": {
+    "content_type": 30,
+    "base_content_type": 1,
+    "object_id": "3",
+    "created_at": "2025-01-26T02:30:38.682Z",
+    "user": 2,
+    "object_str": "Home",
+    "content": {
+      "pk": 3,
+      "live": true,
+      "path": "00010002",
+      "slug": "home",
+      "depth": 2,
+      "owner": 2,
+      "title": "Home",
+      "locale": 1,
+      "locked": false,
+      "expired": false,
+      "alias_of": null,
+      "numchild": 1,
+      "url_path": "/home/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "seo_title": "Ada Wright writes here",
+      "go_live_at": null,
+      "draft_title": "Home",
+      "top_content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\"><b>About me</b></h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love most things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little hand-rolled place on the internet where I can rant.</p>\", \"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\"}, {\"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"type\": \"link_list\", \"value\": {\"heading\": \"Socials\", \"heading_level\": 1, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"label\": \"Mastodon\", \"icon\": \"mastodon\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"label\": \"Bluesky\", \"icon\": \"bluesky\"}, \"id\": \"d2be4414-f648-413e-a38f-07198f143902\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"label\": \"GitHub\", \"icon\": \"github\"}, \"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"label\": \"LinkedIn\", \"icon\": \"linkedin\"}, \"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"label\": \"Facebook\", \"icon\": \"facebook\"}, \"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"label\": \"Threads\", \"icon\": \"threads\"}, \"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"label\": \"Instagram\", \"icon\": \"instagram\"}, \"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"label\": \"YouTube\", \"icon\": \"youtube\"}, \"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"label\": \"Twitch\", \"icon\": \"twitch\"}, \"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"label\": \"\\\"X\\\" (2007-2022)\", \"icon\": \"twitter\"}, \"id\": \"5544cb23-207e-495c-a657-5c63ab119559\"}]}, \"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\"}, {\"type\": \"link_list\", \"value\": {\"heading\": \"Contact me\", \"heading_level\": 3, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"label\": \"Email\", \"icon\": \"email\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"label\": \"Telegram\", \"icon\": \"telegram\"}, \"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\"}]}, \"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\"}]}, \"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\"}]",
+      "content_type": 30,
+      "live_revision": 7,
+      "show_in_menus": true,
+      "bottom_content": "[]",
+      "latest_revision": 7,
+      "translation_key": "9581f3d4-7fab-4cc6-84a3-89de1f5870d3",
+      "last_published_at": "2025-01-25T23:41:05.547Z",
+      "first_published_at": "2025-01-24T00:54:57.256Z",
+      "search_description": "I'm a software developer from Perth, Australia, who loves most things Python. This is my little hand-crafted blog-cum-personal website-cum-little decentralised rant-hole on the internet.",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-25T23:41:05.182Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 9,
+  "fields": {
+    "content_type": 30,
+    "base_content_type": 1,
+    "object_id": "3",
+    "created_at": "2025-01-26T03:49:16.094Z",
+    "user": 2,
+    "object_str": "Home",
+    "content": {
+      "pk": 3,
+      "live": true,
+      "path": "00010002",
+      "slug": "home",
+      "depth": 2,
+      "owner": 2,
+      "title": "Home",
+      "locale": 1,
+      "locked": false,
+      "expired": false,
+      "alias_of": null,
+      "numchild": 1,
+      "url_path": "/home/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "seo_title": "Ada Wright writes here",
+      "go_live_at": null,
+      "draft_title": "Home",
+      "top_content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\"><b>About me</b></h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love all things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little, decentralised, hand-rolled place on the internet where I can rant and post.</p>\", \"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\"}, {\"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"type\": \"link_list\", \"value\": {\"heading\": \"Socials\", \"heading_level\": 1, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"label\": \"Mastodon\", \"icon\": \"mastodon\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"label\": \"Bluesky\", \"icon\": \"bluesky\"}, \"id\": \"d2be4414-f648-413e-a38f-07198f143902\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"label\": \"GitHub\", \"icon\": \"github\"}, \"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"label\": \"LinkedIn\", \"icon\": \"linkedin\"}, \"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"label\": \"Facebook\", \"icon\": \"facebook\"}, \"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"label\": \"Threads\", \"icon\": \"threads\"}, \"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"label\": \"Instagram\", \"icon\": \"instagram\"}, \"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"label\": \"YouTube\", \"icon\": \"youtube\"}, \"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"label\": \"Twitch\", \"icon\": \"twitch\"}, \"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"label\": \"\\\"X\\\" (2007-2022)\", \"icon\": \"twitter\"}, \"id\": \"5544cb23-207e-495c-a657-5c63ab119559\"}]}, \"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\"}, {\"type\": \"link_list\", \"value\": {\"heading\": \"Contact me\", \"heading_level\": 3, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"label\": \"Email\", \"icon\": \"email\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"label\": \"Telegram\", \"icon\": \"telegram\"}, \"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\"}]}, \"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\"}]}, \"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\"}]",
+      "content_type": 30,
+      "live_revision": 8,
+      "show_in_menus": true,
+      "bottom_content": "[]",
+      "latest_revision": 8,
+      "translation_key": "9581f3d4-7fab-4cc6-84a3-89de1f5870d3",
+      "last_published_at": "2025-01-26T02:30:39.165Z",
+      "first_published_at": "2025-01-24T00:54:57.256Z",
+      "search_description": "I'm a software developer from Perth, Australia, who loves most things Python. This is my little hand-crafted blog-cum-personal website-cum-little decentralised rant-hole on the internet.",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-26T02:30:38.682Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 10,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-26T04:05:16.471Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": false,
+      "path": "0001000200010001",
+      "slug": "so-i-decided-to-start-a-blog",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"03rqr\\\">So I decided to start a blog</h1><p data-block-key=\\\"5isdh\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify and/or explain the countless hours I've poured into getting this personal website off the ground.</p>",
+      "tagline": "What the hell am I doing here?",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/so-i-decided-to-start-a-blog/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 1,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": 2,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 11,
+  "fields": {
+    "content_type": 30,
+    "base_content_type": 1,
+    "object_id": "3",
+    "created_at": "2025-01-26T04:12:20.430Z",
+    "user": 2,
+    "object_str": "Home",
+    "content": {
+      "pk": 3,
+      "live": true,
+      "path": "00010002",
+      "slug": "home",
+      "depth": 2,
+      "owner": 2,
+      "title": "Home",
+      "locale": 1,
+      "locked": false,
+      "expired": false,
+      "alias_of": null,
+      "numchild": 1,
+      "url_path": "/home/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "seo_title": "Ada Wright writes here",
+      "go_live_at": null,
+      "draft_title": "Home",
+      "top_content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\"><b>About me</b></h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love all things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little, decentralised, hand-rolled place on the internet where I can post and rant.</p>\", \"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\"}, {\"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"type\": \"link_list\", \"value\": {\"heading\": \"Socials\", \"heading_level\": 1, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"label\": \"Mastodon\", \"icon\": \"mastodon\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"label\": \"Bluesky\", \"icon\": \"bluesky\"}, \"id\": \"d2be4414-f648-413e-a38f-07198f143902\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"label\": \"GitHub\", \"icon\": \"github\"}, \"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"label\": \"LinkedIn\", \"icon\": \"linkedin\"}, \"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"label\": \"Facebook\", \"icon\": \"facebook\"}, \"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"label\": \"Threads\", \"icon\": \"threads\"}, \"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"label\": \"Instagram\", \"icon\": \"instagram\"}, \"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"label\": \"YouTube\", \"icon\": \"youtube\"}, \"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"label\": \"Twitch\", \"icon\": \"twitch\"}, \"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\"}, {\"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"label\": \"\\\"X\\\" (2007-2022)\", \"icon\": \"twitter\"}, \"id\": \"5544cb23-207e-495c-a657-5c63ab119559\"}]}, \"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\"}, {\"type\": \"link_list\", \"value\": {\"heading\": \"Contact me\", \"heading_level\": 3, \"items\": [{\"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"label\": \"Email\", \"icon\": \"email\"}, \"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\"}, {\"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"label\": \"Telegram\", \"icon\": \"telegram\"}, \"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\"}]}, \"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\"}]}, \"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\"}]",
+      "content_type": 30,
+      "live_revision": 9,
+      "show_in_menus": true,
+      "bottom_content": "[]",
+      "latest_revision": 9,
+      "translation_key": "9581f3d4-7fab-4cc6-84a3-89de1f5870d3",
+      "last_published_at": "2025-01-26T03:49:16.162Z",
+      "first_published_at": "2025-01-24T00:54:57.256Z",
+      "search_description": "I'm a software developer from Perth, Australia, who loves most things Python. This is my little hand-crafted blog-cum-personal website-cum-little decentralised rant-hole on the internet.",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-26T03:49:16.094Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 12,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "6",
+    "created_at": "2025-01-26T04:46:44.432Z",
+    "user": 2,
+    "object_str": "Just using a Justfile",
+    "content": {
+      "pk": 6,
+      "live": false,
+      "path": "0001000200010002",
+      "slug": "just-using-a-justfile",
+      "depth": 4,
+      "owner": 2,
+      "title": "Just using a Justfile",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"4r388\\\">Just is basically a command-runner, and a great blessing in my life. What have I done to \\\"just run commands\\\" in the past? I took a relatively standard-looking journey through the problem of \\\"running stuff\\\", which vaguely went:</p><ul><li data-block-key=\\\"bferm\\\">Excessive use of man pages to remember arguments and flags</li><li data-block-key=\\\"eeepu\\\">Abusive grepping of a shell's history to see what I'd done before</li><li data-block-key=\\\"4po5s\\\">A Constant addition of aliases and functions to my shell via startup files</li><li data-block-key=\\\"au3c0\\\">Pipenv <code>[scripts]</code>, npm <code>\\\"scripts\\\"</code>, other and other tool-spcific stuff</li><li data-block-key=\\\"3crud\\\">Make? CMake?!</li><li data-block-key=\\\"a09l8\\\">Maybe just a bunch of .sh files under a <code>scripts/</code> directory?</li></ul>\", \"id\": \"cb48d52a-4faf-4e72-8c66-a44a91f1d564\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"0j72i\">Just is basically a command-runner. After decades of using other standard (but in retrospect ad-hoc methods), I've settled comfortably into writing just one <code>Justfile</code>, at the root of any given project, for the vast majority of \"shell-scripty\" stuff (aka the glue) required to get anything useful done.</p>",
+      "tagline": "Just is a beautiful solution to the problems lurking within the fraught problem-realm known to computer scientists as \"running stuff\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/just-using-a-justfile/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Just using a Justfile",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 3,
+          "tag": 3,
+          "content_object": 6
+        },
+        {
+          "pk": 4,
+          "tag": 4,
+          "content_object": 6
+        },
+        {
+          "pk": 5,
+          "tag": 5,
+          "content_object": 6
+        },
+        {
+          "pk": 6,
+          "tag": 6,
+          "content_object": 6
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "d45d4972-76fd-40e7-8b36-486adbb18592",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 13,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "created_at": "2025-01-26T04:49:53.555Z",
+    "user": 2,
+    "object_str": "pre-commit, Python types & virtual envs",
+    "content": {
+      "pk": 7,
+      "live": false,
+      "path": "0001000200010003",
+      "slug": "pre-commit-python-types-virtual-envs",
+      "depth": 4,
+      "owner": 2,
+      "title": "pre-commit, Python types & virtual envs",
+      "locale": 1,
+      "locked": false,
+      "content": "[]",
+      "expired": false,
+      "summary": "<p data-block-key=\"4qjbz\">[Talk about how you gave up on the mypy pre-commit hook and used local, because of how pre-commit creates a new virtualenv for each hook – and additional_dependencies would have required most of the project to be declared! … but Ruff, being static, runs just fine.</p>",
+      "tagline": "How I learned to stop worrying and love `repo: local`",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/pre-commit-python-types-virtual-envs/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "pre-commit, Python types & virtual envs",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 7,
+          "tag": 7,
+          "content_object": 7
+        },
+        {
+          "pk": 8,
+          "tag": 8,
+          "content_object": 7
+        },
+        {
+          "pk": 9,
+          "tag": 9,
+          "content_object": 7
+        },
+        {
+          "pk": 10,
+          "tag": 10,
+          "content_object": 7
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "7411ccc3-82cb-426e-a229-b7af33f5566d",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 14,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-01-26T04:51:13.264Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 11,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 12,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 13,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 14,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 15,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 16,
+          "tag": 6,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 15,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-26T04:59:33.427Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": false,
+      "path": "0001000200010001",
+      "slug": "so-i-decided-to-start-a-blog",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"03rqr\\\">So I decided to start a blog</h1><p data-block-key=\\\"5isdh\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify and/or explain the countless hours I've poured into getting this personal website off the ground.</p>",
+      "tagline": "What the hell am I doing here?",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/so-i-decided-to-start-a-blog/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 17,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": 18,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 10,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-26T04:05:16.471Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 16,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-26T06:13:40.653Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": true,
+      "path": "0001000200010001",
+      "slug": "so-i-decided-to-start-a-blog",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"03rqr\\\">So I decided to start a blog</h1><p data-block-key=\\\"5isdh\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p><p data-block-key=\\\"cddil\\\">Lorem ipsum dolor sit.</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify and/or explain the countless hours I've poured into getting this personal website off the ground.</p>",
+      "tagline": "What the hell am I doing here?",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/so-i-decided-to-start-a-blog/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 15,
+      "show_in_menus": false,
+      "latest_revision": 15,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-01T04:59:33.513Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-01T04:59:33.427Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 17,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-26T06:22:05.962Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": true,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p><p data-block-key=\\\"cddil\\\">Lorem ipsum dolor sit.</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify/explain the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "What the hell am I doing here?",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/so-i-decided-to-start-a-blog/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 16,
+      "show_in_menus": false,
+      "latest_revision": 16,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-26T06:13:40.741Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-26T06:13:40.653Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 18,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-26T06:22:41.464Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": true,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p><p data-block-key=\\\"cddil\\\">Lorem ipsum dolor sit.</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify/explain the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "What the hell am I doing here?",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/first-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 17,
+      "show_in_menus": false,
+      "latest_revision": 17,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-26T06:22:06.060Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-26T06:22:05.962Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 19,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-26T07:47:25.817Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": true,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p><p data-block-key=\\\"cddil\\\">Lorem ipsum dolor sit.</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify/explain the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "\"What the hell am I doing here?\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/first-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 17,
+      "show_in_menus": false,
+      "latest_revision": 18,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-26T06:22:06.060Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-26T06:22:41.464Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 20,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "6",
+    "created_at": "2025-01-26T08:47:45.762Z",
+    "user": 2,
+    "object_str": "Just using a Justfile",
+    "content": {
+      "pk": 6,
+      "live": false,
+      "path": "0001000200010002",
+      "slug": "using-just",
+      "depth": 4,
+      "owner": 2,
+      "title": "Just using a Justfile",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"4r388\\\">Just is basically a command-runner, and a great blessing in my life. What have I done to \\\"just run commands\\\" in the past? I took a relatively standard-looking journey through the problem of \\\"running stuff\\\", which vaguely went:</p><ul><li data-block-key=\\\"bferm\\\">Excessive use of man pages to remember arguments and flags</li><li data-block-key=\\\"eeepu\\\">Abusive grepping of a shell's history to see what I'd done before</li><li data-block-key=\\\"4po5s\\\">A Constant addition of aliases and functions to my shell via startup files</li><li data-block-key=\\\"au3c0\\\">Pipenv <code>[scripts]</code>, npm <code>\\\"scripts\\\"</code>, other and other tool-spcific stuff</li><li data-block-key=\\\"3crud\\\">Make? CMake?!</li><li data-block-key=\\\"a09l8\\\">Maybe just a bunch of .sh files under a <code>scripts/</code> directory?</li></ul>\", \"id\": \"cb48d52a-4faf-4e72-8c66-a44a91f1d564\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"0j72i\">Just is basically a command-runner. After decades of using other standard (but in retrospect ad-hoc methods), I've settled comfortably into writing just one <code>Justfile</code>, at the root of any given project, for the vast majority of \"shell-scripty\" stuff (aka the glue) required to get anything useful done.</p>",
+      "tagline": "Just is a beautiful solution to the problems lurking within the fraught problem-realm known to computer scientists as \"running stuff\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/just-using-a-justfile/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Just using a Justfile",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 29,
+          "tag": 3,
+          "content_object": 6
+        },
+        {
+          "pk": 30,
+          "tag": 4,
+          "content_object": 6
+        },
+        {
+          "pk": 31,
+          "tag": 5,
+          "content_object": 6
+        },
+        {
+          "pk": 32,
+          "tag": 6,
+          "content_object": 6
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 12,
+      "translation_key": "d45d4972-76fd-40e7-8b36-486adbb18592",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-26T04:46:44.432Z"
     },
     "approved_go_live_at": null
   }
@@ -888,6 +2435,465 @@
   }
 },
 {
+  "model": "wagtailcore.pagelogentry",
+  "pk": 12,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-25T23:32:49.889Z",
+    "uuid": "33453ae0-b587-43ca-a41f-b687784cbf6c",
+    "user": 2,
+    "revision": 6,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 13,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-25T23:32:50.221Z",
+    "uuid": "33453ae0-b587-43ca-a41f-b687784cbf6c",
+    "user": 2,
+    "revision": 6,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 14,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-25T23:41:05.441Z",
+    "uuid": "4cb1e65b-b1dc-48e4-8e68-4a3d2955b0c2",
+    "user": 2,
+    "revision": 7,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 15,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-25T23:41:05.670Z",
+    "uuid": "4cb1e65b-b1dc-48e4-8e68-4a3d2955b0c2",
+    "user": 2,
+    "revision": 7,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 16,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T02:30:38.998Z",
+    "uuid": "18595fed-8917-474a-a2b9-b22a437f98d0",
+    "user": 2,
+    "revision": 8,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 17,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-26T02:30:39.283Z",
+    "uuid": "18595fed-8917-474a-a2b9-b22a437f98d0",
+    "user": 2,
+    "revision": 8,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 18,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T03:49:16.133Z",
+    "uuid": "2f5d6482-6dbb-4caa-b224-29d3fe6d6de6",
+    "user": 2,
+    "revision": 9,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 19,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-26T03:49:16.209Z",
+    "uuid": "2f5d6482-6dbb-4caa-b224-29d3fe6d6de6",
+    "user": 2,
+    "revision": 9,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 20,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-01-26T04:05:16.448Z",
+    "uuid": "0720ab60-481b-41d4-a284-070d298d2613",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 21,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T04:05:16.502Z",
+    "uuid": "0720ab60-481b-41d4-a284-070d298d2613",
+    "user": 2,
+    "revision": 10,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 22,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T04:12:20.460Z",
+    "uuid": "ee304091-39dd-44d8-86f2-1292f13af2ef",
+    "user": 2,
+    "revision": 11,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 23,
+  "fields": {
+    "content_type": 30,
+    "label": "Home",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-26T04:12:20.543Z",
+    "uuid": "ee304091-39dd-44d8-86f2-1292f13af2ef",
+    "user": 2,
+    "revision": 11,
+    "content_changed": true,
+    "deleted": false,
+    "page": 3
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 24,
+  "fields": {
+    "content_type": 34,
+    "label": "Just using a Justfile",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-01-26T04:46:44.403Z",
+    "uuid": "b74edff2-5c3b-42e9-9479-9456d906f7fd",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 6
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 25,
+  "fields": {
+    "content_type": 34,
+    "label": "Just using a Justfile",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T04:46:44.490Z",
+    "uuid": "b74edff2-5c3b-42e9-9479-9456d906f7fd",
+    "user": 2,
+    "revision": 12,
+    "content_changed": true,
+    "deleted": false,
+    "page": 6
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 26,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-01-26T04:49:53.531Z",
+    "uuid": "d2413053-7675-4d9f-98a3-2b0c30bbefc7",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 27,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T04:49:53.589Z",
+    "uuid": "d2413053-7675-4d9f-98a3-2b0c30bbefc7",
+    "user": 2,
+    "revision": 13,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 28,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-01-26T04:51:13.241Z",
+    "uuid": "01462d75-b03b-41a7-a199-e405a854f00b",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 29,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T04:51:13.317Z",
+    "uuid": "01462d75-b03b-41a7-a199-e405a854f00b",
+    "user": 2,
+    "revision": 14,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 30,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T04:59:33.478Z",
+    "uuid": "91f7422a-4ded-401f-969b-0de7c85a0791",
+    "user": 2,
+    "revision": 15,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 31,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-26T04:59:33.598Z",
+    "uuid": "91f7422a-4ded-401f-969b-0de7c85a0791",
+    "user": 2,
+    "revision": 15,
+    "content_changed": false,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 32,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T06:13:40.704Z",
+    "uuid": "07e1acc3-d5af-4ff5-9b7c-520709a02248",
+    "user": 2,
+    "revision": 16,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 33,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-26T06:13:40.799Z",
+    "uuid": "07e1acc3-d5af-4ff5-9b7c-520709a02248",
+    "user": 2,
+    "revision": 16,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 34,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T06:22:06.017Z",
+    "uuid": "311de7a9-9b52-4c1a-9e3f-549b182bd8c0",
+    "user": 2,
+    "revision": 17,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 35,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T06:22:41.510Z",
+    "uuid": "672f431d-712b-4def-979c-3d955f4a2b4f",
+    "user": 2,
+    "revision": 18,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 36,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T07:47:25.879Z",
+    "uuid": "cfebe668-eb11-4cd7-b2e2-7f9983d1bde0",
+    "user": 2,
+    "revision": 19,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 37,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-26T07:47:25.990Z",
+    "uuid": "cfebe668-eb11-4cd7-b2e2-7f9983d1bde0",
+    "user": 2,
+    "revision": 19,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 38,
+  "fields": {
+    "content_type": 34,
+    "label": "Just using a Justfile",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-26T08:47:45.864Z",
+    "uuid": "3bbe69f7-3b93-4f9e-95ac-4107a9b1fa8d",
+    "user": 2,
+    "revision": 20,
+    "content_changed": true,
+    "deleted": false,
+    "page": 6
+  }
+},
+{
   "model": "wagtailcore.pagesubscription",
   "pk": 1,
   "fields": {
@@ -902,6 +2908,42 @@
   "fields": {
     "user": 2,
     "page": 4,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 3,
+  "fields": {
+    "user": 2,
+    "page": 5,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 4,
+  "fields": {
+    "user": 2,
+    "page": 6,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 5,
+  "fields": {
+    "user": 2,
+    "page": 7,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 6,
+  "fields": {
+    "user": 2,
+    "page": 8,
     "comment_notifications": true
   }
 },
