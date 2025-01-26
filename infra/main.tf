@@ -22,7 +22,7 @@ resource "digitalocean_droplet" "hpk_server" {
   monitoring  = var.monitoring
   backups     = var.backups
   tags        = var.tags
-  resize_disk = false
+  # resize_disk = false
   user_data = templatefile("${path.module}/${var.cloud_init_config}", {
     development       = var.development
     production        = var.production
