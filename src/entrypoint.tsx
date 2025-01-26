@@ -167,12 +167,13 @@ function renderPageContents(): void {
   const listStack: HTMLUListElement[] = [tocList];
   let currentLevel = 1;
 
-  // Find all anchor-linked headings
+  // Find all anchor-linked headings inside articles
   const headings = document.querySelectorAll<HTMLElement>(
-    "h1[id], h2[id], h3[id], h4[id], h5[id], h6[id]",
+    "article h1[id], article h2[id], article h3[id], article h4[id], article h5[id], article h6[id]",
   );
+
   headings.forEach((heading) => {
-    const headingLevel = parseInt(heading.tagName.substring(1)); // Extract the heading level (e.g., "1" for "H1")
+    const headingLevel = parseInt(heading.tagName.substring(1));
 
     // Adjust the stack to match the heading level
     while (headingLevel > currentLevel) {
@@ -209,52 +210,6 @@ function renderPageContents(): void {
     listStack[listStack.length - 1].appendChild(listItem);
   });
 }
-
-// function enableStickyTOC(): void {
-//   const tocContainer = document.querySelector<HTMLElement>(".toc > div");
-//   if (!tocContainer) return;
-
-//   const parentContainer = tocContainer.parentElement;
-//   if (!parentContainer) return;
-
-//   const offsetTop = 16; // Equivalent to Tailwind's `top-4`
-//   const marginRight = 16; // Equivalent to Tailwind's `-mr-4`
-
-//   const initialTop = parentContainer.getBoundingClientRect().top + window.scrollY;
-//   const parentStyles = getComputedStyle(parentContainer);
-
-//   window.addEventListener("scroll", () => {
-//     const currentScroll = window.scrollY;
-//     const stickyStart = initialTop - offsetTop;
-
-//     if (currentScroll >= stickyStart) {
-//       tocContainer.classList.add("is-fixed");
-
-//       tocContainer.style.position = "fixed";
-//       tocContainer.style.top = `${offsetTop}px`;
-//       tocContainer.style.maxHeight = `calc(100vh - ${offsetTop}px)`;
-//       tocContainer.style.overflowY = "auto";
-
-//       // Dynamically calculate width and right offset
-//       const parentWidth = parentContainer.getBoundingClientRect().width;
-//       tocContainer.style.width = `${parentWidth}px`;
-//       tocContainer.style.padding = parentStyles.padding; // Preserve padding
-//       tocContainer.style.right = `${marginRight}px`; // Apply negative right margin
-//     } else {
-//       tocContainer.classList.remove("is-fixed");
-
-//       tocContainer.style.position = "relative";
-//       tocContainer.style.top = "initial";
-//       tocContainer.style.maxHeight = "initial";
-//       tocContainer.style.overflowY = "initial";
-
-//       // Reset dynamically applied styles
-//       tocContainer.style.width = "initial";
-//       tocContainer.style.padding = "initial";
-//       tocContainer.style.right = "initial"; // Reset right offset
-//     }
-//   });
-// }
 
 //
 // Main DOMContentLoaded Listener

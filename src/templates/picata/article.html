@@ -1,15 +1,17 @@
 {% extends "picata/3_column.html" %}
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags kill_orphans %}
 
 {% block main_classes %}{{ block.super }} article{% endblock %}
 
 {% block aside %}
-  {% if tagline %}<div class="tagline">"{{ tagline }}"<hr /></div>{% endif %}
+  {% if tagline %}<div class="tagline">{{ tagline|killorphans }}<hr /></div>{% endif %}
   {% if published %}<p class="leading-none text-xs">Published <span>{{ published }}</span></p>{% endif %}
   {% if updated %}<p class="leading-none text-xs">Updated <span>{{ updated }}</span></p>{% endif %}
-  {% comment %} {% if page.tags %}
-    <hr /><p class="text-center">Tagged: {% for tag in page.tags.all %}<span>{{ tag }}{% if not forloop.last %}, {% endif %}</span>{% endfor %}</p>
-  {% endif %} {% endcomment %}
+  {% if page.tags %}
+    <hr /><nav class="tags"><h1>Tags</h1><ul>
+      {% for tag in page.tags.all %}<li><a href="{% url 'search' %}?tags={{ tag|urlencode }}">{{ tag }}</a></li>{% endfor %}
+    </ul></nav>
+  {% endif %}
 {% endblock %}
 
 {% block article %}

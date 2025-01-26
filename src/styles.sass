@@ -124,19 +124,28 @@ body
     // Main takes a series of `div`s, which each take up half the page at a time at 'sm' width
     // and above. All content is centre-justified.
     &.split-view
-      @apply flex flex-wrap items-start gap-x-12 gap-y-4 relative flex-col sm:flex-row
+      @apply flex flex-wrap items-start place-items-start align-top gap-x-12 gap-y-4 relative flex-col md:flex-row
       > div
-          @apply w-full sm:flex-[0_0_calc(50%-1.5rem)] flex flex-col justify-start sm:justify-center text-center
-          > *
-            @apply mx-auto
+        @apply flex w-full flex-col text-center justify-start place-items-start shrink
+        > *
+          @apply mx-auto mt-0 mb-0
+      > .full-width
+        @apply bg-base-200 border-y-base-100 py-4
+        z-index: 20
+        border-width: 2px 0px
+        // &:last-child:not(:only-child)
+        //   @apply mb-4 sm:mb-0
+      > :not(.full-width)
+        @apply sm:flex-[0_0_calc(50%-1.5rem)] sm:justify-center
       &:before
-          @apply hidden sm:block bg-base-100
-          content: ""
-          position: absolute
-          top: 0
-          bottom: 0
-          left: calc(50% - 1px)
-          width: 2px
+        @apply hidden md:block bg-base-100
+        content: ""
+        position: absolute
+        top: 0
+        bottom: 0
+        left: calc(50% - 1px)
+        width: 2px
+
 
     // Main takes a `dl`, alternates a 25%-width left column of `dt`s with
     // 75%-width `dd`s, and there's a 2px vertical line down the gap between 'em
@@ -274,6 +283,15 @@ div.pygments
 
 
 // Template styles
+main.home-page
+  .recent-post
+    @apply text-left
+    h2
+      @apply mb-3
+    .meta-data
+      @apply w-full text-sm italic
+
+
 main.post-list
   .meta-data
     @apply text-xs pt-6
@@ -291,12 +309,20 @@ main.post-list
 main.article
   aside
     .tagline
-      @apply hidden sm:block text-center
+      @apply hidden sm:block text-center text-2xl italic
     hr
       @apply border-neutral-500 mt-6 mb-7
     // @apply leading-none
     span
       @apply whitespace-nowrap
+    .tags
+      @apply text-center
+      h1
+        @apply text-base
+      ul
+        @apply list-none flex flex-wrap justify-center gap-x-1 mt-2
+      a
+        @apply badge badge-primary font-bold whitespace-nowrap
   article > h1
     @apply mb-4
 
@@ -321,7 +347,7 @@ nav
 
 // Block styles
 ul.icon-link-list
-  @apply flex flex-wrap justify-center list-none gap-x-6 gap-y-4
+  @apply flex flex-wrap justify-center list-none gap-x-6 gap-y-0
   > li
     @apply flex items-center
     > a

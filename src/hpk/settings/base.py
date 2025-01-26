@@ -22,7 +22,7 @@ LOG_DIR = BASE_DIR / "logs"
 
 INTERNAL_IPS = ["*"]
 
-ALLOWED_HOSTS = [*getenv("FQDN", "").split(), "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [*getenv("FQDN", "").split(), "localhost", "127.0.0.1", "hpk.io"]
 with contextlib.suppress(Exception):
     public_ip = get_public_ip()
     if public_ip:

@@ -10,11 +10,16 @@
 
     {% for div in self.top_content %}<div>{{ div }}</div>{% endfor %}
 
-    {% for post in recent_posts %}<div class="recent-post">
-        {% if forloop.counter == 1 %}<h2>Recent posts</h2>{% endif %}
-        <h3>{{ post.title }}</h3>
-        {{ post.summary|richtext }}
-    </div>{% endfor %}
+    {% for post in recent_posts %}
+        {% if forloop.counter == 1 %}<div class="full-width"><h1><b>Recent posts</b></h1></div>{% endif %}
+        <div class="recent-post">
+          <h2>{% if post.published %}<a href="{{ post.url }}">{% endif %}{{ post.title }}{% if post.published %}</a>{% endif %}</h2>
+          <div class="meta-data">
+            {% if post.published %}Published {{ post.published }}{% if post.updated %}, updated {{ post.updated }}{% endif %}{% endif %}
+          </div>
+          {{ post.summary|richtext }}
+        </div>
+    {% endfor %}
 
     {% for div in self.bottom_content %}<div>{{ div }}</div>{% endfor %}
 
