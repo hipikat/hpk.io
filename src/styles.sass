@@ -26,7 +26,9 @@
   h6
     @apply text-sm leading-relaxed
   strong, b
-    @apply font-serif font-bold
+    @apply font-bold
+  em, i
+    @apply italic
   code, pre
     @apply font-mono font-light
     &.strong
@@ -103,9 +105,9 @@ body
   nav
     @apply flex flex-wrap justify-center grow pt-4 gap-x-3
     a
-      @apply btn btn-ghost px-2 h-8 min-h-8 text-base
+      @apply btn btn-ghost px-4 h-8 min-h-8 text-base
       &.current
-        @apply btn-active
+        @apply btn-active bg-primary text-primary-content
 
 body
   @apply min-h-screen
@@ -178,7 +180,35 @@ body
     z-index: 30
     box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), 0 -4px 6px -1px rgb(0 0 0 / 0.1), 0 -2px 4px -2px rgb(0 0 0 / 0.1)
     > div
-      @apply flex flex-col flex-1 px-7 w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto
+      @apply flex flex-row flex-wrap justify-between gap-x-5 gap-y-4 flex-1 px-7 w-full sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl mx-auto
+      > aside
+        @apply pr-6
+        > svg
+          @apply w-16 h-16 fill-current
+        > p
+          @apply text-xs mt-0
+          > span
+            @apply whitespace-nowrap
+      > nav
+        @apply text-sm pr-6
+        > h1
+          @apply font-heading font-bold text-base
+        > ul
+          &.icon-list
+            @apply flex flex-row gap-x-2 mt-3
+            svg
+              @apply w-5 h-5 fill-current
+          &.view-source
+            @apply list-disc list-inside
+            margin-top: 0.35rem
+            li
+              @apply whitespace-nowrap
+          // > li
+          //   @apply pr-2
+      //   &.view-source
+      //     @apply grow-2
+      // > aside, nav
+      //   @apply
 
 // Element styles
 a
