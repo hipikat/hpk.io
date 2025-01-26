@@ -369,6 +369,39 @@
   }
 },
 {
+  "model": "wagtailadmin.editingsession",
+  "pk": 66,
+  "fields": {
+    "user": 2,
+    "content_type": 1,
+    "object_id": "6",
+    "last_seen_at": "2025-01-26T15:17:06.619Z",
+    "is_editing": false
+  }
+},
+{
+  "model": "wagtailadmin.editingsession",
+  "pk": 67,
+  "fields": {
+    "user": 2,
+    "content_type": 1,
+    "object_id": "6",
+    "last_seen_at": "2025-01-26T15:17:08.317Z",
+    "is_editing": false
+  }
+},
+{
+  "model": "wagtailadmin.editingsession",
+  "pk": 68,
+  "fields": {
+    "user": 2,
+    "content_type": 1,
+    "object_id": "6",
+    "last_seen_at": "2025-01-26T15:17:09.035Z",
+    "is_editing": false
+  }
+},
+{
   "model": "wagtailcore.locale",
   "pk": 1,
   "fields": {
@@ -693,34 +726,6 @@
 },
 {
   "model": "wagtailcore.referenceindex",
-  "pk": 38,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "5",
-    "to_content_type": 31,
-    "to_object_id": "1",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.None.tag",
-    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 39,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "5",
-    "to_content_type": 31,
-    "to_object_id": "2",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.None.tag",
-    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
   "pk": 44,
   "fields": {
     "content_type": 34,
@@ -773,6 +778,34 @@
     "model_path": "tagged_items.item.tag",
     "content_path": "tagged_items.31.tag",
     "content_path_hash": "999edc45-2894-58ff-b45e-d1b4b18f4149"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 48,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "to_content_type": 31,
+    "to_object_id": "2",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.24.tag",
+    "content_path_hash": "4b5b95de-291f-5f0e-836c-e010ea961acf"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 49,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "to_content_type": 31,
+    "to_object_id": "1",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.23.tag",
+    "content_path_hash": "07e41103-292d-5210-b72a-837f3320c6c1"
   }
 },
 {
@@ -887,11 +920,11 @@
     "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
     "locale": 1,
     "latest_revision": 19,
-    "live": true,
-    "has_unpublished_changes": false,
+    "live": false,
+    "has_unpublished_changes": true,
     "first_published_at": "2025-01-01T04:59:33.513Z",
     "last_published_at": "2025-01-26T07:47:25.922Z",
-    "live_revision": 19,
+    "live_revision": null,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -2891,6 +2924,23 @@
     "content_changed": true,
     "deleted": false,
     "page": 6
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 39,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.unpublish",
+    "data": {},
+    "timestamp": "2025-01-26T15:17:51.874Z",
+    "uuid": "1f1af304-9c82-4e48-901e-937e11ab08e6",
+    "user": 2,
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "page": 5
   }
 },
 {
