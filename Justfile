@@ -812,3 +812,18 @@ setup-ssh env:
         just scp-put-in {{ env }} "$file" "~/.ssh/"
     done
     just scp-put-in {{ env }} ~/.ssh/config "~/.ssh/"
+
+# Pull changes from `remote`, load the latest snapshot, and re-initialise the site
+[group('workflow')]
+sync-remote remote='origin':
+    sudo -u wagtail git pull {{ remote }}
+    sudo -u wagtail uv sync
+    sudo -u wagtail npm ci
+    sudo -u wagtail npm run build:prod
+    just load
+    sudo systemctl restart nginx gunicorn-hpk
+
+# Run 'sync-remote' on the specified environment's server
+[group('workflow')]
+sync-env env:
+    just ssh-in {{ env }} sudo just -f /app/Justfile sync-remote
