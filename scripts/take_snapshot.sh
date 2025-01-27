@@ -91,15 +91,15 @@ uv run python src/manage.py dumpdata \
   --exclude wagtailsearch.indexentry \
   --indent 2 > "$SNAPSHOT_DIR/data.json"
 
-# Create a snapshot of the media directory, excluding renditions
+# Create a snapshot of the media directory
 MEDIA_DIR="media"
 SNAPSHOT_MEDIA_DIR="$SNAPSHOT_DIR/media"
 if [[ ! -d "$MEDIA_DIR" ]]; then
     echo "Media directory '$MEDIA_DIR' does not exist. Skipping media snapshot."
 else
-    echo "Saving media directory (excluding renditions) to snapshot..."
+    echo "Saving media directory to snapshot..."
     mkdir -p "$SNAPSHOT_MEDIA_DIR"
-    rsync -av --exclude 'images/' "$MEDIA_DIR/" "$SNAPSHOT_MEDIA_DIR/"
+    rsync -av "$MEDIA_DIR/" "$SNAPSHOT_MEDIA_DIR/"
     echo "Media snapshot saved successfully."
 fi
 

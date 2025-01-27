@@ -13,6 +13,7 @@ infra/dot_env.tfvars
 build/
 lib/
 media/
+!snapshots/latest/media/
 static/
 !src/static/
 src/db.sqlite3
