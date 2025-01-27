@@ -22,7 +22,7 @@
 <nav>{% block nav %}
   {{ nav }}
 {% endblock %}</nav>
-<article>{% block article %}
+<article class="{% block article_classes %}prose{% endblock %}">{% block article %}
   {{ article }}
 {% endblock %}</article>
 {% endblock %}

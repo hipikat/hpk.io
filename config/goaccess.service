@@ -1,0 +1,13 @@
+[Unit]
+Description=GoAccess Real-Time Analytics
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/goaccess /var/log/nginx/hpk-access.log -o /var/www/html/report.html --log-format=COMBINED --real-time-html
+Restart=always
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

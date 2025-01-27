@@ -156,7 +156,7 @@ function renderPageContents(): void {
 
   // Create the header for the navigation
   const tocHeader = document.createElement("h2");
-  tocHeader.textContent = "In this page";
+  tocHeader.textContent = "On this page";
   tocContainer.appendChild(tocHeader);
 
   // Create the root list

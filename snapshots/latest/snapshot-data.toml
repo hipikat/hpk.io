@@ -1,4 +1,4 @@
-timestamp = '2025-01-27 09:24:36'
-commit_hash = '24fa0fed1e79f033054310f3ff4904ea155e5949'
+timestamp = '2025-01-27 18:37:43'
+commit_hash = '4640896b515af5bf5bfec7b8b78e94c487da8d07'
 last_migration = '[X]  wagtailusers.0014_userprofile_contrast'
-hostname = 'hpk'
+hostname = 'hpk-dev'
