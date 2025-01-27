@@ -807,8 +807,8 @@ check:
 [group('workflow')]
 setup-ssh env:
     #!/usr/bin/env bash
-    just ssh-in dev "mkdir -p ~/.ssh && chmod 700 ~/.ssh"
+    just ssh-in {{ env }} "mkdir -p ~/.ssh && chmod 700 ~/.ssh"
     for file in ls ~/.ssh/ephemeral-*; do
-        just scp-put-in dev "$file" "~/.ssh/"
+        just scp-put-in {{ env }} "$file" "~/.ssh/"
     done
-    just scp-put-in dev ~/.ssh/config "~/.ssh/"
+    just scp-put-in {{ env }} ~/.ssh/config "~/.ssh/"
