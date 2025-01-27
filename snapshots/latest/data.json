@@ -411,17 +411,6 @@
   }
 },
 {
-  "model": "wagtailadmin.editingsession",
-  "pk": 93,
-  "fields": {
-    "user": 2,
-    "content_type": 1,
-    "object_id": "5",
-    "last_seen_at": "2025-01-27T08:57:24.669Z",
-    "is_editing": false
-  }
-},
-{
   "model": "wagtailcore.locale",
   "pk": 1,
   "fields": {

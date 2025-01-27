@@ -27,6 +27,7 @@ extras=(
 )
 post_install_picata() {
     uv sync --all-groups
+    pre-commit install
 }
 pre_install_wagtail() {
     echo "Installing Node toolchain for Wagtail..."
