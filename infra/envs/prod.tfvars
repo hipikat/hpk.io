@@ -2,4 +2,4 @@ tags        = ["production"]
 region      = "sgp1"
 production  = true
 development = false
-monitoring  = false
+monitoring  = true

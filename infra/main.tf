@@ -14,15 +14,15 @@ provider "digitalocean" {
 
 # DigitalOcean Droplet to run the site
 resource "digitalocean_droplet" "hpk_server" {
-  name       = terraform.workspace == "prod" ? var.tld : "hpk-${terraform.workspace}"
-  region     = var.region
-  size       = var.droplet_size
-  image      = var.image
-  ssh_keys   = [var.ssh_fingerprint]
-  monitoring = var.monitoring
-  backups    = var.backups
-  tags       = var.tags
-  # resize_disk = false
+  name        = terraform.workspace == "prod" ? var.tld : "hpk-${terraform.workspace}"
+  region      = var.region
+  size        = var.droplet_size
+  image       = var.image
+  ssh_keys    = [var.ssh_fingerprint]
+  monitoring  = var.monitoring
+  backups     = var.backups
+  tags        = var.tags
+  resize_disk = false
   user_data = templatefile("${path.module}/${var.cloud_init_config}", {
     development       = var.development
     production        = var.production
