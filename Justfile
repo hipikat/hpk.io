@@ -820,7 +820,8 @@ sync-remote remote='origin':
     sudo -u wagtail uv sync
     sudo -u wagtail npm ci
     sudo -u wagtail npm run build:prod
-    just load
+    sudo systemctl stop gunicorn-hpk
+    just load || true
     sudo systemctl restart nginx gunicorn-hpk
 
 # Install development packages and editables
