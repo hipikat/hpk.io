@@ -3,6 +3,7 @@
 packages:
   # Services
   - fail2ban
+  - goaccess
   - nginx
   - postgresql
   # Utilities
@@ -221,5 +222,12 @@ runcmd:
   # Restart fail2ban
   - echo ">>> Restarting fail2ban"
   - systemctl restart fail2ban
+
+  # Enable real-time monitoring with GoAccess
+  - echo ">>> Configuring and starting GoAccess"
+  - touch /var/www/html/report.html
+  - chown www-data:www-data /var/www/html/report.html
+  - ln -s /app/config/goaccess.service /etc/systemd/system/goaccess.service
+  - systemctl start goaccess
 
 final_message: "The system has been initialised with cloud-init!"
