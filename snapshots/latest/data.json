@@ -112,6 +112,14 @@
   }
 },
 {
+  "model": "picata.pagetag",
+  "pk": 15,
+  "fields": {
+    "name": "blogging",
+    "slug": "blogging"
+  }
+},
+{
   "model": "picata.pagetagrelation",
   "pk": 7,
   "fields": {
@@ -193,22 +201,6 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 23,
-  "fields": {
-    "tag": 1,
-    "content_object": 5
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 24,
-  "fields": {
-    "tag": 2,
-    "content_object": 5
-  }
-},
-{
-  "model": "picata.pagetagrelation",
   "pk": 29,
   "fields": {
     "tag": 3,
@@ -240,12 +232,36 @@
   }
 },
 {
+  "model": "picata.pagetagrelation",
+  "pk": 33,
+  "fields": {
+    "tag": 15,
+    "content_object": 5
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 34,
+  "fields": {
+    "tag": 1,
+    "content_object": 5
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 35,
+  "fields": {
+    "tag": 2,
+    "content_object": 5
+  }
+},
+{
   "model": "picata.article",
   "pk": 5,
   "fields": {
     "tagline": "\"What the hell am I doing here?\"",
     "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify/explain the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
-    "content": "[{\"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts\\u2026 you understand.</p><p data-block-key=\\\"cddil\\\">Lorem ipsum dolor sit.</p>\"}]",
+    "content": "[{\"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here. </p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p>\"}]",
     "page_type": null
   }
 },
@@ -370,34 +386,12 @@
 },
 {
   "model": "wagtailadmin.editingsession",
-  "pk": 66,
+  "pk": 78,
   "fields": {
     "user": 2,
     "content_type": 1,
-    "object_id": "6",
-    "last_seen_at": "2025-01-26T15:17:06.619Z",
-    "is_editing": false
-  }
-},
-{
-  "model": "wagtailadmin.editingsession",
-  "pk": 67,
-  "fields": {
-    "user": 2,
-    "content_type": 1,
-    "object_id": "6",
-    "last_seen_at": "2025-01-26T15:17:08.317Z",
-    "is_editing": false
-  }
-},
-{
-  "model": "wagtailadmin.editingsession",
-  "pk": 68,
-  "fields": {
-    "user": 2,
-    "content_type": 1,
-    "object_id": "6",
-    "last_seen_at": "2025-01-26T15:17:09.035Z",
+    "object_id": "5",
+    "last_seen_at": "2025-01-27T01:16:18.910Z",
     "is_editing": false
   }
 },
@@ -782,21 +776,7 @@
 },
 {
   "model": "wagtailcore.referenceindex",
-  "pk": 48,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "5",
-    "to_content_type": 31,
-    "to_object_id": "2",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.24.tag",
-    "content_path_hash": "4b5b95de-291f-5f0e-836c-e010ea961acf"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 49,
+  "pk": 53,
   "fields": {
     "content_type": 34,
     "base_content_type": 1,
@@ -804,8 +784,36 @@
     "to_content_type": 31,
     "to_object_id": "1",
     "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.23.tag",
-    "content_path_hash": "07e41103-292d-5210-b72a-837f3320c6c1"
+    "content_path": "tagged_items.34.tag",
+    "content_path_hash": "4537709c-d34a-5b2b-be4e-5d647312acac"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 54,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "to_content_type": 31,
+    "to_object_id": "15",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.33.tag",
+    "content_path_hash": "24a9a55f-6c93-5457-9160-f82f5d2de83b"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 55,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "to_content_type": 31,
+    "to_object_id": "2",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.35.tag",
+    "content_path_hash": "969b46bf-60ef-554c-84b2-fea2283e89d5"
   }
 },
 {
@@ -886,11 +894,11 @@
     "translation_key": "8ebae3ed-3893-41e8-bf25-6cff8ecdccaa",
     "locale": 1,
     "latest_revision": 5,
-    "live": true,
-    "has_unpublished_changes": false,
+    "live": false,
+    "has_unpublished_changes": true,
     "first_published_at": "2025-01-01T00:56:10.300Z",
     "last_published_at": "2025-01-01T00:56:10.300Z",
-    "live_revision": 5,
+    "live_revision": null,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -919,12 +927,12 @@
     "numchild": 0,
     "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
     "locale": 1,
-    "latest_revision": 19,
+    "latest_revision": 21,
     "live": false,
     "has_unpublished_changes": true,
     "first_published_at": "2025-01-01T04:59:33.513Z",
-    "last_published_at": "2025-01-26T07:47:25.922Z",
-    "live_revision": null,
+    "last_published_at": "2025-01-26T06:22:06.060Z",
+    "live_revision": 17,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -940,7 +948,7 @@
     "seo_title": "",
     "show_in_menus": false,
     "search_description": "",
-    "latest_revision_created_at": "2025-01-26T07:47:25.817Z",
+    "latest_revision_created_at": "2025-01-27T01:11:01.872Z",
     "alias_of": null
   }
 },
@@ -2176,6 +2184,72 @@
   }
 },
 {
+  "model": "wagtailcore.revision",
+  "pk": 21,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-27T01:11:01.872Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": false,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here. </p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify/explain the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "\"What the hell am I doing here?\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/first-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 33,
+          "tag": 15,
+          "content_object": 5
+        },
+        {
+          "pk": 34,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": 35,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 17,
+      "show_in_menus": false,
+      "latest_revision": 19,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-26T06:22:06.060Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-26T07:47:25.817Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
   "model": "wagtailcore.grouppagepermission",
   "pk": 1,
   "fields": {
@@ -2939,6 +3013,40 @@
     "user": 2,
     "revision": null,
     "content_changed": false,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 40,
+  "fields": {
+    "content_type": 32,
+    "label": "Blog",
+    "action": "wagtail.unpublish",
+    "data": {},
+    "timestamp": "2025-01-26T15:26:39.095Z",
+    "uuid": "7097e239-8ef3-4d59-b3e8-c3863abe3e2c",
+    "user": 2,
+    "revision": null,
+    "content_changed": false,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 41,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T01:11:01.955Z",
+    "uuid": "bb866469-6a5f-4d4c-8729-54e249bd4863",
+    "user": 2,
+    "revision": 21,
+    "content_changed": true,
     "deleted": false,
     "page": 5
   }
