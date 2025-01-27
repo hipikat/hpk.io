@@ -823,6 +823,11 @@ sync-remote remote='origin':
     just load
     sudo systemctl restart nginx gunicorn-hpk
 
+# Install development packages and editables
+[group('workflow')]
+dev-mode:
+    just init-python init-node init-editables
+
 # Run 'sync-remote' on the specified environment's server
 [group('workflow')]
 sync-env env:
