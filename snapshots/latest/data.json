@@ -120,6 +120,14 @@
   }
 },
 {
+  "model": "picata.pagetag",
+  "pk": 16,
+  "fields": {
+    "name": "Django",
+    "slug": "django"
+  }
+},
+{
   "model": "picata.pagetagrelation",
   "pk": 7,
   "fields": {
@@ -233,7 +241,7 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 33,
+  "pk": 45,
   "fields": {
     "tag": 15,
     "content_object": 5
@@ -241,7 +249,7 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 34,
+  "pk": 46,
   "fields": {
     "tag": 1,
     "content_object": 5
@@ -249,10 +257,18 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 35,
+  "pk": 47,
   "fields": {
     "tag": 2,
     "content_object": 5
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 49,
+  "fields": {
+    "tag": 16,
+    "content_object": 9
   }
 },
 {
@@ -260,8 +276,8 @@
   "pk": 5,
   "fields": {
     "tagline": "\"What the hell am I doing here?\"",
-    "summary": "<p data-block-key=\"58zlb\">Wherein I try to justify/explain the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
-    "content": "[{\"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here. </p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p>\"}]",
+    "summary": "<p data-block-key=\"58zlb\">Wherein I try to explain/justify the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+    "content": "[{\"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here.</p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p><h2 data-block-key=\\\"6qbpp\\\">Epilogue</h2><p data-block-key=\\\"5tn05\\\">I'm not exactly a heavy user of all the social sites linked to in the footer, but it seemed wise to reference my official accounts on my own website, as a guard against identity theft, and to help the SEO bots know who I am.</p><p data-block-key=\\\"cdqcg\\\">Anyway, I hope you enjoy my stuff!</p>\"}]",
     "page_type": null
   }
 },
@@ -291,6 +307,16 @@
   "fields": {
     "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
     "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+    "content": "[]",
+    "page_type": null
+  }
+},
+{
+  "model": "picata.article",
+  "pk": 9,
+  "fields": {
+    "tagline": "\"Import only what you need to survive\"",
+    "summary": "<p data-block-key=\"lh6z1\">Development server running out of memory? Or maybe your <code>runserver</code> process is taking forever to load? Here's how I fine-tuned my Django settings to stop those things happening.</p>",
     "content": "[]",
     "page_type": null
   }
@@ -386,12 +412,12 @@
 },
 {
   "model": "wagtailadmin.editingsession",
-  "pk": 78,
+  "pk": 93,
   "fields": {
     "user": 2,
     "content_type": 1,
     "object_id": "5",
-    "last_seen_at": "2025-01-27T01:16:18.910Z",
+    "last_seen_at": "2025-01-27T08:57:24.669Z",
     "is_editing": false
   }
 },
@@ -776,7 +802,7 @@
 },
 {
   "model": "wagtailcore.referenceindex",
-  "pk": 53,
+  "pk": 68,
   "fields": {
     "content_type": 34,
     "base_content_type": 1,
@@ -784,13 +810,13 @@
     "to_content_type": 31,
     "to_object_id": "1",
     "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.34.tag",
-    "content_path_hash": "4537709c-d34a-5b2b-be4e-5d647312acac"
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
   }
 },
 {
   "model": "wagtailcore.referenceindex",
-  "pk": 54,
+  "pk": 69,
   "fields": {
     "content_type": 34,
     "base_content_type": 1,
@@ -798,13 +824,13 @@
     "to_content_type": 31,
     "to_object_id": "15",
     "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.33.tag",
-    "content_path_hash": "24a9a55f-6c93-5457-9160-f82f5d2de83b"
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
   }
 },
 {
   "model": "wagtailcore.referenceindex",
-  "pk": 55,
+  "pk": 70,
   "fields": {
     "content_type": 34,
     "base_content_type": 1,
@@ -812,8 +838,22 @@
     "to_content_type": 31,
     "to_object_id": "2",
     "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.35.tag",
-    "content_path_hash": "969b46bf-60ef-554c-84b2-fea2283e89d5"
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 74,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "9",
+    "to_content_type": 31,
+    "to_object_id": "16",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.49.tag",
+    "content_path_hash": "f3cdaa84-6405-5288-b7ed-020e46541b13"
   }
 },
 {
@@ -890,15 +930,15 @@
   "fields": {
     "path": "000100020001",
     "depth": 3,
-    "numchild": 4,
+    "numchild": 5,
     "translation_key": "8ebae3ed-3893-41e8-bf25-6cff8ecdccaa",
     "locale": 1,
-    "latest_revision": 5,
-    "live": false,
-    "has_unpublished_changes": true,
+    "latest_revision": 23,
+    "live": true,
+    "has_unpublished_changes": false,
     "first_published_at": "2025-01-01T00:56:10.300Z",
-    "last_published_at": "2025-01-01T00:56:10.300Z",
-    "live_revision": null,
+    "last_published_at": "2025-01-27T02:35:39.965Z",
+    "live_revision": 23,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -914,7 +954,7 @@
     "seo_title": "",
     "show_in_menus": true,
     "search_description": "",
-    "latest_revision_created_at": "2025-01-01T00:56:10.227Z",
+    "latest_revision_created_at": "2025-01-27T02:35:39.931Z",
     "alias_of": null
   }
 },
@@ -927,12 +967,12 @@
     "numchild": 0,
     "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
     "locale": 1,
-    "latest_revision": 21,
-    "live": false,
-    "has_unpublished_changes": true,
-    "first_published_at": "2025-01-01T04:59:33.513Z",
-    "last_published_at": "2025-01-26T06:22:06.060Z",
-    "live_revision": 17,
+    "latest_revision": 26,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2025-01-26T04:59:33.513Z",
+    "last_published_at": "2025-01-27T06:49:58.608Z",
+    "live_revision": 26,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -947,8 +987,8 @@
     "owner": 2,
     "seo_title": "",
     "show_in_menus": false,
-    "search_description": "",
-    "latest_revision_created_at": "2025-01-27T01:11:01.872Z",
+    "search_description": "Where I try to justify the countless hours I've poured into getting this personal website off the ground.",
+    "latest_revision_created_at": "2025-01-27T06:49:58.499Z",
     "alias_of": null
   }
 },
@@ -1051,6 +1091,40 @@
     "show_in_menus": false,
     "search_description": "",
     "latest_revision_created_at": "2025-01-26T04:51:13.264Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 9,
+  "fields": {
+    "path": "0001000200010005",
+    "depth": 4,
+    "numchild": 0,
+    "translation_key": "51b71484-e6ae-43d7-a62b-59c8b2214a27",
+    "locale": 1,
+    "latest_revision": 28,
+    "live": false,
+    "has_unpublished_changes": true,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Django settings in 4 parts",
+    "draft_title": "Django settings in 4 parts",
+    "slug": "django-settings-in-4-parts",
+    "content_type": 34,
+    "url_path": "/home/blog/django-settings-in-4-parts/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-01-27T06:57:11.476Z",
     "alias_of": null
   }
 },
@@ -2250,6 +2324,428 @@
   }
 },
 {
+  "model": "wagtailcore.revision",
+  "pk": 22,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-27T02:07:18.947Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": false,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here.</p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to explain/justify the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "\"What the hell am I doing here?\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/first-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 36,
+          "tag": 15,
+          "content_object": 5
+        },
+        {
+          "pk": 37,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": 38,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 17,
+      "show_in_menus": false,
+      "latest_revision": 21,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-26T06:22:06.060Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-27T01:11:01.872Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 23,
+  "fields": {
+    "content_type": 32,
+    "base_content_type": 1,
+    "object_id": "4",
+    "created_at": "2025-01-27T02:35:39.931Z",
+    "user": 2,
+    "object_str": "Blog",
+    "content": {
+      "pk": 4,
+      "live": false,
+      "path": "000100020001",
+      "slug": "blog",
+      "depth": 3,
+      "intro": "<h1 data-block-key=\"5neok\">Things I've Posted</h1><p data-block-key=\"c6dtn\"></p>",
+      "owner": 2,
+      "title": "Blog",
+      "locale": 1,
+      "locked": false,
+      "expired": false,
+      "alias_of": null,
+      "numchild": 4,
+      "url_path": "/home/blog/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Blog",
+      "content_type": 32,
+      "live_revision": null,
+      "show_in_menus": true,
+      "latest_revision": 5,
+      "translation_key": "8ebae3ed-3893-41e8-bf25-6cff8ecdccaa",
+      "last_published_at": null,
+      "first_published_at": "2025-01-01T00:56:10.300Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-01T00:56:10.227Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 24,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-27T02:38:13.067Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": false,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here.</p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to explain/justify the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "\"What the hell am I doing here?\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/first-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 39,
+          "tag": 15,
+          "content_object": 5
+        },
+        {
+          "pk": 40,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": 41,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 17,
+      "show_in_menus": false,
+      "latest_revision": 22,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-26T06:22:06.060Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-27T02:07:18.947Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 25,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-27T06:22:51.920Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": true,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here.</p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to explain/justify the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "\"What the hell am I doing here?\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/first-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 15,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 24,
+      "show_in_menus": false,
+      "latest_revision": 24,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-27T02:38:13.229Z",
+      "first_published_at": "2025-01-01T04:59:33.513Z",
+      "search_description": "Where I try to justify the countless hours I've poured into getting this personal website off the ground.",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-27T02:38:13.067Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 26,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "5",
+    "created_at": "2025-01-27T06:49:58.499Z",
+    "user": 2,
+    "object_str": "So I decided to start a blog",
+    "content": {
+      "pk": 5,
+      "live": true,
+      "path": "0001000200010001",
+      "slug": "first-post",
+      "depth": 4,
+      "owner": 2,
+      "title": "So I decided to start a blog",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"03rqr\\\">Actually I decided to start a blog sometime late in the 20th century. And here it is! First I spend 2.5 decades as a web developer, working out what I need to know, and then finally found the time. This whole dammed \\\"web\\\" thing kept evolving and moving the goal posts, ya know?</p><h2 data-block-key=\\\"cddil\\\">Why <i>am</i> I here?</h2><p data-block-key=\\\"ebt0p\\\">Many reasons.</p><ul><li data-block-key=\\\"aa1ic\\\">I'm always learning new things, and spending all my time split between official documentation, books, ChatGPT, and StackOverflow, because there are no good tutorials or guides anywhere on the internet (that I can find), and I'm driven to close those gaps</li><li data-block-key=\\\"cb65d\\\">Having your very own web presence felt like a cool idea to me in 1997, and I never lost that feeling. Skip to today, with centralised social media hastening the downfall of civilisation, it's not just cool it's literally revolutionary!</li><li data-block-key=\\\"5to9d\\\">To earn a modicum of credibility as a developer/person/potential employee \\u2013 and especially to feel confident calling myself a \\\"full stack\\\" developer \\u2013 writing a front-end, a back-end, a DevOps pipeline, running it all in production yourself feels <i>good</i></li><li data-block-key=\\\"ovll\\\">Now I have one repository that's also a rapid-development platform, which I can keep up-to-date with tooling, where I can experiment with whatever I want while not having to worry about bootstrapping new projects all the time\\u00a0\\u2013\\u00a0\\\"feature\\\" branches, ftw!</li></ul><h2 data-block-key=\\\"e8b9f\\\">What do I plan to write about?</h2><p data-block-key=\\\"9s3di\\\">Mostly I'm planning on writing up technical guides, recipes, tutorials, and what-have-yous, just based on whatever I've been learning or working with lately \\u2013 but only when there isn't already a wealth of Googleable stuff out there already.</p><p data-block-key=\\\"9ooa3\\\">But this is my blog, and I'll be dammed if I'm going to hold myself back from the temptation to opine about whatever's going on in the world or my life. Maybe reviews of books and movies? I just like writing! You won't find a skerrick of \\\"AI generated\\\" content here.</p><h2 data-block-key=\\\"ac9r3\\\">What is it made of?</h2><p data-block-key=\\\"8dvq0\\\">I took the best damn CMS framework in the world (<a href=\\\"https://wagtail.org\\\">Wagtail</a>), written on top of the best dammed web framework in the world (<a href=\\\"https://www.djangoproject.com\\\">Django</a>), and wrote a CMS &amp; blog application generic enough that I eventually split it out into a package called <a href=\\\"https://pypi.org/project/picata/\\\">Picata</a>. The goal is to develop Picata into a CMS solution others might find useful, since as wonderful as Wagtail is it <i>does</i> require weeks-to-months of full-stack developer time to turn it into a nice and working website, the the offerings for pre-built solutions are currently scarce.</p><p data-block-key=\\\"8cqii\\\">You'll find more details between the Picata docs and the <a href=\\\"https://github.com/hipikat/hpk.io\\\">repo for this site itself</a>.</p><p data-block-key=\\\"e91at\\\">I learned a lot of interesting modern stuff along the way, but <a href=\\\"https://tailwindcss.com\\\">TailwindCSS</a> deserves a special mention for all the front-end styling you see before you; I found it utterly game-changing when it comes to rapidly generating pretty, concise, responsive CSS. It even made it easy to write themes you can change between (with those buttons in the top-right corner), and I could still do it all in <a href=\\\"https://sass-lang.com\\\">Sass</a>! (Mmmm, semantic whitespace.)</p><h2 data-block-key=\\\"6qbpp\\\">Epilogue</h2><p data-block-key=\\\"5tn05\\\">I'm not exactly a heavy user of all the social sites linked to in the footer, but it seemed wise to reference my official accounts on my own website, as a guard against identity theft, and to help the SEO bots know who I am.</p><p data-block-key=\\\"cdqcg\\\">Anyway, I hope you enjoy my stuff!</p>\", \"id\": \"4eaf4b81-ac26-4ca8-9e51-d2624c9bc4ac\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"58zlb\">Wherein I try to explain/justify the countless hours I've poured into getting this personal website off the ground. Includes a short description of the journey and technology behind it, and describes the expectations I've set for myself at this very early stage.</p>",
+      "tagline": "\"What the hell am I doing here?\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/first-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "So I decided to start a blog",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 15,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 1,
+          "content_object": 5
+        },
+        {
+          "pk": null,
+          "tag": 2,
+          "content_object": 5
+        }
+      ],
+      "live_revision": 25,
+      "show_in_menus": false,
+      "latest_revision": 25,
+      "translation_key": "9e1ab2ea-0fa2-4155-8900-28294524530f",
+      "last_published_at": "2025-01-27T06:22:52.202Z",
+      "first_published_at": "2025-01-20T04:59:33.513Z",
+      "search_description": "Where I try to justify the countless hours I've poured into getting this personal website off the ground.",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-27T06:22:51.920Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 27,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "9",
+    "created_at": "2025-01-27T06:55:00.863Z",
+    "user": 2,
+    "object_str": "Django settings in 4 parts",
+    "content": {
+      "pk": 9,
+      "live": false,
+      "path": "0001000200010005",
+      "slug": "django-settings-in-4-parts",
+      "depth": 4,
+      "owner": 2,
+      "title": "Django settings in 4 parts",
+      "locale": 1,
+      "locked": false,
+      "content": "[]",
+      "expired": false,
+      "summary": "",
+      "tagline": "Import only what you need to survive.",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/django-settings-in-4-parts/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Django settings in 4 parts",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 48,
+          "tag": 16,
+          "content_object": 9
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "51b71484-e6ae-43d7-a62b-59c8b2214a27",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 28,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "9",
+    "created_at": "2025-01-27T06:57:11.476Z",
+    "user": 2,
+    "object_str": "Django settings in 4 parts",
+    "content": {
+      "pk": 9,
+      "live": false,
+      "path": "0001000200010005",
+      "slug": "django-settings-in-4-parts",
+      "depth": 4,
+      "owner": 2,
+      "title": "Django settings in 4 parts",
+      "locale": 1,
+      "locked": false,
+      "content": "[]",
+      "expired": false,
+      "summary": "<p data-block-key=\"lh6z1\">Development server running out of memory? Or maybe your <code>runserver</code> process is taking forever to load? Here's how I fine-tuned my Django settings to stop those things happening.</p>",
+      "tagline": "\"Import only what you need to survive\"",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/django-settings-in-4-parts/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Django settings in 4 parts",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 49,
+          "tag": 16,
+          "content_object": 9
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 27,
+      "translation_key": "51b71484-e6ae-43d7-a62b-59c8b2214a27",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-27T06:55:00.863Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
   "model": "wagtailcore.grouppagepermission",
   "pk": 1,
   "fields": {
@@ -3052,6 +3548,210 @@
   }
 },
 {
+  "model": "wagtailcore.pagelogentry",
+  "pk": 42,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T02:07:18.976Z",
+    "uuid": "b099ed18-b97b-4e6a-ae09-2ba417f04954",
+    "user": 2,
+    "revision": 22,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 43,
+  "fields": {
+    "content_type": 32,
+    "label": "Blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T02:35:39.949Z",
+    "uuid": "2c5822a8-5369-4037-a3b1-6cefaf560ca6",
+    "user": 2,
+    "revision": 23,
+    "content_changed": true,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 44,
+  "fields": {
+    "content_type": 32,
+    "label": "Blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-27T02:35:40.003Z",
+    "uuid": "2c5822a8-5369-4037-a3b1-6cefaf560ca6",
+    "user": 2,
+    "revision": 23,
+    "content_changed": false,
+    "deleted": false,
+    "page": 4
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 45,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T02:38:13.121Z",
+    "uuid": "8c29b74a-1de8-43bb-af89-f13e0e827c2b",
+    "user": 2,
+    "revision": 24,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 46,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-27T02:38:13.312Z",
+    "uuid": "8c29b74a-1de8-43bb-af89-f13e0e827c2b",
+    "user": 2,
+    "revision": 24,
+    "content_changed": false,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 47,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T06:22:52.117Z",
+    "uuid": "f527df3c-c6fd-4335-8c26-339d7adf047a",
+    "user": 2,
+    "revision": 25,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 48,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-27T06:22:52.281Z",
+    "uuid": "f527df3c-c6fd-4335-8c26-339d7adf047a",
+    "user": 2,
+    "revision": 25,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 49,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T06:49:58.561Z",
+    "uuid": "ae778c0f-9a53-4a3a-8445-65e7f2f864ff",
+    "user": 2,
+    "revision": 26,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 50,
+  "fields": {
+    "content_type": 34,
+    "label": "So I decided to start a blog",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-27T06:49:58.681Z",
+    "uuid": "ae778c0f-9a53-4a3a-8445-65e7f2f864ff",
+    "user": 2,
+    "revision": 26,
+    "content_changed": true,
+    "deleted": false,
+    "page": 5
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 51,
+  "fields": {
+    "content_type": 34,
+    "label": "Django settings in 4 parts",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-01-27T06:55:00.829Z",
+    "uuid": "40da8be5-43ea-4b59-a95e-c5e65e20fc2e",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 52,
+  "fields": {
+    "content_type": 34,
+    "label": "Django settings in 4 parts",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T06:55:00.912Z",
+    "uuid": "40da8be5-43ea-4b59-a95e-c5e65e20fc2e",
+    "user": 2,
+    "revision": 27,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 53,
+  "fields": {
+    "content_type": 34,
+    "label": "Django settings in 4 parts",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-27T06:57:11.508Z",
+    "uuid": "8e0e4c4f-de62-4621-9de0-cbb90fe5f217",
+    "user": 2,
+    "revision": 28,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
   "model": "wagtailcore.pagesubscription",
   "pk": 1,
   "fields": {
@@ -3102,6 +3802,15 @@
   "fields": {
     "user": 2,
     "page": 8,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 7,
+  "fields": {
+    "user": 2,
+    "page": 9,
     "comment_notifications": true
   }
 },
