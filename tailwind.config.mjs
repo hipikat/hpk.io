@@ -9,8 +9,8 @@ export default {
     safelist: ["size-5", "group-hover:opacity-100"],
   },
   plugins: [
-    daisyui,
     typography,
+    daisyui,
     function ({ addBase, theme }) {
       const screens = theme("screens");
       addBase({
