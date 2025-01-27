@@ -15,6 +15,7 @@ export default {
       const screens = theme("screens");
       addBase({
         ":root": {
+          fontSize: "1.2rem",
           "--screen-sm": screens.sm,
           "--screen-md": screens.md,
           "--screen-lg": screens.lg,
@@ -56,9 +57,9 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        xs: ["0.9rem", "1.6"],
-        sm: ["1rem", "1.6"],
-        base: ["1.2rem", "1.6"],
+        xs: ["0.75rem", "1.6"],
+        sm: ["0.8333rem", "1.6"],
+        base: ["1rem", "1.6"],
         lg: ["1.125rem", "1.6"],
         xl: ["1.25rem", "1.4"],
         "2xl": ["1.5rem", "1.4"],
@@ -75,11 +76,11 @@ export default {
         "profile-ring": "var(--tw-theme-ring)",
       },
       maxWidth: {
-        sm: "53rem",
-        md: "53rem",
-        lg: "62rem",
-        xl: "72rem",
-        "2xl": "86rem",
+        sm: "34rem",
+        md: "40rem",
+        lg: "52rem",
+        xl: "66rem",
+        "2xl": "78rem",
       },
       padding: {
         "safe-left": "env(safe-area-inset-left)",
