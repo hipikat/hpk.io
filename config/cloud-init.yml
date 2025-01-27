@@ -3,6 +3,7 @@
 packages:
   # Services
   - fail2ban
+  - goaccess
   - nginx
   - postgresql
   # Utilities

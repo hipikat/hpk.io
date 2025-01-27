@@ -823,7 +823,7 @@ sync-remote remote='origin':
     just load
     sudo systemctl restart nginx gunicorn-hpk
 
-# Install development packages and editables
+# Install development packages and set up editables
 [group('workflow')]
 dev-mode:
     just init-python init-node init-editables
