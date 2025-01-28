@@ -534,7 +534,11 @@ clone-editables:
         upstream_url="${upstreams[$repo]}"
         origin_url="${origins[$repo]}"
         if [ -d "$repo_path/.git" ]; then
-            echo "Repository '$repo' already exists at $repo_path. Skipping..."
+            echo "Repository '$repo' already exists at $repo_path. Skipping clone..."
+            if ! git config --get-all safe.directory | grep -Fxq "$repo_path"; then
+                echo "Marking $repo_path as a safe directory..."
+                git config --add safe.directory "$repo_path"
+            fi
             continue
         fi
         if [ -n "$upstream_url" ] || [ -n "$origin_url" ]; then
@@ -543,8 +547,6 @@ clone-editables:
             default_remote=${default_remote:-origin}
             echo "Cloning $repo from $default_remote repo $clone_url..."
             git clone --origin "$default_remote" "$clone_url" "$repo_path"
-            echo "Marking $repo_path as a safe directory..."
-            git config --global --add safe.directory "$repo_path"
         else
             echo "Error: No upstream or origin remote defined for $repo" >&2
             exit 1
