@@ -46,9 +46,15 @@
     font-weight: 300 !important
 
 .prose
+  div.block-code div.pygments pre
+    @apply my-0 !important
+
+  // Paragraphs and unordered lists
   :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)),
   :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *))
     @apply mb-3 mt-3
+
+  // Elements following headings 2-6
   :where(h2 + *):not(:where([class~="not-prose"], [class~="not-prose"] *)),
   :where(h3 + *):not(:where([class~="not-prose"], [class~="not-prose"] *)),
   :where(h4 + *):not(:where([class~="not-prose"], [class~="not-prose"] *)),
@@ -56,7 +62,23 @@
   :where(h6 + *):not(:where([class~="not-prose"], [class~="not-prose"] *))
     @apply mt-0
 
+  // Sub-headings following an h1
+  :where(h1 + div > h2):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h1 + div > h3):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h1 + div > h4):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h1 + div > h5):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h1 + div > h6):not(:where([class~="not-prose"], [class~="not-prose"] *))
+    @apply mt-6
 
+  :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h5):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(h6):not(:where([class~="not-prose"], [class~="not-prose"] *))
+    @apply mt-2
+
+  // :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *))
+  //   @apply mt-3
 
 // Main page layout
 html
