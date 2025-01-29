@@ -357,7 +357,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "gunicorn", specifier = ">=23.0.0" },
-    { name = "picata", specifier = ">=0.0.6" },
+    { name = "picata", specifier = ">=0.0.7" },
 ]
 
 [package.metadata.requires-dev]
