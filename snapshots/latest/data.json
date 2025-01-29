@@ -161,54 +161,6 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 11,
-  "fields": {
-    "tag": 11,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 12,
-  "fields": {
-    "tag": 12,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 13,
-  "fields": {
-    "tag": 13,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 14,
-  "fields": {
-    "tag": 14,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 15,
-  "fields": {
-    "tag": 5,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 16,
-  "fields": {
-    "tag": 6,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
   "pk": 29,
   "fields": {
     "tag": 3,
@@ -272,6 +224,54 @@
   }
 },
 {
+  "model": "picata.pagetagrelation",
+  "pk": 74,
+  "fields": {
+    "tag": 11,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 75,
+  "fields": {
+    "tag": 12,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 76,
+  "fields": {
+    "tag": 13,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 77,
+  "fields": {
+    "tag": 14,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 78,
+  "fields": {
+    "tag": 5,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 79,
+  "fields": {
+    "tag": 6,
+    "content_object": 8
+  }
+},
+{
   "model": "picata.article",
   "pk": 5,
   "fields": {
@@ -307,7 +307,7 @@
   "fields": {
     "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
     "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
-    "content": "[]",
+    "content": "[{\"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">Let's see if a <code>cloud-init</code> file will render nicely at all with Pygments\\u2026</p>\"}, {\"id\": \"135e20b3-7c89-4827-8aa2-ff37aed566e8\", \"type\": \"code\", \"value\": {\"code\": \"runcmd:\\r\\n  # Enable systemd journal services\\r\\n  - echo \\\">>> Enabling systemd journal services\\\"\\r\\n  - mkdir -p /var/log/journal\\r\\n  - systemctl restart systemd-journald\\r\\n\\r\\n  # Set the server's timezone\\r\\n  - echo \\\">>> Setting the server's timezone to ${timezone}\", \"language\": \"bash\"}}]",
     "page_type": null
   }
 },
@@ -651,90 +651,6 @@
 },
 {
   "model": "wagtailcore.referenceindex",
-  "pk": 28,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "13",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.13.tag",
-    "content_path_hash": "66d59944-fb9e-5553-9b4d-45ad8b1b11bf"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 29,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "5",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.15.tag",
-    "content_path_hash": "8eff711f-e02b-5b2e-bbe8-e0fd9a55d76a"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 30,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "6",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.16.tag",
-    "content_path_hash": "2e447b0c-bf70-508c-b946-eed69a297109"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 31,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "11",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.11.tag",
-    "content_path_hash": "55d5a30f-3e7f-5401-b8e4-cca376197cce"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 32,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "12",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.12.tag",
-    "content_path_hash": "f20410c7-a795-5a86-a6ee-f72f2ba927e0"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 33,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "14",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.14.tag",
-    "content_path_hash": "4d274764-40ae-53d7-8a77-867edeb0fee3"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
   "pk": 44,
   "fields": {
     "content_type": 34,
@@ -843,6 +759,90 @@
     "model_path": "tagged_items.item.tag",
     "content_path": "tagged_items.49.tag",
     "content_path_hash": "f3cdaa84-6405-5288-b7ed-020e46541b13"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 129,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "14",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.77.tag",
+    "content_path_hash": "3c9c6fd4-24e0-5715-aa2d-83451a75992b"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 130,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "11",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.74.tag",
+    "content_path_hash": "f900db26-586e-58c1-95d7-23afd8f1bb50"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 131,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "13",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.76.tag",
+    "content_path_hash": "5abf45e7-28a2-56e1-90e8-d4285d27bbbb"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 132,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "12",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.75.tag",
+    "content_path_hash": "67fc6be7-fb52-5745-aaa6-c8ecf8cb9258"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 133,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "6",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.79.tag",
+    "content_path_hash": "cf7d4a1b-7323-5deb-ac39-7fc79cef84ef"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 134,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "5",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.78.tag",
+    "content_path_hash": "a9809d34-e28b-5b30-846e-c146f7825cfc"
   }
 },
 {
@@ -1058,7 +1058,7 @@
     "numchild": 0,
     "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
     "locale": 1,
-    "latest_revision": 14,
+    "latest_revision": 33,
     "live": false,
     "has_unpublished_changes": true,
     "first_published_at": null,
@@ -1079,7 +1079,7 @@
     "seo_title": "",
     "show_in_menus": false,
     "search_description": "",
-    "latest_revision_created_at": "2025-01-26T04:51:13.264Z",
+    "latest_revision_created_at": "2025-01-28T03:56:02.895Z",
     "alias_of": null
   }
 },
@@ -2735,6 +2735,411 @@
   }
 },
 {
+  "model": "wagtailcore.revision",
+  "pk": 29,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-01-28T03:52:03.839Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">Let's see if a <code>cloud-init</code> file will render nicely at all with Pygments\\u2026</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}, {\"type\": \"code\", \"value\": {\"code\": \"runcmd:\\r\\n  # Enable systemd journal services\\r\\n  - echo \\\">>> Enabling systemd journal services\\\"\\r\\n  - mkdir -p /var/log/journal\\r\\n  - systemctl restart systemd-journald\\r\\n\\r\\n  # Set the server's timezone\\r\\n  - echo \\\">>> Setting the server's timezone to ${timezone}\\\"\\r\\n  - sudo timedatectl set-timezone ${timezone}\\r\\n  - echo \\\"${timezone}\\\" | sudo tee /etc/timezone\\r\\n  - sudo dpkg-reconfigure --frontend noninteractive tzdata\\r\\n\\r\\n  # Increase the user file-watch handler limit\\r\\n  - |\\r\\n    if ${development}; then\\r\\n      echo \\\">>> Increasing the file-watcher handler limit\\\"\\r\\n      printf \\\"# Increase file-watch limit to the maximum\\\\nfs.inotify.max_user_watches=524288\\\\n\\\" >> /etc/sysctl.conf\\r\\n      sysctl -p\\r\\n    fi\\r\\n\\r\\n  # Install ada's dotfiles\\r\\n  - echo \\\">>> Installing ada's dotfiles\\\"\\r\\n  - sudo -u ada git clone https://github.com/hipikat/dotfiles.git /home/ada/.dotfiles\\r\\n  - sudo -u ada sh -c 'cd /home/ada/.dotfiles && sh install_dotfiles.sh'\\r\\n  - sudo chmod 755 /home/ada\\r\\n\\r\\n  # Update PostgreSQL to use md5 authentication and listen on all interfaces\\r\\n  - echo \\\">>> Updating PostgreSQL to use md5 authentication for local connections\\\"\\r\\n  - sed -i 's/local\\\\s\\\\+all\\\\s\\\\+all\\\\s\\\\+peer/local   all             all             md5/' /etc/postgresql/*/main/pg_hba.conf\\r\\n  - echo \\\"host    all             all             0.0.0.0/0               md5\\\" >> /etc/postgresql/*/main/pg_hba.conf\\r\\n  - echo \\\">>> Configuring PostgreSQL to listen on all interfaces\\\"\\r\\n  - sed -i \\\"s/^#listen_addresses = 'localhost'/listen_addresses = '*'/g\\\" /etc/postgresql/*/main/postgresql.conf\\r\\n  - systemctl restart postgresql\\r\\n\\r\\n  # Install Just\\r\\n  - echo \\\">>> Installing Just\\\"\\r\\n  - >-\\r\\n    curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh |\\r\\n    bash -s -- --to /usr/local/bin\\r\\n\\r\\n  # Install UV\\r\\n  - echo \\\">>> Installing UV\\\"\\r\\n  - >-\\r\\n    curl -LsSf https://astral.sh/uv/install.sh |\\r\\n    UV_UNMANAGED_INSTALL=\\\"/usr/local/bin\\\" HOME=\\\"/root\\\" sh\\r\\n\\r\\n  # Install Node\\r\\n  - echo \\\">>> Installing Node.js\\\"\\r\\n  - >-\\r\\n    . /etc/environment &&\\r\\n    curl -sSfL https://nodejs.org/dist/v${node_version}/node-v${node_version}-linux-x64.tar.xz |\\r\\n    tar -xJ -C /usr/local/\\r\\n  - mv /usr/local/node-v${node_version}-linux-x64 /usr/local/node-v${node_version}\\r\\n  - ln -s /usr/local/node-v${node_version}/bin/node /usr/local/bin/node\\r\\n  - ln -s /usr/local/node-v${node_version}/bin/npm /usr/local/bin/npm\\r\\n\\r\\n  # Clone the project into /app and create initially-empty directories\\r\\n  - echo \\\">>> Cloning project repository and creating directories\\\"\\r\\n  - git clone https://github.com/hipikat/hpk.io.git /app\\r\\n  - mkdir -p /app/logs /app/media /app/build/webpack\\r\\n\\r\\n  # Ensure /app/** is owned by wagtail, is group-writable, and new files inherit the group\\r\\n  - echo \\\">>> Ensuring /app ownership and permissions\\\"\\r\\n  - chown -R wagtail:wagtail /app\\r\\n  - chmod -R g+rw /app\\r\\n  - find /app -type d -exec chmod g+s {} \\\\;\\r\\n\\r\\n  # Install project dependencies, only including core dependencies if not in a development environment\\r\\n  - echo \\\">>> Installing project dependencies\\\"\\r\\n  - |\\r\\n    if ${development}; then\\r\\n      sudo -u wagtail uv sync --all-groups --directory /app -v --no-progress\\r\\n      cd /app && sudo -u wagtail npm install --no-audit --no-fund --no-progress --loglevel=info && cd -\\r\\n    else\\r\\n      sudo -u wagtail uv sync --directory /app -v --no-progress\\r\\n      cd /app && sudo -u wagtail npm install --omit=dev --no-audit --no-fund --no-progress --loglevel=info && cd -\\r\\n    fi\\r\\n\\r\\n  # Git-clone editable packages, checkout the correct versions, and install them\\r\\n  - ${development} && sudo -u wagtail just -E /etc/environment -f /app/Justfile clone-editables set-editable-versions install-editables\\r\\n\\r\\n  # Install pre-commit hooks, and bootstrap the hooks for ada with a (known-empty) commit\\r\\n  - echo \\\">>> Installing pre-commit hooks and bootstrapping environment for ada\\\"\\r\\n  - cd /app && sudo -u wagtail uv run pre-commit install\\r\\n  - cd /app && sudo -u ada git commit\\r\\n\\r\\n  # Create the database and run migrations\\r\\n  - echo \\\">>> Initializing the database and running migrations\\\"\\r\\n  - just -E /etc/environment -f /app/Justfile db-create ${db_password}\\r\\n  - sudo -u wagtail just -E /etc/environment -f /app/Justfile db-init ${db_password}\\r\\n\\r\\n  # Create the Django superuser (if it hasn't been restored by the snapshot)\\r\\n  - echo \\\">>> Creating the Django superuser\\\"\\r\\n  - sudo -u wagtail just -E /etc/environment -f /app/Justfile dj-createsuperuser ${admin_django_user} ${admin_email} ${admin_password}\\r\\n\\r\\n  # Build artifacts and collect all static files\\r\\n  - echo \\\">>> Building artifacts and collecting static files\\\"\\r\\n  - |\\r\\n    cd /app\\r\\n    if ${development}; then\\r\\n      sudo -u wagtail npm run build\\r\\n    else\\r\\n      sudo -u wagtail npm run webpack:prod\\r\\n      sudo -u wagtail npm run collectstatic\\r\\n    fi\\r\\n\\r\\n  # Configure and start Gunicorn\\r\\n  - echo \\\">>> Configuring and starting Gunicorn\\\"\\r\\n  - ln -s /app/config/${gunicorn_config} /etc/systemd/system/gunicorn-hpk.service\\r\\n  - systemctl start gunicorn-hpk\\r\\n\\r\\n  # Configure certbot to obtain SSL certificates from LetsEncrypt & set up for automatic renewal\\r\\n  - echo \\\">>> Getting SSL certificates from LetsEncrypt & setting up automatic renewal\\\"\\r\\n  - systemctl stop nginx\\r\\n  - groupadd -f letsencrypt && usermod -aG letsencrypt www-data\\r\\n  - snap install core && snap refresh core\\r\\n  - snap install --classic certbot\\r\\n  - |\\r\\n    if ${production}; then\\r\\n      certbot certonly --standalone -d ${fqdn} --non-interactive --agree-tos --email ${admin_email}\\r\\n    else\\r\\n      certbot certonly --staging --standalone -d ${fqdn} --non-interactive --agree-tos --email ${admin_email}\\r\\n    fi\\r\\n  - mkdir -p /etc/nginx/ssl\\r\\n  - ln -s /etc/letsencrypt/live/${fqdn}/fullchain.pem /etc/nginx/ssl/hpk-fullchain.pem\\r\\n  - ln -s /etc/letsencrypt/live/${fqdn}/privkey.pem /etc/nginx/ssl/hpk-privkey.pem\\r\\n  - chown -R letsencrypt:www-data /etc/nginx/ssl\\r\\n\\r\\n  # Configure and start Nginx\\r\\n  - echo \\\">>> Configuring and starting Nginx\\\"\\r\\n  - >-\\r\\n    sed -i '/^http {/a \\\\\\r\\n    \\\\n\\\\tlog_format main '\\\\''$remote_addr - $remote_user [$time_local] \\\"$request\\\" '\\\\''\\r\\n    \\\\n\\\\t                '\\\\''$status $body_bytes_sent \\\"$http_referer\\\" '\\\\''\\r\\n    \\\\n\\\\t                '\\\\''\\\"$http_user_agent\\\" \\\"$http_x_forwarded_for\\\"'\\\\'';\\\\n\\r\\n    \\\\n\\\\tlog_format warn '\\\\''$remote_addr [$time_local] $status \\\"$request\\\"'\\\\'';\\\\n'\\r\\n    /etc/nginx/nginx.conf\\r\\n  - echo '\\\\nenv FQDN;' | tee -a /etc/nginx/nginx.conf\\r\\n  - rm -f /etc/nginx/sites-enabled/default\\r\\n  - |\\r\\n    if ${development}; then\\r\\n      ln -s /app/config/nginx-site-dev.conf /etc/nginx/sites-available/hpk\\r\\n    else\\r\\n      ln -s /app/config/nginx-site-prod.conf /etc/nginx/sites-available/hpk\\r\\n    fi\\r\\n  - ln -s /etc/nginx/sites-available/hpk /etc/nginx/sites-enabled/hpk\\r\\n  - systemctl start nginx\\r\\n\\r\\n  # Restart fail2ban\\r\\n  - echo \\\">>> Restarting fail2ban\\\"\\r\\n  - systemctl restart fail2ban\\r\\n\\r\\n  # Enable real-time monitoring with GoAccess\\r\\n  - echo \\\">>> Configuring and starting GoAccess\\\"\\r\\n  - touch /var/www/html/report.html\\r\\n  - chown www-data:www-data /var/www/html/report.html\\r\\n  - ln -s /app/config/goaccess.service /etc/systemd/system/goaccess.service\\r\\n  - systemctl start goaccess\", \"language\": \"bash\"}, \"id\": \"135e20b3-7c89-4827-8aa2-ff37aed566e8\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 50,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 51,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 52,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 53,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 54,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 55,
+          "tag": 6,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 14,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-26T04:51:13.264Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 30,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-01-28T03:54:07.211Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">Let's see if a <code>cloud-init</code> file will render nicely at all with Pygments\\u2026</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}, {\"type\": \"code\", \"value\": {\"code\": \"# Enable systemd journal services\\r\\necho \\\">>> Enabling systemd journal services\\\"\", \"language\": \"bash\"}, \"id\": \"135e20b3-7c89-4827-8aa2-ff37aed566e8\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 56,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 57,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 58,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 59,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 60,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 61,
+          "tag": 6,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 29,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-28T03:52:03.839Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 31,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-01-28T03:54:35.456Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">Let's see if a <code>cloud-init</code> file will render nicely at all with Pygments\\u2026</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}, {\"type\": \"code\", \"value\": {\"code\": \"# Enable systemd journal services\\r\\n- echo \\\">>> Enabling systemd journal services\\\"\", \"language\": \"bash\"}, \"id\": \"135e20b3-7c89-4827-8aa2-ff37aed566e8\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 62,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 63,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 64,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 65,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 66,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 67,
+          "tag": 6,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 30,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-28T03:54:07.211Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 32,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-01-28T03:55:38.878Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">Let's see if a <code>cloud-init</code> file will render nicely at all with Pygments\\u2026</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}, {\"type\": \"code\", \"value\": {\"code\": \"runcmd:\\r\\n  # Enable systemd journal services\\r\\n  - echo \\\">>> Enabling systemd journal services\\\"\\r\\n  - mkdir -p /var/log/journal\\r\\n  - systemctl restart systemd-journald\", \"language\": \"bash\"}, \"id\": \"135e20b3-7c89-4827-8aa2-ff37aed566e8\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 68,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 69,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 70,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 71,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 72,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 73,
+          "tag": 6,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 31,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-28T03:54:35.456Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 33,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-01-28T03:56:02.895Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">Let's see if a <code>cloud-init</code> file will render nicely at all with Pygments\\u2026</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}, {\"type\": \"code\", \"value\": {\"code\": \"runcmd:\\r\\n  # Enable systemd journal services\\r\\n  - echo \\\">>> Enabling systemd journal services\\\"\\r\\n  - mkdir -p /var/log/journal\\r\\n  - systemctl restart systemd-journald\\r\\n\\r\\n  # Set the server's timezone\\r\\n  - echo \\\">>> Setting the server's timezone to ${timezone}\", \"language\": \"bash\"}, \"id\": \"135e20b3-7c89-4827-8aa2-ff37aed566e8\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 74,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 75,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 76,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 77,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 78,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 79,
+          "tag": 6,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 32,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-28T03:55:38.878Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
   "model": "wagtailcore.grouppagepermission",
   "pk": 1,
   "fields": {
@@ -3738,6 +4143,91 @@
     "content_changed": true,
     "deleted": false,
     "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 54,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-28T03:52:03.919Z",
+    "uuid": "4531e4a9-45eb-4bf7-a8d8-360ccd96275d",
+    "user": 2,
+    "revision": 29,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 55,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-28T03:54:07.334Z",
+    "uuid": "c9cf651d-4ef9-476b-993d-7d5be3079646",
+    "user": 2,
+    "revision": 30,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 56,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-28T03:54:35.529Z",
+    "uuid": "6708f3d0-f221-42c9-9819-17643b07c3d3",
+    "user": 2,
+    "revision": 31,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 57,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-28T03:55:38.964Z",
+    "uuid": "ee893425-b65f-42e7-b952-db9075c5c48b",
+    "user": 2,
+    "revision": 32,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 58,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-28T03:56:03.127Z",
+    "uuid": "abaa0b7f-7c0a-4d88-9008-29a08e9dbaeb",
+    "user": 2,
+    "revision": 33,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
   }
 },
 {

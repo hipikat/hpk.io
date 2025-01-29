@@ -608,7 +608,7 @@ wheels = [
 
 [[package]]
 name = "picata"
-version = "0.0.6"
+version = "0.0.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "lxml" },
@@ -619,9 +619,9 @@ dependencies = [
     { name = "wagtail" },
     { name = "wagtail-modeladmin" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/99/0a/2641cf4dd7678311968df0579d8e7fe206d618184a4bce579586c8959cdb/picata-0.0.6.tar.gz", hash = "sha256:bbbf1526d2ee8c79e5ea09977990be61355bb35ca5f8455b5fc4cf6a70a38c71", size = 1272469 }
+sdist = { url = "https://files.pythonhosted.org/packages/06/6a/f6b290b9538eb65e238ddb2450e6c63ce45f8b0aeae0bda89f05f95fbb95/picata-0.0.7.tar.gz", hash = "sha256:f5ef600d17e74e4809416ad3fa49bac628e972372705da60a124fb91a9944e15", size = 2188423 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c3/98/c05c6e300646d75fc5299464dc74f6c5decc7cee3274dfc45f79ec98779a/picata-0.0.6-py3-none-any.whl", hash = "sha256:4e03b856b97cea44c50f4977a7639ad2367d029759f55e2d95aca854564ecd75", size = 1293547 },
+    { url = "https://files.pythonhosted.org/packages/46/4f/729293b0484cde6918a121821dcea009015d0dfd3abcdbdf66138a5a05a8/picata-0.0.7-py3-none-any.whl", hash = "sha256:a11259ad7d40679b635002b56eb238d1129f7128d11a4d5f68a03c465180ac5e", size = 2644068 },
 ]
 
 [[package]]
