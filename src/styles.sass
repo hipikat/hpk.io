@@ -45,13 +45,26 @@
     @apply font-light
     font-weight: 300 !important
 
+:is(h1, h2, h3, h4, h5)
+  + :is(h2, h3, h4, h5, h6)
+    @apply mt-2
+
+.prose
+  :is(h1, h2, h3, h4, h5)
+    + :is(h2, h3, h4, h5, h6)
+      @apply mt-2
+
+// h2 + h3
+//   border: 2px solid green !important
+
 .prose
   div.block-code div.pygments pre
     @apply my-0 !important
 
   // Paragraphs and unordered lists
   :where(p):not(:where([class~="not-prose"], [class~="not-prose"] *)),
-  :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *))
+  :where(ul):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+  :where(ol):not(:where([class~="not-prose"], [class~="not-prose"] *))
     @apply mb-3 mt-3
 
   // Elements following headings 2-6
@@ -75,7 +88,8 @@
   :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)),
   :where(h5):not(:where([class~="not-prose"], [class~="not-prose"] *)),
   :where(h6):not(:where([class~="not-prose"], [class~="not-prose"] *))
-    @apply mt-2
+    @apply mt-6
+
 
   // :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *))
   //   @apply mt-3
@@ -103,17 +117,18 @@ body
     @apply flex justify-between
     > div
       @apply absolute -mt-2 px-2 items-center justify-center text-xs font-bold text-white rounded
+  > div.buttons
+    @apply flex gap-x-1
 
-#search-wrapper, #theme-wrapper
+#search-wrapper, #theme-wrapper, #feed-link
   @apply flex
-  button
-    > svg
-      @apply size-4
+  svg
+    @apply size-4
 
 #search-wrapper
-  @apply mr-2
+  // @apply mr-1
   > #search-toggle
-    @apply btn-neutral btn btn-xs !rounded-l-full
+    @apply btn btn-xs btn-neutral !rounded-l-full
   form > #search-field
     @apply transition-all duration-300 ease-in-out placeholder-gray-400
     @apply border border-gray-300 focus:border-primary focus:ring focus:ring-primary/50
@@ -128,12 +143,14 @@ body
 #theme-wrapper
   @apply indicator
   button
-    @apply btn-neutral btn btn-xs
+    @apply btn btn-xs btn-neutral
   > #theme-reset
     @apply group-hover:opacity-100 indicator-item
-    @apply transition scale-50 pl-4 pb-1 bg-transparent
-    > svg
-      @apply size-6
+    @apply transition scale-50 pl-3 pb-1 bg-transparent
+
+#feed-link
+  @apply btn btn-xs btn-neutral !rounded-full
+  margin-left: 2px
 
 #menu-block
   @apply flex flex-wrap items-end pt-3 sm:pt-0
@@ -302,7 +319,8 @@ h1, h2, h3, h4, h5, h6
   box-shadow: 0px 0px 3px 2px var(--btn-neutral-shadow, rgba(0, 0, 0, 0.2))
 
 .pill-button-divider
-  @apply h-full w-0.5
+  @apply h-full
+  width: 1.5px
   background-color: calc(oklch(var(--n)) * 0.8)
 
 div.pygments

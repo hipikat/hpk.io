@@ -30,10 +30,6 @@ INTERNAL_IPS += CLASS_C_DEVICE_ADDRS
 ALLOWED_HOSTS += CLASS_C_NETWORK_ADDR
 
 if getenv("DJANGO_MANAGEMENT_COMMAND", "").startswith("runserver"):
-    logger.warning(
-        f"Loading hpk.settings.dev…\nINTERNAL_IPS = {INTERNAL_IPS}\nALLOWED_HOSTS = {ALLOWED_HOSTS}"
-    )
-
     RUNSERVERPLUS_POLLER_RELOADER_TYPE = "watchdog"
     RUNSERVER_PLUS_EXCLUDE_PATTERNS = [
         ".venv/*",

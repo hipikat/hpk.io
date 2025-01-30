@@ -41,6 +41,9 @@
           "url": "{{ request.build_absolute_uri }}"
       }
     </script>
+
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{% url 'rss_feed' %}" />
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="{% url 'atom_feed' %}" />
   </head>
   <body>
     <header>
@@ -64,7 +67,7 @@
         <div id="top-bar">
         {% endif %}
 
-          <div class="flex btn-group">
+          <div class="buttons">
 
             <!-- Search controls -->
             <div id="search-wrapper">
@@ -99,6 +102,13 @@
                 </button>
               </div>
             </div>
+
+            <!-- RSS Feed Button -->
+            <a id="feed-link" href="{% url 'rss_feed' %}" aria-label="Subscribe to RSS feed" title="RSS Feed">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12.75 19.5v-.75a7.5 7.5 0 0 0-7.5-7.5H4.5m0-6.75h.75c7.87 0 14.25 6.38 14.25 14.25v.75M6 18.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+              </svg>
+            </a>
 
           </div>
 
