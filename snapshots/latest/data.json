@@ -153,38 +153,6 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 7,
-  "fields": {
-    "tag": 7,
-    "content_object": 7
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 8,
-  "fields": {
-    "tag": 8,
-    "content_object": 7
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 9,
-  "fields": {
-    "tag": 9,
-    "content_object": 7
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 10,
-  "fields": {
-    "tag": 10,
-    "content_object": 7
-  }
-},
-{
-  "model": "picata.pagetagrelation",
   "pk": 29,
   "fields": {
     "tag": 3,
@@ -289,7 +257,7 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 124,
+  "pk": 148,
   "fields": {
     "tag": 16,
     "content_object": 9
@@ -297,7 +265,7 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 125,
+  "pk": 149,
   "fields": {
     "tag": 19,
     "content_object": 9
@@ -305,7 +273,7 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 126,
+  "pk": 150,
   "fields": {
     "tag": 17,
     "content_object": 9
@@ -313,10 +281,42 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 127,
+  "pk": 151,
   "fields": {
     "tag": 18,
     "content_object": 9
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 152,
+  "fields": {
+    "tag": 7,
+    "content_object": 7
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 153,
+  "fields": {
+    "tag": 8,
+    "content_object": 7
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 154,
+  "fields": {
+    "tag": 9,
+    "content_object": 7
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 155,
+  "fields": {
+    "tag": 10,
+    "content_object": 7
   }
 },
 {
@@ -344,8 +344,8 @@
   "pk": 7,
   "fields": {
     "tagline": "How I learned to stop worrying and love `repo: local`",
-    "summary": "<p data-block-key=\"4qjbz\">[Talk about how you gave up on the mypy pre-commit hook and used local, because of how pre-commit creates a new virtualenv for each hook – and additional_dependencies would have required most of the project to be declared! … but Ruff, being static, runs just fine.</p>",
-    "content": "[]",
+    "summary": "<p data-block-key=\"4qjbz\">The pre-commit package is a great way to quickly get a repo running with lots of pre-commit checks you shouldn't have to spend time coding into hooks yourself. But it uses virtual environments behind the scenes in an opaque way that comes with a caveat you should be mindful of.</p>",
+    "content": "[{\"id\": \"d5d4814d-5e7c-4898-a957-4d2d2b4570bb\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"6eafd\\\">The <a href=\\\"https://pre-commit.com\\\">pre-commit</a> package is a great way to quickly get a repo running with lots of checks you might not have even thought about, and shouldn't have to spend time manually coding into hooks yourself. It's certainly helping keep my projects extra-squeaky-clean in a way that feeds back to my brain in the form of lots of little dopamine hits.</p><blockquote data-block-key=\\\"8slvc\\\">Check out the <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/.pre-commit-config.yaml\\\">.pre-commit-config.yaml</a> file behind this site's codebase to see what I'm actually using on it today.</blockquote><p data-block-key=\\\"f5sdf\\\">My initial concern, though, was that <code>pre-commit install</code> does of course <i>take over</i> the pre-commit hooks for a repository, because it relies on its own <code>.git/hooks/pre-commit</code> executable script \\u2013\\u00a0and it wasn't immediately obvious how I could just add my own arbitrary checks.</p><h2 data-block-key=\\\"er4o6\\\">TL;DR?</h2><p data-block-key=\\\"e2a8t\\\">\\\"<a href=\\\"https://pre-commit.com/#repository-local-hooks\\\">Repository local hooks</a>\\\" are your friend.</p>\"}, {\"id\": \"82f192b3-96e5-4884-8dcd-c924fede42f3\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"6eafd\\\">Invisible virtual environments</h2><p data-block-key=\\\"9o8dd\\\">One slightly magical, opaque implementation detail about pre-commit is that every hook basically creates and runs in its own virtual environment. What that looks like depends on the \\\"language\\\" associated with the hook itself, and there are a couple of notable exceptions:</p><ul><li data-block-key=\\\"8smgj\\\">\\\"<a href=\\\"https://pre-commit.com/#script\\\">script</a>\\\" hooks, for simple scripts used to validate files,</li><li data-block-key=\\\"18nr4\\\">\\\"<a href=\\\"https://pre-commit.com/#system\\\">system</a>\\\" hooks, which target system-level executables, and</li><li data-block-key=\\\"ar1t9\\\"><a href=\\\"https://pre-commit.com/#repository-local-hooks\\\">Repository-local</a> hooks, most useful when the hook itself depends on build artefacts in your project, or fairly \\\"complete\\\" virtual environments that you don't want to re-build just for that hook.</li></ul><h3 data-block-key=\\\"10u5\\\">Additional dependencies</h3><p data-block-key=\\\"epe4k\\\">If a hook isn't working the way you'd expect, it may be due to the fact that the virtual environment its creating for itself doesn't have quite everything it needs to run \\u2013\\u00a0this is where the <a href=\\\"https://pre-commit.com/#config-additional_dependencies\\\"><code>additional_dependencies</code></a> lists come into your configuration. Most hook repositories seem pretty good about mentioning the kind of things you'll need to add here \\u2013\\u00a0for example I got my <a href=\\\"https://github.com/pre-commit/mirrors-eslint\\\"><code>eslint</code></a> hook running with just:</p><p data-block-key=\\\"erf07\\\"></p><p data-block-key=\\\"10u88\\\"></p>\"}, {\"id\": \"a56202e8-ddf7-4818-8f07-5bbfe8296190\", \"type\": \"code\", \"value\": {\"code\": \"- repo: https://github.com/pre-commit/mirrors-eslint\\r\\n    rev: \\\"v9.18.0\\\"\\r\\n    hooks:\\r\\n      - id: eslint\\r\\n        name: Lint ECMAScript with eslint\\r\\n        args: [\\\"--config\\\", \\\"./eslint.config.mjs\\\"]\\r\\n        additional_dependencies:\\r\\n          - eslint@9.16.0\\r\\n          - eslint-plugin-prettier@5.2.1\\r\\n          - eslint-plugin-tailwindcss@3.17.5\\r\\n          - eslint-plugin-react@7.37.2\\r\\n          - typescript-eslint@8.17.0\", \"language\": \"yaml\"}}, {\"id\": \"ef2f1470-5df1-4ed2-a772-ac4d5e0e25cf\", \"type\": \"rich_text\", \"value\": \"<h3 data-block-key=\\\"m5704\\\">Static typing, and just using 'local'</h3><p data-block-key=\\\"ibip\\\">It was only after spending some time trying to get <a href=\\\"https://github.com/pre-commit/mirrors-mypy\\\">mypy for pre-commit</a> working that the penny really dropped for me, with regard to how much of a working virtualenv some things actually need. Calling <code>mypy .</code> was finally going smoothly, with no more configuration required than what was in my <code>pyproject.toml</code>:</p>\"}, {\"id\": \"928d2402-6b63-4711-a7e4-d1c142548849\", \"type\": \"code\", \"value\": {\"code\": \"[tool.mypy]\\r\\nexclude = [\\r\\n  '^(.git|.pytest_cache|.ruff_cache|.venv)/.*',\\r\\n  '^(build|dist|infra|lib|logs|media|node_modules|snapshots|static)/.*',\\r\\n]\\r\\nmypy_path = \\\"$MYPY_CONFIG_FILE_DIR/src\\\"\\r\\nplugins = [\\\"mypy_django_plugin.main\\\"]\\r\\nignore_missing_imports = true\\r\\n\\r\\n[tool.django-stubs]\\r\\ndjango_settings_module = \\\"picata.settings.mypy\\\"\", \"language\": \"toml\"}}, {\"id\": \"7ad59cae-8632-4881-b5d8-e73e294ed238\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"m5704\\\">\\u2026\\u00a0but the mypy pre-commit hook was complaining about one more required dependency after another, until I realise I realised I was about to completely re-create pretty much my entire Python virtual environment, invisibly, in the background, just for this hook to run.</p><p data-block-key=\\\"aflgm\\\">And it's not like <code>mypy</code> was going to change anything, so the principle of isolating pre-commit hooks in their own virtual environments for safety (or whatever) reasons seemed moot. Surely there had to be a better way?</p><h4 data-block-key=\\\"7p5be\\\">The better way</h4><p data-block-key=\\\"6qb5k\\\">As you might have guessed by now, the better way came in the form of abandoning the mypy pre-commit hook package completely, just using <code>repo: local</code>, and telling pre-commit what it was I wanted it to run against my already-built virtual environment:</p>\"}, {\"id\": \"e2829a7f-fcb4-445d-84a4-5d2f0a082f2d\", \"type\": \"code\", \"value\": {\"code\": \"- repo: local\\r\\n    hooks:\\r\\n      - id: mypy\\r\\n        name: Type-check Python with mypy\\r\\n        language: python\\r\\n        types: [python]\\r\\n        entry: mypy\\r\\n        args: [\\\"--config-file=pyproject.toml\\\"]\", \"language\": \"yaml\"}}, {\"id\": \"9810f7db-f8d5-49cb-9e85-6a6ce1955e6b\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"m5704\\\">So, yeah. For many pre-commit checks, it might be easier to <i>not</i> go looking for a third-party repository, and just call what you want, when you want, how you want.</p>\"}, {\"id\": \"b5fa2420-a43c-445a-8706-7c3269a91772\", \"type\": \"code\", \"value\": {\"code\": \"\\u276f pre-commit run mypy --all-files\\r\\nType-check Python with mypy..............Passed\", \"language\": \"bash\"}}]",
     "page_type": null
   }
 },
@@ -364,7 +364,7 @@
   "pk": 9,
   "fields": {
     "tagline": "\"Import only what you need to survive\"",
-    "summary": "<p data-block-key=\"lh6z1\">Development server running out of memory? Or maybe your <code>runserver</code> process is taking forever to load? Here are some optimisation tips to speed up, and slim down, every part of your Django development experience.</p>",
+    "summary": "<p data-block-key=\"lh6z1\">Development server running out of memory? Or maybe your <code>runserver</code> process is taking forever to load, and other management commands take too long? Here are some optimisation tips I used to speed up – and slim down – every part of my Django development experience.</p>",
     "content": "[{\"id\": \"5462860b-3278-4e40-bdc0-4d8a2d16d5ea\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"qkuhz\\\">The basics</h2><p data-block-key=\\\"8nbms\\\">Your <a href=\\\"https://docs.djangoproject.com/en/5.1/topics/settings/\\\">Django settings</a> are conceptually fairly simple, and should be <i>kept</i> simple in practice. For most purposes it's generally best to just start with three modules under your <code>(project).settings</code> package\\u2026</p><ul><li data-block-key=\\\"5oef0\\\"><code>base.py</code> for the vast majority of defaults not affected by the environment</li><li data-block-key=\\\"34l3c\\\"><code>dev.py</code>, importing everything from <code>base.py</code> and adding dev/debug settings</li><li data-block-key=\\\"83kac\\\"><code>prod.py</code>, importing everything from <code>base.py</code> and adding production settings</li></ul><p data-block-key=\\\"4ktc2\\\">I'd also go so far as to argue that your concrete settings files are literally the only place in a codebase where it's acceptable to just \\\"import star\\\", though hopefully you're using Ruff or a similar linter, and at least acknowledge the potential folly with an ignore directive\\u2026</p>\"}, {\"id\": \"956e470b-4eb4-4f34-9839-d38f1d7047b4\", \"type\": \"code\", \"value\": {\"code\": \"from .base import *  # noqa: F403\", \"language\": \"python\"}}, {\"id\": \"bc7bb96e-766e-4f2d-bfd2-5503f05e2ce6\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"e8850\\\">Something fishy going on</h2><p data-block-key=\\\"6m1us\\\">Some time into development, after na\\u00efvely adding a lot of \\\"dev-mode-and-debugging\\\" stuff to my <code>dev.py</code>, I noticed a few of things:</p><ul><li data-block-key=\\\"3u0k\\\">My dev servers (which were DigitalOcean droplets with 2cpus &amp; 8 gigs of ram at the time) were running out of memory a lot more often than they should</li><li data-block-key=\\\"4q5un\\\"><code>runserver_plus</code>was taking <i>ages</i> to start serving pages</li><li data-block-key=\\\"bh62j\\\"><code>django-admin</code> commands were taking unusually long to run</li><li data-block-key=\\\"96hss\\\"><code>mypy</code> was taking yonks to do its thing, and <code>mypyd</code> was the main process eating up all of my precious memory</li></ul>\"}, {\"id\": \"1a850079-9156-4e4b-8ec7-46a75d51feb1\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"6npb3\\\">The diagnosis</h2><p data-block-key=\\\"63aaj\\\">So yes, the thing is, if your \\\"dev settings\\\" just turn everything on at the module level then all those things are going to be imported and run whenever <i>any</i> Django management command runs.</p><p data-block-key=\\\"2dkm\\\">If you've moved at all beyond the basics, that might mean you're loading <a href=\\\"https://django-extensions.readthedocs.io/en/latest/\\\"><code>django-extensions</code></a> and the <a href=\\\"https://django-debug-toolbar.readthedocs.io/en/latest/\\\">Django Debug Toolbar</a> into your code with every command, and if you've stepped into the wonderful world of static type-checking you might be letting <a href=\\\"https://github.com/typeddjango/django-stubs\\\"><code>django-stubs</code></a> monkey-patch your code. (Or at least I was\\u2026)</p><p data-block-key=\\\"6ni74\\\">But: I found I don't actually need <code>django-extensions</code> for anything at all besides <code>runserver(_plus)</code>, and monkey-patching type-hints into Django is resource intensive, and only needed for <code>mypy[d]</code>.</p>\"}, {\"id\": \"67e42a76-b7d9-4831-bbbc-3ba28829d167\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"rltrc\\\">The solutions</h2><h3 data-block-key=\\\"akm1c\\\">Conditional settings &amp; discovering the execution context</h3><p data-block-key=\\\"5jd4d\\\">Django doesn't provide an immediately obvious way for you to tell exactly what spawned the code that's currently being imported\\u2026</p><p data-block-key=\\\"73alp\\\">Your <code>manage.py</code> is a simple little file that generally remains untouched, and acts as the entry-point for the <code>django-admin</code> command (assuming you aren't already just running things with <code>python manage.py</code>) \\u2013 but people can and do often augment it for their own purposes and this is an ideal time to add a couple of lines before that final <code>execute_from_command_line(argv)</code> call:</p>\"}, {\"id\": \"eefff5a9-072d-4441-97b7-b1539a202111\", \"type\": \"code\", \"value\": {\"code\": \"if len(argv) >= 2:  # noqa: PLR2004\\r\\n    environ.setdefault(\\\"DJANGO_MANAGEMENT_COMMAND\\\", argv[1])\\r\\n\\r\\nfrom django.core.management import execute_from_command_line\\r\\n\\r\\nexecute_from_command_line(argv)\", \"language\": \"python\"}}, {\"id\": \"a5c6cf0d-2bf2-4a29-ae68-f066f94c5435\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">And now you can selectively and exclusively import <code>django-extensions</code> and all the DJDT stuff when you know you're in a <code>runserver</code> or <code>runserver_plus</code> context with something like like this in your <code>(project).settings.dev</code> module:</p>\"}, {\"id\": \"7240bf41-70ec-479d-9b25-85b556113571\", \"type\": \"code\", \"value\": {\"code\": \"if getenv(\\\"DJANGO_MANAGEMENT_COMMAND\\\", \\\"\\\").startswith(\\\"runserver\\\"):\\r\\n    RUNSERVERPLUS_POLLER_RELOADER_TYPE = \\\"watchdog\\\"\\r\\n    RUNSERVER_PLUS_EXCLUDE_PATTERNS = [\\r\\n        \\\".venv/*\\\",\\r\\n        \\\".vscode/*\\\",\\r\\n        \\\"node_modules/*\\\",\\r\\n        \\\"media/*\\\",\\r\\n        \\\"src/migrations/*\\\",\\r\\n        \\\"static/*\\\",\\r\\n    ]\\r\\n\\r\\n    # Enable Django Debug Toolbar and runserver_plus\\r\\n    INSTALLED_APPS += [\\r\\n        \\\"debug_toolbar\\\",\\r\\n        \\\"django_extensions\\\",\\r\\n    ]\\r\\n    MIDDLEWARE = [\\\"debug_toolbar.middleware.DebugToolbarMiddleware\\\", *MIDDLEWARE]\", \"language\": \"python\"}}, {\"id\": \"95e5f16f-08ba-4c17-9a22-74dd47e8aaa9\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">(and yes there are a few hints for <a href=\\\"https://django-extensions.readthedocs.io/en/latest/runserver_plus.html#io-calls-and-cpu-usage\\\">other optimisations you should consider</a> if you haven't already, embedded in that block of code.)</p>\"}, {\"id\": \"fc562879-e5f4-4ba1-8652-15318e91b3d8\", \"type\": \"rich_text\", \"value\": \"<h3 data-block-key=\\\"x2vz7\\\">Settings exclusive to <code>mypy</code> (or whatever the kids are typing-checking with these days)</h3><p data-block-key=\\\"cbguh\\\">This brings us to the \\\"in 4 parts\\\" bit of this post. I now have a forth settings module in the form of <code>mypy.py</code> which consists entirely of:</p>\"}, {\"id\": \"f9d368d0-1254-4ba7-ba13-24d63bc9a7cd\", \"type\": \"code\", \"value\": {\"code\": \"\\\"\\\"\\\"Django settings for the mypy type-checking daemon.\\\"\\\"\\\"\\r\\n\\r\\nimport django_stubs_ext\\r\\n\\r\\nfrom .dev import *  # noqa: F403\\r\\n\\r\\ndjango_stubs_ext.monkeypatch()\", \"language\": \"python\"}}, {\"id\": \"856e31fe-697d-4b07-a4fd-8da214c55ff4\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">\\u2026\\u00a0and then we can ensure the heavy burden of <a href=\\\"https://github.com/typeddjango/django-stubs\\\">monkey-patching Django with type-hinting stubs</a> happens when (and only when) needed by adding adding to our <code>pyproject.toml</code>:</p>\"}, {\"id\": \"2efa12b4-15bf-4775-b331-1ef58b13dee1\", \"type\": \"code\", \"value\": {\"code\": \"[tool.django-stubs]\\r\\ndjango_settings_module = \\\"(project).settings.mypy\\\"\", \"language\": \"toml\"}}, {\"id\": \"7e354794-1415-4e6e-b049-79ffaac523a8\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"ejdzv\\\">\\u2013 that means:</p><ol><li data-block-key=\\\"4auth\\\">any <code>mypyd</code> processes VS Code might launch if you've got an extension like <code>matangover.mypy</code> installed, and</li><li data-block-key=\\\"1fo9p\\\">the <code>mypy</code> process itself, which is great to run as a <a href=\\\"https://pre-commit.com\\\">pre-commit</a> hook.</li></ol>\"}, {\"id\": \"8ebf1316-b2c0-4e01-9c3d-96b6e017c8c4\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"x2vz7\\\">The result\\u2026</h2><ul><li data-block-key=\\\"1ihcp\\\"><code>runserver[_plus]</code> need not waste your resources on loading Django stubs</li><li data-block-key=\\\"cb7r0\\\"><code>mypy[d]</code> won't be wasting cycles &amp; memory on debug stuff meant only for you</li><li data-block-key=\\\"35kj4\\\">All the other Django management commands aren't bogged down by your debugging code or monkey-patched type-hints</li></ul><p data-block-key=\\\"9b6pl\\\">\\u2026 and you can be happier, and iterate faster, on smaller development boxes. And isn't that what it's <i>really</i> all about?</p>\"}]",
     "page_type": null
   }
@@ -390,6 +390,20 @@
   "fields": {
     "top_content": "[{\"id\": \"2feced3d-03b3-4be0-8041-03372f10a51f\", \"type\": \"rich_text\", \"value\": \"<h1 data-block-key=\\\"a8bgp\\\"><b>About me</b></h1><p data-block-key=\\\"b365o\\\">Welcome! I'm a software developer from Perth, Western Australia, who's mostly worked with full web stacks, but generally love all things Python, and many things DevOps.</p><p data-block-key=\\\"80r3k\\\">This is my blog / personal website / little, decentralised, hand-rolled place on the internet where I can post and rant.</p>\"}, {\"id\": \"105f9b46-27dd-4ebb-9032-42b5e892fab4\", \"type\": \"icon_link_lists\", \"value\": {\"lists\": [{\"id\": \"3f0a5bc8-d317-4782-b7e1-ae3e35a603ed\", \"type\": \"link_list\", \"value\": {\"items\": [{\"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\", \"type\": \"item\", \"value\": {\"href\": \"https://mastodon.social/@hipikat\", \"icon\": \"mastodon\", \"label\": \"Mastodon\"}}, {\"id\": \"d2be4414-f648-413e-a38f-07198f143902\", \"type\": \"item\", \"value\": {\"href\": \"https://bsky.app/profile/hipikat.bsky.social\", \"icon\": \"bluesky\", \"label\": \"Bluesky\"}}, {\"id\": \"2db41738-71ea-4a78-a706-35582f5a6534\", \"type\": \"item\", \"value\": {\"href\": \"https://github.com/hipikat\", \"icon\": \"github\", \"label\": \"GitHub\"}}, {\"id\": \"ad8fa80c-a966-4416-8f24-32718011f2ec\", \"type\": \"item\", \"value\": {\"href\": \"http://linkedin.com/in/hipikat/\", \"icon\": \"linkedin\", \"label\": \"LinkedIn\"}}, {\"id\": \"8cd4e344-da9b-45ba-b47c-6c38a36fde59\", \"type\": \"item\", \"value\": {\"href\": \"https://www.facebook.com/hipikat\", \"icon\": \"facebook\", \"label\": \"Facebook\"}}, {\"id\": \"a39f3f50-3c70-48db-89ea-0f9d47f5a23e\", \"type\": \"item\", \"value\": {\"href\": \"https://www.threads.net/@hipikat\", \"icon\": \"threads\", \"label\": \"Threads\"}}, {\"id\": \"34bf78f0-e961-42c7-b09d-cbfbd5430b57\", \"type\": \"item\", \"value\": {\"href\": \"https://www.instagram.com/hipikat/\", \"icon\": \"instagram\", \"label\": \"Instagram\"}}, {\"id\": \"3aedf5e1-3655-4326-aee4-ae5fa5d3be9c\", \"type\": \"item\", \"value\": {\"href\": \"https://www.youtube.com/@adawright2895\", \"icon\": \"youtube\", \"label\": \"YouTube\"}}, {\"id\": \"85b28960-e836-48d2-ae3d-847e80b08603\", \"type\": \"item\", \"value\": {\"href\": \"https://www.twitch.tv/chipikat\", \"icon\": \"twitch\", \"label\": \"Twitch\"}}, {\"id\": \"5544cb23-207e-495c-a657-5c63ab119559\", \"type\": \"item\", \"value\": {\"href\": \"https://x.com/pypikat\", \"icon\": \"twitter\", \"label\": \"\\\"X\\\" (2007-2022)\"}}], \"heading\": \"Socials\", \"heading_level\": 1}}, {\"id\": \"f9a1fe15-ecd3-4e6f-ae9e-063eb9ad7afc\", \"type\": \"link_list\", \"value\": {\"items\": [{\"id\": \"5512d3ad-82c2-461c-8a24-ae4b433b7648\", \"type\": \"item\", \"value\": {\"href\": \"mailto:ada@hpk.io\", \"icon\": \"email\", \"label\": \"Email\"}}, {\"id\": \"b0a08281-a602-453f-afaa-225d52177e3d\", \"type\": \"item\", \"value\": {\"href\": \"http://t.me/hipikat\", \"icon\": \"telegram\", \"label\": \"Telegram\"}}], \"heading\": \"Contact me\", \"heading_level\": 3}}]}}]",
     "bottom_content": "[]"
+  }
+},
+{
+  "model": "wagtailredirects.redirect",
+  "pk": 1,
+  "fields": {
+    "old_path": "/blog/pre-commit-python-types-virtual-envs",
+    "site": 1,
+    "is_permanent": true,
+    "redirect_page": 7,
+    "redirect_page_route_path": "",
+    "redirect_link": "",
+    "automatically_created": true,
+    "created_at": "2025-01-31T03:21:50.206Z"
   }
 },
 {
@@ -456,6 +470,17 @@
     "height": 630,
     "focal_point_key": "2e16d0ba",
     "image": 1
+  }
+},
+{
+  "model": "wagtailadmin.editingsession",
+  "pk": 131,
+  "fields": {
+    "user": 2,
+    "content_type": 1,
+    "object_id": "7",
+    "last_seen_at": "2025-01-31T03:18:59.543Z",
+    "is_editing": false
   }
 },
 {
@@ -639,62 +664,6 @@
     "model_path": "collection",
     "content_path": "collection",
     "content_path_hash": "b40b1263-e929-57f2-a7f8-9dbce56b887b"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 18,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "7",
-    "to_content_type": 31,
-    "to_object_id": "9",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.9.tag",
-    "content_path_hash": "6192591c-068e-5695-9ce2-96b9b1848275"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 19,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "7",
-    "to_content_type": 31,
-    "to_object_id": "10",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.10.tag",
-    "content_path_hash": "9307753f-f405-523b-a62e-db17e076048a"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 20,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "7",
-    "to_content_type": 31,
-    "to_object_id": "7",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.7.tag",
-    "content_path_hash": "a4245cab-1223-5258-8e09-836cdc37835a"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 21,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "7",
-    "to_content_type": 31,
-    "to_object_id": "8",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.8.tag",
-    "content_path_hash": "cc756bbf-cf49-5f28-aed2-1244b0e04866"
   }
 },
 {
@@ -936,6 +905,62 @@
   }
 },
 {
+  "model": "wagtailcore.referenceindex",
+  "pk": 169,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "10",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 170,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "8",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 171,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "9",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 172,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "to_content_type": 31,
+    "to_object_id": "7",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.None.tag",
+    "content_path_hash": "ba6661ca-69a8-5ae1-a6aa-fb67dbf805eb"
+  }
+},
+{
   "model": "wagtailcore.page",
   "pk": 1,
   "fields": {
@@ -1114,28 +1139,28 @@
     "numchild": 0,
     "translation_key": "7411ccc3-82cb-426e-a229-b7af33f5566d",
     "locale": 1,
-    "latest_revision": 13,
-    "live": false,
-    "has_unpublished_changes": true,
-    "first_published_at": null,
-    "last_published_at": null,
-    "live_revision": null,
+    "latest_revision": 66,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2025-01-31T03:13:24.572Z",
+    "last_published_at": "2025-01-31T03:21:50.048Z",
+    "live_revision": 66,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
     "locked": false,
     "locked_at": null,
     "locked_by": null,
-    "title": "pre-commit, Python types & virtual envs",
-    "draft_title": "pre-commit, Python types & virtual envs",
-    "slug": "pre-commit-python-types-virtual-envs",
+    "title": "pre-commit, Python typing & virtual envs",
+    "draft_title": "pre-commit, Python typing & virtual envs",
+    "slug": "pre-commit-and-repo-local",
     "content_type": 34,
-    "url_path": "/home/blog/pre-commit-python-types-virtual-envs/",
+    "url_path": "/home/blog/pre-commit-and-repo-local/",
     "owner": 2,
     "seo_title": "",
     "show_in_menus": false,
     "search_description": "",
-    "latest_revision_created_at": "2025-01-26T04:49:53.555Z",
+    "latest_revision_created_at": "2025-01-31T03:21:49.921Z",
     "alias_of": null
   }
 },
@@ -1182,12 +1207,12 @@
     "numchild": 0,
     "translation_key": "51b71484-e6ae-43d7-a62b-59c8b2214a27",
     "locale": 1,
-    "latest_revision": 59,
+    "latest_revision": 65,
     "live": true,
     "has_unpublished_changes": false,
     "first_published_at": "2025-01-29T03:03:00.924Z",
-    "last_published_at": "2025-01-30T08:15:54.451Z",
-    "live_revision": 59,
+    "last_published_at": "2025-01-31T03:20:30.350Z",
+    "live_revision": 65,
     "go_live_at": null,
     "expire_at": null,
     "expired": false,
@@ -1203,7 +1228,7 @@
     "seo_title": "",
     "show_in_menus": false,
     "search_description": "",
-    "latest_revision_created_at": "2025-01-30T08:15:54.296Z",
+    "latest_revision_created_at": "2025-01-31T03:20:30.164Z",
     "alias_of": null
   }
 },
@@ -1250,77 +1275,6 @@
       "wagtail_admin_comments": [],
       "has_unpublished_changes": false,
       "latest_revision_created_at": "2025-01-26T03:49:16.094Z"
-    },
-    "approved_go_live_at": null
-  }
-},
-{
-  "model": "wagtailcore.revision",
-  "pk": 13,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "7",
-    "created_at": "2025-01-26T04:49:53.555Z",
-    "user": 2,
-    "object_str": "pre-commit, Python types & virtual envs",
-    "content": {
-      "pk": 7,
-      "live": false,
-      "path": "0001000200010003",
-      "slug": "pre-commit-python-types-virtual-envs",
-      "depth": 4,
-      "owner": 2,
-      "title": "pre-commit, Python types & virtual envs",
-      "locale": 1,
-      "locked": false,
-      "content": "[]",
-      "expired": false,
-      "summary": "<p data-block-key=\"4qjbz\">[Talk about how you gave up on the mypy pre-commit hook and used local, because of how pre-commit creates a new virtualenv for each hook – and additional_dependencies would have required most of the project to be declared! … but Ruff, being static, runs just fine.</p>",
-      "tagline": "How I learned to stop worrying and love `repo: local`",
-      "alias_of": null,
-      "numchild": 0,
-      "url_path": "/home/blog/pre-commit-python-types-virtual-envs/",
-      "expire_at": null,
-      "locked_at": null,
-      "locked_by": null,
-      "page_type": null,
-      "seo_title": "",
-      "go_live_at": null,
-      "draft_title": "pre-commit, Python types & virtual envs",
-      "content_type": 34,
-      "tagged_items": [
-        {
-          "pk": 7,
-          "tag": 7,
-          "content_object": 7
-        },
-        {
-          "pk": 8,
-          "tag": 8,
-          "content_object": 7
-        },
-        {
-          "pk": 9,
-          "tag": 9,
-          "content_object": 7
-        },
-        {
-          "pk": 10,
-          "tag": 10,
-          "content_object": 7
-        }
-      ],
-      "live_revision": null,
-      "show_in_menus": false,
-      "latest_revision": null,
-      "translation_key": "7411ccc3-82cb-426e-a229-b7af33f5566d",
-      "last_published_at": null,
-      "first_published_at": null,
-      "search_description": "",
-      "wagtail_admin_comments": [],
-      "has_unpublished_changes": false,
-      "latest_revision_created_at": null
     },
     "approved_go_live_at": null
   }
@@ -1591,12 +1545,12 @@
 },
 {
   "model": "wagtailcore.revision",
-  "pk": 59,
+  "pk": 65,
   "fields": {
     "content_type": 34,
     "base_content_type": 1,
     "object_id": "9",
-    "created_at": "2025-01-30T08:15:54.296Z",
+    "created_at": "2025-01-31T03:20:30.164Z",
     "user": 2,
     "object_str": "Django settings in 4 parts",
     "content": {
@@ -1611,7 +1565,7 @@
       "locked": false,
       "content": "[{\"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"qkuhz\\\">The basics</h2><p data-block-key=\\\"8nbms\\\">Your <a href=\\\"https://docs.djangoproject.com/en/5.1/topics/settings/\\\">Django settings</a> are conceptually fairly simple, and should be <i>kept</i> simple in practice. For most purposes it's generally best to just start with three modules under your <code>(project).settings</code> package\\u2026</p><ul><li data-block-key=\\\"5oef0\\\"><code>base.py</code> for the vast majority of defaults not affected by the environment</li><li data-block-key=\\\"34l3c\\\"><code>dev.py</code>, importing everything from <code>base.py</code> and adding dev/debug settings</li><li data-block-key=\\\"83kac\\\"><code>prod.py</code>, importing everything from <code>base.py</code> and adding production settings</li></ul><p data-block-key=\\\"4ktc2\\\">I'd also go so far as to argue that your concrete settings files are literally the only place in a codebase where it's acceptable to just \\\"import star\\\", though hopefully you're using Ruff or a similar linter, and at least acknowledge the potential folly with an ignore directive\\u2026</p>\", \"id\": \"5462860b-3278-4e40-bdc0-4d8a2d16d5ea\"}, {\"type\": \"code\", \"value\": {\"code\": \"from .base import *  # noqa: F403\", \"language\": \"python\"}, \"id\": \"956e470b-4eb4-4f34-9839-d38f1d7047b4\"}, {\"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"e8850\\\">Something fishy going on</h2><p data-block-key=\\\"6m1us\\\">Some time into development, after na\\u00efvely adding a lot of \\\"dev-mode-and-debugging\\\" stuff to my <code>dev.py</code>, I noticed a few of things:</p><ul><li data-block-key=\\\"3u0k\\\">My dev servers (which were DigitalOcean droplets with 2cpus &amp; 8 gigs of ram at the time) were running out of memory a lot more often than they should</li><li data-block-key=\\\"4q5un\\\"><code>runserver_plus</code>was taking <i>ages</i> to start serving pages</li><li data-block-key=\\\"bh62j\\\"><code>django-admin</code> commands were taking unusually long to run</li><li data-block-key=\\\"96hss\\\"><code>mypy</code> was taking yonks to do its thing, and <code>mypyd</code> was the main process eating up all of my precious memory</li></ul>\", \"id\": \"bc7bb96e-766e-4f2d-bfd2-5503f05e2ce6\"}, {\"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"6npb3\\\">The diagnosis</h2><p data-block-key=\\\"63aaj\\\">So yes, the thing is, if your \\\"dev settings\\\" just turn everything on at the module level then all those things are going to be imported and run whenever <i>any</i> Django management command runs.</p><p data-block-key=\\\"2dkm\\\">If you've moved at all beyond the basics, that might mean you're loading <a href=\\\"https://django-extensions.readthedocs.io/en/latest/\\\"><code>django-extensions</code></a> and the <a href=\\\"https://django-debug-toolbar.readthedocs.io/en/latest/\\\">Django Debug Toolbar</a> into your code with every command, and if you've stepped into the wonderful world of static type-checking you might be letting <a href=\\\"https://github.com/typeddjango/django-stubs\\\"><code>django-stubs</code></a> monkey-patch your code. (Or at least I was\\u2026)</p><p data-block-key=\\\"6ni74\\\">But: I found I don't actually need <code>django-extensions</code> for anything at all besides <code>runserver(_plus)</code>, and monkey-patching type-hints into Django is resource intensive, and only needed for <code>mypy[d]</code>.</p>\", \"id\": \"1a850079-9156-4e4b-8ec7-46a75d51feb1\"}, {\"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"rltrc\\\">The solutions</h2><h3 data-block-key=\\\"akm1c\\\">Conditional settings &amp; discovering the execution context</h3><p data-block-key=\\\"5jd4d\\\">Django doesn't provide an immediately obvious way for you to tell exactly what spawned the code that's currently being imported\\u2026</p><p data-block-key=\\\"73alp\\\">Your <code>manage.py</code> is a simple little file that generally remains untouched, and acts as the entry-point for the <code>django-admin</code> command (assuming you aren't already just running things with <code>python manage.py</code>) \\u2013 but people can and do often augment it for their own purposes and this is an ideal time to add a couple of lines before that final <code>execute_from_command_line(argv)</code> call:</p>\", \"id\": \"67e42a76-b7d9-4831-bbbc-3ba28829d167\"}, {\"type\": \"code\", \"value\": {\"code\": \"if len(argv) >= 2:  # noqa: PLR2004\\r\\n    environ.setdefault(\\\"DJANGO_MANAGEMENT_COMMAND\\\", argv[1])\\r\\n\\r\\nfrom django.core.management import execute_from_command_line\\r\\n\\r\\nexecute_from_command_line(argv)\", \"language\": \"python\"}, \"id\": \"eefff5a9-072d-4441-97b7-b1539a202111\"}, {\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">And now you can selectively and exclusively import <code>django-extensions</code> and all the DJDT stuff when you know you're in a <code>runserver</code> or <code>runserver_plus</code> context with something like like this in your <code>(project).settings.dev</code> module:</p>\", \"id\": \"a5c6cf0d-2bf2-4a29-ae68-f066f94c5435\"}, {\"type\": \"code\", \"value\": {\"code\": \"if getenv(\\\"DJANGO_MANAGEMENT_COMMAND\\\", \\\"\\\").startswith(\\\"runserver\\\"):\\r\\n    RUNSERVERPLUS_POLLER_RELOADER_TYPE = \\\"watchdog\\\"\\r\\n    RUNSERVER_PLUS_EXCLUDE_PATTERNS = [\\r\\n        \\\".venv/*\\\",\\r\\n        \\\".vscode/*\\\",\\r\\n        \\\"node_modules/*\\\",\\r\\n        \\\"media/*\\\",\\r\\n        \\\"src/migrations/*\\\",\\r\\n        \\\"static/*\\\",\\r\\n    ]\\r\\n\\r\\n    # Enable Django Debug Toolbar and runserver_plus\\r\\n    INSTALLED_APPS += [\\r\\n        \\\"debug_toolbar\\\",\\r\\n        \\\"django_extensions\\\",\\r\\n    ]\\r\\n    MIDDLEWARE = [\\\"debug_toolbar.middleware.DebugToolbarMiddleware\\\", *MIDDLEWARE]\", \"language\": \"python\"}, \"id\": \"7240bf41-70ec-479d-9b25-85b556113571\"}, {\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">(and yes there are a few hints for <a href=\\\"https://django-extensions.readthedocs.io/en/latest/runserver_plus.html#io-calls-and-cpu-usage\\\">other optimisations you should consider</a> if you haven't already, embedded in that block of code.)</p>\", \"id\": \"95e5f16f-08ba-4c17-9a22-74dd47e8aaa9\"}, {\"type\": \"rich_text\", \"value\": \"<h3 data-block-key=\\\"x2vz7\\\">Settings exclusive to <code>mypy</code> (or whatever the kids are typing-checking with these days)</h3><p data-block-key=\\\"cbguh\\\">This brings us to the \\\"in 4 parts\\\" bit of this post. I now have a forth settings module in the form of <code>mypy.py</code> which consists entirely of:</p>\", \"id\": \"fc562879-e5f4-4ba1-8652-15318e91b3d8\"}, {\"type\": \"code\", \"value\": {\"code\": \"\\\"\\\"\\\"Django settings for the mypy type-checking daemon.\\\"\\\"\\\"\\r\\n\\r\\nimport django_stubs_ext\\r\\n\\r\\nfrom .dev import *  # noqa: F403\\r\\n\\r\\ndjango_stubs_ext.monkeypatch()\", \"language\": \"python\"}, \"id\": \"f9d368d0-1254-4ba7-ba13-24d63bc9a7cd\"}, {\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">\\u2026\\u00a0and then we can ensure the heavy burden of <a href=\\\"https://github.com/typeddjango/django-stubs\\\">monkey-patching Django with type-hinting stubs</a> happens when (and only when) needed by adding adding to our <code>pyproject.toml</code>:</p>\", \"id\": \"856e31fe-697d-4b07-a4fd-8da214c55ff4\"}, {\"type\": \"code\", \"value\": {\"code\": \"[tool.django-stubs]\\r\\ndjango_settings_module = \\\"(project).settings.mypy\\\"\", \"language\": \"toml\"}, \"id\": \"2efa12b4-15bf-4775-b331-1ef58b13dee1\"}, {\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"ejdzv\\\">\\u2013 that means:</p><ol><li data-block-key=\\\"4auth\\\">any <code>mypyd</code> processes VS Code might launch if you've got an extension like <code>matangover.mypy</code> installed, and</li><li data-block-key=\\\"1fo9p\\\">the <code>mypy</code> process itself, which is great to run as a <a href=\\\"https://pre-commit.com\\\">pre-commit</a> hook.</li></ol>\", \"id\": \"7e354794-1415-4e6e-b049-79ffaac523a8\"}, {\"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"x2vz7\\\">The result\\u2026</h2><ul><li data-block-key=\\\"1ihcp\\\"><code>runserver[_plus]</code> need not waste your resources on loading Django stubs</li><li data-block-key=\\\"cb7r0\\\"><code>mypy[d]</code> won't be wasting cycles &amp; memory on debug stuff meant only for you</li><li data-block-key=\\\"35kj4\\\">All the other Django management commands aren't bogged down by your debugging code or monkey-patched type-hints</li></ul><p data-block-key=\\\"9b6pl\\\">\\u2026 and you can be happier, and iterate faster, on smaller development boxes. And isn't that what it's <i>really</i> all about?</p>\", \"id\": \"8ebf1316-b2c0-4e01-9c3d-96b6e017c8c4\"}]",
       "expired": false,
-      "summary": "<p data-block-key=\"lh6z1\">Development server running out of memory? Or maybe your <code>runserver</code> process is taking forever to load? Here are some optimisation tips to speed up, and slim down, every part of your Django development experience.</p>",
+      "summary": "<p data-block-key=\"lh6z1\">Development server running out of memory? Or maybe your <code>runserver</code> process is taking forever to load, and other management commands take too long? Here are some optimisation tips I used to speed up – and slim down – every part of my Django development experience.</p>",
       "tagline": "\"Import only what you need to survive\"",
       "alias_of": null,
       "numchild": 0,
@@ -1646,16 +1600,87 @@
           "content_object": 9
         }
       ],
-      "live_revision": 58,
+      "live_revision": 59,
       "show_in_menus": false,
-      "latest_revision": 58,
+      "latest_revision": 59,
       "translation_key": "51b71484-e6ae-43d7-a62b-59c8b2214a27",
-      "last_published_at": "2025-01-30T08:14:59.582Z",
+      "last_published_at": "2025-01-30T08:15:54.451Z",
       "first_published_at": "2025-01-29T03:03:00.924Z",
       "search_description": "",
       "wagtail_admin_comments": [],
       "has_unpublished_changes": false,
-      "latest_revision_created_at": "2025-01-30T08:14:59.450Z"
+      "latest_revision_created_at": "2025-01-30T08:15:54.296Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 66,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "7",
+    "created_at": "2025-01-31T03:21:49.921Z",
+    "user": 2,
+    "object_str": "pre-commit, Python typing & virtual envs",
+    "content": {
+      "pk": 7,
+      "live": true,
+      "path": "0001000200010003",
+      "slug": "pre-commit-and-repo-local",
+      "depth": 4,
+      "owner": 2,
+      "title": "pre-commit, Python typing & virtual envs",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"6eafd\\\">The <a href=\\\"https://pre-commit.com\\\">pre-commit</a> package is a great way to quickly get a repo running with lots of checks you might not have even thought about, and shouldn't have to spend time manually coding into hooks yourself. It's certainly helping keep my projects extra-squeaky-clean in a way that feeds back to my brain in the form of lots of little dopamine hits.</p><blockquote data-block-key=\\\"8slvc\\\">Check out the <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/.pre-commit-config.yaml\\\">.pre-commit-config.yaml</a> file behind this site's codebase to see what I'm actually using on it today.</blockquote><p data-block-key=\\\"f5sdf\\\">My initial concern, though, was that <code>pre-commit install</code> does of course <i>take over</i> the pre-commit hooks for a repository, because it relies on its own <code>.git/hooks/pre-commit</code> executable script \\u2013\\u00a0and it wasn't immediately obvious how I could just add my own arbitrary checks.</p><h2 data-block-key=\\\"er4o6\\\">TL;DR?</h2><p data-block-key=\\\"e2a8t\\\">\\\"<a href=\\\"https://pre-commit.com/#repository-local-hooks\\\">Repository local hooks</a>\\\" are your friend.</p>\", \"id\": \"d5d4814d-5e7c-4898-a957-4d2d2b4570bb\"}, {\"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"6eafd\\\">Invisible virtual environments</h2><p data-block-key=\\\"9o8dd\\\">One slightly magical, opaque implementation detail about pre-commit is that every hook basically creates and runs in its own virtual environment. What that looks like depends on the \\\"language\\\" associated with the hook itself, and there are a couple of notable exceptions:</p><ul><li data-block-key=\\\"8smgj\\\">\\\"<a href=\\\"https://pre-commit.com/#script\\\">script</a>\\\" hooks, for simple scripts used to validate files,</li><li data-block-key=\\\"18nr4\\\">\\\"<a href=\\\"https://pre-commit.com/#system\\\">system</a>\\\" hooks, which target system-level executables, and</li><li data-block-key=\\\"ar1t9\\\"><a href=\\\"https://pre-commit.com/#repository-local-hooks\\\">Repository-local</a> hooks, most useful when the hook itself depends on build artefacts in your project, or fairly \\\"complete\\\" virtual environments that you don't want to re-build just for that hook.</li></ul><h3 data-block-key=\\\"10u5\\\">Additional dependencies</h3><p data-block-key=\\\"epe4k\\\">If a hook isn't working the way you'd expect, it may be due to the fact that the virtual environment its creating for itself doesn't have quite everything it needs to run \\u2013\\u00a0this is where the <a href=\\\"https://pre-commit.com/#config-additional_dependencies\\\"><code>additional_dependencies</code></a> lists come into your configuration. Most hook repositories seem pretty good about mentioning the kind of things you'll need to add here \\u2013\\u00a0for example I got my <a href=\\\"https://github.com/pre-commit/mirrors-eslint\\\"><code>eslint</code></a> hook running with just:</p><p data-block-key=\\\"erf07\\\"></p><p data-block-key=\\\"10u88\\\"></p>\", \"id\": \"82f192b3-96e5-4884-8dcd-c924fede42f3\"}, {\"type\": \"code\", \"value\": {\"code\": \"- repo: https://github.com/pre-commit/mirrors-eslint\\r\\n    rev: \\\"v9.18.0\\\"\\r\\n    hooks:\\r\\n      - id: eslint\\r\\n        name: Lint ECMAScript with eslint\\r\\n        args: [\\\"--config\\\", \\\"./eslint.config.mjs\\\"]\\r\\n        additional_dependencies:\\r\\n          - eslint@9.16.0\\r\\n          - eslint-plugin-prettier@5.2.1\\r\\n          - eslint-plugin-tailwindcss@3.17.5\\r\\n          - eslint-plugin-react@7.37.2\\r\\n          - typescript-eslint@8.17.0\", \"language\": \"yaml\"}, \"id\": \"a56202e8-ddf7-4818-8f07-5bbfe8296190\"}, {\"type\": \"rich_text\", \"value\": \"<h3 data-block-key=\\\"m5704\\\">Static typing, and just using 'local'</h3><p data-block-key=\\\"ibip\\\">It was only after spending some time trying to get <a href=\\\"https://github.com/pre-commit/mirrors-mypy\\\">mypy for pre-commit</a> working that the penny really dropped for me, with regard to how much of a working virtualenv some things actually need. Calling <code>mypy .</code> was finally going smoothly, with no more configuration required than what was in my <code>pyproject.toml</code>:</p>\", \"id\": \"ef2f1470-5df1-4ed2-a772-ac4d5e0e25cf\"}, {\"type\": \"code\", \"value\": {\"code\": \"[tool.mypy]\\r\\nexclude = [\\r\\n  '^(.git|.pytest_cache|.ruff_cache|.venv)/.*',\\r\\n  '^(build|dist|infra|lib|logs|media|node_modules|snapshots|static)/.*',\\r\\n]\\r\\nmypy_path = \\\"$MYPY_CONFIG_FILE_DIR/src\\\"\\r\\nplugins = [\\\"mypy_django_plugin.main\\\"]\\r\\nignore_missing_imports = true\\r\\n\\r\\n[tool.django-stubs]\\r\\ndjango_settings_module = \\\"picata.settings.mypy\\\"\", \"language\": \"toml\"}, \"id\": \"928d2402-6b63-4711-a7e4-d1c142548849\"}, {\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"m5704\\\">\\u2026\\u00a0but the mypy pre-commit hook was complaining about one more required dependency after another, until I realise I realised I was about to completely re-create pretty much my entire Python virtual environment, invisibly, in the background, just for this hook to run.</p><p data-block-key=\\\"aflgm\\\">And it's not like <code>mypy</code> was going to change anything, so the principle of isolating pre-commit hooks in their own virtual environments for safety (or whatever) reasons seemed moot. Surely there had to be a better way?</p><h4 data-block-key=\\\"7p5be\\\">The better way</h4><p data-block-key=\\\"6qb5k\\\">As you might have guessed by now, the better way came in the form of abandoning the mypy pre-commit hook package completely, just using <code>repo: local</code>, and telling pre-commit what it was I wanted it to run against my already-built virtual environment:</p>\", \"id\": \"7ad59cae-8632-4881-b5d8-e73e294ed238\"}, {\"type\": \"code\", \"value\": {\"code\": \"- repo: local\\r\\n    hooks:\\r\\n      - id: mypy\\r\\n        name: Type-check Python with mypy\\r\\n        language: python\\r\\n        types: [python]\\r\\n        entry: mypy\\r\\n        args: [\\\"--config-file=pyproject.toml\\\"]\", \"language\": \"yaml\"}, \"id\": \"e2829a7f-fcb4-445d-84a4-5d2f0a082f2d\"}, {\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"m5704\\\">So, yeah. For many pre-commit checks, it might be easier to <i>not</i> go looking for a third-party repository, and just call what you want, when you want, how you want.</p>\", \"id\": \"9810f7db-f8d5-49cb-9e85-6a6ce1955e6b\"}, {\"type\": \"code\", \"value\": {\"code\": \"\\u276f pre-commit run mypy --all-files\\r\\nType-check Python with mypy..............Passed\", \"language\": \"bash\"}, \"id\": \"b5fa2420-a43c-445a-8706-7c3269a91772\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"4qjbz\">The pre-commit package is a great way to quickly get a repo running with lots of pre-commit checks you shouldn't have to spend time coding into hooks yourself. But it uses virtual environments behind the scenes in an opaque way that comes with a caveat you should be mindful of.</p>",
+      "tagline": "How I learned to stop worrying and love `repo: local`",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/pre-commit-python-types-virtual-envs/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "pre-commit, Python typing & virtual envs",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": null,
+          "tag": 7,
+          "content_object": 7
+        },
+        {
+          "pk": null,
+          "tag": 8,
+          "content_object": 7
+        },
+        {
+          "pk": null,
+          "tag": 9,
+          "content_object": 7
+        },
+        {
+          "pk": null,
+          "tag": 10,
+          "content_object": 7
+        }
+      ],
+      "live_revision": 64,
+      "show_in_menus": false,
+      "latest_revision": 64,
+      "translation_key": "7411ccc3-82cb-426e-a229-b7af33f5566d",
+      "last_published_at": "2025-01-31T03:18:57.772Z",
+      "first_published_at": "2025-01-31T03:13:24.572Z",
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": "2025-01-31T03:18:57.637Z"
     },
     "approved_go_live_at": null
   }
@@ -3463,6 +3488,237 @@
     "content_changed": true,
     "deleted": false,
     "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 101,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-31T02:47:04.198Z",
+    "uuid": "a2be5366-09ed-4a49-99c6-c414465a0621",
+    "user": 2,
+    "revision": 60,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 102,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-31T02:53:18.960Z",
+    "uuid": "fbb4a218-027f-4e83-bbcc-3d72d83217f7",
+    "user": 2,
+    "revision": 61,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 103,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-31T03:13:24.384Z",
+    "uuid": "b56a78ae-5b37-4a1f-b236-3f108872066f",
+    "user": 2,
+    "revision": 62,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 104,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-31T03:13:24.806Z",
+    "uuid": "b56a78ae-5b37-4a1f-b236-3f108872066f",
+    "user": 2,
+    "revision": 62,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 105,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-31T03:17:40.199Z",
+    "uuid": "d58b6511-8c4d-4cea-9a71-8173ecec180c",
+    "user": 2,
+    "revision": 63,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 106,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-31T03:17:43.368Z",
+    "uuid": "d58b6511-8c4d-4cea-9a71-8173ecec180c",
+    "user": 2,
+    "revision": 63,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 107,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python types & virtual envs",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-31T03:18:57.709Z",
+    "uuid": "cefc2b8d-4350-4194-bb56-3e73ec2516ba",
+    "user": 2,
+    "revision": 64,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 108,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python typing & virtual envs",
+    "action": "wagtail.rename",
+    "data": {
+      "title": {
+        "new": "pre-commit, Python typing & virtual envs",
+        "old": "pre-commit, Python types & virtual envs"
+      }
+    },
+    "timestamp": "2025-01-31T03:18:57.896Z",
+    "uuid": "cefc2b8d-4350-4194-bb56-3e73ec2516ba",
+    "user": 2,
+    "revision": 64,
+    "content_changed": false,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 109,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python typing & virtual envs",
+    "action": "wagtail.publish",
+    "data": {
+      "title": {
+        "new": "pre-commit, Python typing & virtual envs",
+        "old": "pre-commit, Python types & virtual envs"
+      }
+    },
+    "timestamp": "2025-01-31T03:18:57.909Z",
+    "uuid": "cefc2b8d-4350-4194-bb56-3e73ec2516ba",
+    "user": 2,
+    "revision": 64,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 110,
+  "fields": {
+    "content_type": 34,
+    "label": "Django settings in 4 parts",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-31T03:20:30.266Z",
+    "uuid": "fa32caa1-512b-40b2-911d-219f706155e3",
+    "user": 2,
+    "revision": 65,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 111,
+  "fields": {
+    "content_type": 34,
+    "label": "Django settings in 4 parts",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-31T03:20:30.481Z",
+    "uuid": "fa32caa1-512b-40b2-911d-219f706155e3",
+    "user": 2,
+    "revision": 65,
+    "content_changed": true,
+    "deleted": false,
+    "page": 9
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 112,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python typing & virtual envs",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-01-31T03:21:49.992Z",
+    "uuid": "e868c6d4-cb6f-465d-aa9f-f552283e01e6",
+    "user": 2,
+    "revision": 66,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 113,
+  "fields": {
+    "content_type": 34,
+    "label": "pre-commit, Python typing & virtual envs",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-01-31T03:21:50.223Z",
+    "uuid": "e868c6d4-cb6f-465d-aa9f-f552283e01e6",
+    "user": 2,
+    "revision": 66,
+    "content_changed": true,
+    "deleted": false,
+    "page": 7
   }
 },
 {
