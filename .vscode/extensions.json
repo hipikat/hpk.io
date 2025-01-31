@@ -36,6 +36,7 @@
     "shd101wyy.markdown-preview-enhanced",
     "bierner.markdown-preview-github-styles",
     "codeium.codeium",
-    "github.copilot"
+    "github.copilot",
+    "playwright.playwright"
   ]
 }
