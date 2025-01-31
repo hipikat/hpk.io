@@ -19,7 +19,8 @@
           </div>
           <div class="prose">{{ post.summary|richtext }}</div>
         </div>
-        {% if forloop.last %}<div class="full-width"><p>see my <a href="/blog">blog</a> for more content</p></div>{% endif %}
+        {% if forloop.last %}<div class="full-width"><nav><p class="mb-0">see my <a href="/blog">blog</a> for more content</p>
+        <p class="mt-0">or subscribe to the <a href="{% url 'rss_feed' %}">rss</a> or <a href="{% url 'atom_feed' %}">atom</a> feeds</p></nav></div>{% endif %}
     {% endfor %}
 
     {% for div in self.bottom_content %}<div>{{ div }}</div>{% endfor %}
