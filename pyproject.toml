@@ -111,3 +111,13 @@ convention = "google" # Use Google's docstring conventions.
   "Q000",   # Ignore smart quotes in migration files.
   "E501",   # Allow long lines in migration files.
 ]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "hpk.settings.test"
+pythonpath = "src"
+python_files = 'tests.py test_*.py *_tests.py'
+norecursedirs = '.git .venv build dist lib logs media node_modules snapshots static'
+filterwarnings = [  # ACTION:MATCH_EXPRESSION:CATEGORY:MODULE:LINE
+  "ignore::django.utils.deprecation.RemovedInDjango60Warning",
+  "ignore:.*getdefaultlocale.*:DeprecationWarning",
+]

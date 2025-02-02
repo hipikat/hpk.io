@@ -3,9 +3,15 @@
 set dotenv-load := true
 set positional-arguments := true
 
-# Constants/Preferences
+# Constants/Preferences/shell-setup-scripts
 
 user := "${DEVELOPER}"
+
+test_env := '''
+    export HPK_TEST_DB=db-test.sqlite3
+    export DJANGO_SETTINGS_MODULE=hpk.settings.test
+'''
+
 editables := '''
 repos="picata django"
 declare -A upstreams origins extras
@@ -256,10 +262,21 @@ py *args='':
 dj *args='':
     uv run {{ uv_sync }} python src/manage.py {{ args }}
 
-# Run Python code in the Django shell
+# Launch or run Python code in the Django shell
 [group('python')]
 dj-shell *command='':
     uv run {{ uv_sync }} python src/manage.py shell -c "{{ command }}"
+
+# Run django-extension's shell_plus command
+[group('python')]
+dj-shell-plus *command='':
+    uv run {{ uv_sync }} python src/manage.py shell_plus -c "{{ command }}"
+
+# Run a Django shell against an on-file Sqlite test database
+dj-shell-test *command='':
+    #!/usr/bin/env bash
+    {{ test_env }}
+    just dj-shell-plus
 
 # Create superuser with a non-interactive password setting
 [group('python')]
@@ -376,6 +393,14 @@ db-init db_password='':
       echo "Couldn't load snapshot; applying migrations to initialize database."
       uv run {{ uv_sync }} python src/manage.py migrate
     fi
+
+[group('environment')]
+db-init-test:
+    #!/usr/bin/env bash
+    {{ test_env }}
+    rm -f $HPK_TEST_DB
+    just dj migrate
+    just dj-createsuperuser pytester pytest@hpk.io 'py73st'
 
 # Drop the application database and associated user, if they exist
 [group('environment')]
@@ -682,7 +707,14 @@ _develop-docker:
 _develop-cloud:
     just tofu-in dev apply
 
-# Run a development server (local, docker, or cloud)
+# Run a test server (assuming Sqlite is writing to a file)
+[group('workflow')]
+_develop-test:
+    #!/usr/bin/env bash
+    {{ test_env }}
+    just dj runserver_plus 0.0.0.0:8075
+
+# Run a development server (local, docker, cloud, or against a test database)
 [group('workflow')]
 dev target='local':
     @just _develop-{{ target }}
