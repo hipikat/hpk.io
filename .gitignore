@@ -11,6 +11,7 @@ terraform.tfstate.d/
 infra/dot_env.tfvars
 
 build/
+db-test.sqlite3
 lib/
 media/
 !snapshots/latest/media/

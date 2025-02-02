@@ -13,7 +13,7 @@
     {% for post in recent_posts %}
         {% if forloop.first %}<div class="full-width"><h1><b>Recent posts</b></h1></div>{% endif %}
         <div class="recent-post">
-          <h2>{% if post.published %}<a href="{{ post.url }}">{% endif %}{{ post.title|killorphans }}{% if post.published %}</a>{% endif %}</h2>
+          <h2>{% if post.live %}<a href="{{ post.url }}">{% endif %}{{ post.title|killorphans }}{% if post.live %}</a>{% endif %}</h2>
           <div class="meta-data">
             {% if post.published %}Published {{ post.published }}{% if post.updated %}, updated {{ post.updated }}{% endif %}{% endif %}
           </div>

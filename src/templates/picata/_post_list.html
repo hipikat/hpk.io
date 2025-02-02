@@ -18,7 +18,7 @@
     </div>{% endif %}
   </dt>
   <dd class="preview">
-    <h3>{% if post.published %}<a href="{{ post.url }}">{% endif %}{{ post.title }}{% if post.published %}</a>{% endif %}</h3>
+    <h3>{% if post.live %}<a href="{{ post.url }}">{% endif %}{{ post.title }}{% if post.live %}</a>{% endif %}</h3>
     {% if post.summary %}{{ post.summary|richtext }}{% endif %}
   </dd>
 {% endfor %}

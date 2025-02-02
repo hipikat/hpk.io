@@ -39,7 +39,11 @@ dev = [
   "watchdog>=6.0.0",
   "werkzeug>=3.1.3",
 ]
-test = ["pytest-django>=4.9.0", "pytest-xdist>=3.6.1"]
+test = [
+  "pytest-django>=4.9.0",
+  "pytest-playwright>=0.7.0",
+  "pytest-xdist>=3.6.1",
+]
 
 [tool.mypy]
 exclude = [
@@ -106,4 +110,14 @@ convention = "google" # Use Google's docstring conventions.
   "D104",   # Allow missing docstrings in empty migration modules.
   "Q000",   # Ignore smart quotes in migration files.
   "E501",   # Allow long lines in migration files.
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "hpk.settings.test"
+pythonpath = "src"
+python_files = 'tests.py test_*.py *_tests.py'
+norecursedirs = '.git .venv build dist lib logs media node_modules snapshots static'
+filterwarnings = [  # ACTION:MATCH_EXPRESSION:CATEGORY:MODULE:LINE
+  "ignore::django.utils.deprecation.RemovedInDjango60Warning",
+  "ignore:.*getdefaultlocale.*:DeprecationWarning",
 ]
