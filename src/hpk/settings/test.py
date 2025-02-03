@@ -24,7 +24,7 @@ SECRET_KEY = "django-insecure-9yz$rw8%)1wm-l)j6q-r&$bu_n52sv=4q6)c5u8n10+5w+anec
 # Default to an in-memory Sqlite database, or use a file or PostgreSQL on request
 test_db = getenv("HPK_TEST_DB", "memory")
 if test_db.startswith("postgres"):
-    raise NotImplementedError("PostgreSQL not yet supported for tests")
+    raise NotImplementedError("PostgreSQL not yet supported for tests.")
 else:
     DATABASES = {
         "default": {
