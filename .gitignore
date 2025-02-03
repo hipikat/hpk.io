@@ -1,32 +1,36 @@
+# Sensitive
 .env
 secrets.tfvars
 
+# Environments
 .venv/
 node_modules/
 
+# OpenTofu state
 .terraform
 terraform.tfstate
 terraform.tfstate.*
 terraform.tfstate.d/
 infra/dot_env.tfvars
 
+# Generated & runtime
 build/
-db-test.sqlite3
 lib/
+logs/
 media/
 !snapshots/latest/media/
 static/
 !src/static/
-src/db.sqlite3
 snapshots/*.tgz
-emergency_backup.dump
 
-logs/
-*.log
-
+# Transient/junk
 __pycache__
 *.swp
-.junk/
 .DS_Store
-
+.coverage
 .dmypy.json
+.junk/
+*.log
+db-test.sqlite3
+emergency_backup.dump
+src/db.sqlite3
