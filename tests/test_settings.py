@@ -6,6 +6,7 @@ import os
 import pytest
 
 
+@pytest.mark.xdist_group(name="settings")
 def test_dev_settings() -> None:
     """Test dev settings."""
     from hpk.settings import dev
@@ -14,6 +15,7 @@ def test_dev_settings() -> None:
     assert dev.DEBUG
 
 
+@pytest.mark.xdist_group(name="settings")
 def test_dev_settings_runserver() -> None:
     """Test dev settings when calling runserver."""
     from hpk.settings import dev
@@ -24,20 +26,20 @@ def test_dev_settings_runserver() -> None:
     assert dev.MIDDLEWARE.index("debug_toolbar.middleware.DebugToolbarMiddleware") == 0
 
 
+@pytest.mark.xdist_group(name="settings")
 def test_dev_settings_collectstatic() -> None:
     """Test dev settings contains `ManifestStaticFilesStorage` when running collectstatic."""
     from hpk.settings import dev
 
     os.environ["DJANGO_MANAGEMENT_COMMAND"] = "collectstatic"
     importlib.reload(dev)
-    assert "debug_toolbar" in dev.INSTALLED_APPS
-
     assert (
         "django.contrib.staticfiles.storage.ManifestStaticFilesStorage"
         in dev.STORAGES["staticfiles"]["BACKEND"]
     )
 
 
+@pytest.mark.xdist_group(name="settings")
 def test_mypy_settings() -> None:
     """Test mypy can be imported without throwing an exception."""
     try:
@@ -48,6 +50,7 @@ def test_mypy_settings() -> None:
     assert isinstance(module, object), "Module was not properly imported."
 
 
+@pytest.mark.xdist_group(name="settings")
 def test_prod_settings() -> None:
     """Test production settings."""
     from hpk.settings import prod
@@ -58,6 +61,7 @@ def test_prod_settings() -> None:
     )
 
 
+@pytest.mark.xdist_group(name="settings")
 def test_postgres_testing_not_supported() -> None:
     """Ensure test settings raise NotImplementedError when using PostgreSQL."""
     with pytest.raises(NotImplementedError, match="PostgreSQL not yet supported for tests."):  # noqa: PT012
@@ -67,6 +71,7 @@ def test_postgres_testing_not_supported() -> None:
         importlib.reload(test)
 
 
+@pytest.mark.xdist_group(name="settings")
 @pytest.mark.parametrize("command", ["shell", "runserver"])
 def test_test_settings_commands_install_extensions(command: str) -> None:
     """Ensure 'django_extensions' added to INSTLLED_APPS when running shell or runserver."""

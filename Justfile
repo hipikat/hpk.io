@@ -872,7 +872,7 @@ sync-env env:
 # Run Pytest & Coverage; generate the HTML report and also output to the terminal
 [group('workflow')]
 test-python:
-    pytest -q -n auto --cov=hpk --cov-report=term-missing --cov-report=html
+    pytest -q --cov=hpk --cov-report=term-missing --cov-report=html
 
 # Run all tests (currently just pytest, with coverage)
 [group('workflow')]
