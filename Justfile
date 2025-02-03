@@ -868,3 +868,13 @@ dev-mode:
 [group('workflow')]
 sync-env env:
     just ssh-in {{ env }} sudo just -f /app/Justfile sync-remote
+
+# Run Pytest & Coverage; generate the HTML report and also output to the terminal
+[group('workflow')]
+test-python:
+    pytest -q -n auto --cov=hpk --cov-report=term-missing --cov-report=html
+
+# Run all tests (currently just pytest, with coverage)
+[group('workflow')]
+test:
+    just test-python
