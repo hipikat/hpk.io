@@ -30,6 +30,9 @@ with contextlib.suppress(Exception):
 INTERNAL_IPS += CLASS_C_DEVICE_ADDRS
 ALLOWED_HOSTS += CLASS_C_NETWORK_ADDR
 
+
+INSTALLED_APPS += ["django_extensions"]
+
 if getenv("DJANGO_MANAGEMENT_COMMAND", "").startswith("runserver"):
     logger.warning(
         f"Loading hpk.settings.dev…\nINTERNAL_IPS = {INTERNAL_IPS}\nALLOWED_HOSTS = {ALLOWED_HOSTS}"
@@ -52,10 +55,7 @@ if getenv("DJANGO_MANAGEMENT_COMMAND", "").startswith("runserver"):
     ]
 
     # Enable Django Debug Toolbar and runserver_plus
-    INSTALLED_APPS += [
-        "debug_toolbar",
-        "django_extensions",
-    ]
+    INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware", *MIDDLEWARE]
 
 
