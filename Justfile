@@ -36,6 +36,8 @@ post_install_picata() {
     pre-commit install
 }
 pre_install_wagtail() {
+    echo "Removing previously built editable directories..."
+    rm -rf build/*
     echo "Installing Node toolchain for Wagtail..."
     npm ci
     echo "Compiling assets for Wagtail..."
@@ -45,24 +47,24 @@ post_install_wagtail() {
     uv pip install ruff --upgrade
     editable_path=$(echo build/__editable__.*)
     static_dirs=(
-        "wagtail/admin/static/"
-        "wagtail/documents/static/"
-        "wagtail/embeds/static/"
-        "wagtail/images/static/"
-        "wagtail/contrib/search_promotions/static/"
-        "wagtail/users/static/"
+        "wagtail/admin/static_src/"
+        "wagtail/documents/static_src/"
+        "wagtail/embeds/static_src/"
+        "wagtail/images/static_src/"
+        "wagtail/contrib/search_promotions/static_src/"
+        "wagtail/users/static_src/"
     )
     for dir in "${static_dirs[@]}"; do
         dest="$editable_path/$dir"
         if [ -d "$dir" ]; then
-            echo "Copying static files from $dir to $dest..."
+            echo "In $(pwd); linking static files under $dir to $dest..."
             mkdir -p "$dest"
-            cp -r "$dir"/* "$dest"
+            cp -rf $dir* "$dest"
         else
             echo "Warning: Source directory $dir does not exist. Skipping..."
         fi
     done
-    echo "Static files copied successfully."
+    echo "Static files symlinked successfully."
 }
 '''
 
@@ -665,7 +667,7 @@ install-editable package:
     post_install_function="post_install_$package"
     if declare -f "$post_install_function" > /dev/null; then
         echo "Running post-install steps for $package in $repo_path..."
-        (cd "$repo_path" && "$post_install_function")
+        (cd "$repo_path" && echo "*** RUNNING $post_install_function FROM $(pwd)" && "$post_install_function")
     fi
     if declare -f "finalise_install" > /dev/null; then
         echo "Running finalise_install..."
