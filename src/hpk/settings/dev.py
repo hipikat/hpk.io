@@ -1,12 +1,13 @@
 """Django settings for development environments."""
 
-# ruff: noqa: F405 ERA001
+# ruff: noqa: F405 ERA001 F403
 # mypy: disable-error-code="index"
 # pyright: reportCallIssue=false, reportArgumentType=false
 
 import logging
 
-from .base import *  # noqa: F403
+from ._shell_plus_imports import *
+from .base import *
 from .base import LOGGING
 
 # NB: The logging system isn't set up yet; this is the "root" logger, which'll just write to stderr
