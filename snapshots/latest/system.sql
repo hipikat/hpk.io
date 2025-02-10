@@ -82,6 +82,7 @@ COPY public.django_content_type (id, app_label, model) FROM stdin;
 49	auth	user
 50	contenttypes	contenttype
 51	sessions	session
+52	picata	postseries
 \.
 
 
@@ -297,6 +298,10 @@ COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
 205	Can change session	51	change_session
 206	Can delete session	51	delete_session
 207	Can view session	51	view_session
+208	Can add post series	52	add_postseries
+209	Can change post series	52	change_postseries
+210	Can delete post series	52	delete_postseries
+211	Can view post series	52	view_postseries
 \.
 
 
@@ -542,6 +547,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 211	wagtailusers	0014_userprofile_contrast	2025-01-24 00:34:19.628532+00
 212	wagtailimages	0001_squashed_0021	2025-01-24 00:34:19.641243+00
 213	wagtailcore	0001_squashed_0016_change_page_url_path_to_text_field	2025-01-24 00:34:19.644137+00
+214	picata	0002_postseries	2025-02-05 01:17:09.472972+00
 \.
 
 
@@ -563,21 +569,21 @@ SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 16, true);
 -- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: wagtail
 --
 
-SELECT pg_catalog.setval('public.auth_permission_id_seq', 207, true);
+SELECT pg_catalog.setval('public.auth_permission_id_seq', 211, true);
 
 
 --
 -- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: wagtail
 --
 
-SELECT pg_catalog.setval('public.django_content_type_id_seq', 51, true);
+SELECT pg_catalog.setval('public.django_content_type_id_seq', 52, true);
 
 
 --
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: wagtail
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 213, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 214, true);
 
 
 --

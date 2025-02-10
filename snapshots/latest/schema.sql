@@ -427,6 +427,18 @@ CREATE TABLE public.picata_postgrouppage (
 ALTER TABLE public.picata_postgrouppage OWNER TO wagtail;
 
 --
+-- Name: picata_postseries; Type: TABLE; Schema: public; Owner: wagtail
+--
+
+CREATE TABLE public.picata_postseries (
+    page_ptr_id integer NOT NULL,
+    introduction jsonb NOT NULL
+);
+
+
+ALTER TABLE public.picata_postseries OWNER TO wagtail;
+
+--
 -- Name: picata_socialsettings; Type: TABLE; Schema: public; Owner: wagtail
 --
 
@@ -1851,6 +1863,14 @@ ALTER TABLE ONLY public.picata_pagetagrelation
 
 ALTER TABLE ONLY public.picata_postgrouppage
     ADD CONSTRAINT picata_postgrouppage_pkey PRIMARY KEY (page_ptr_id);
+
+
+--
+-- Name: picata_postseries picata_postseries_pkey; Type: CONSTRAINT; Schema: public; Owner: wagtail
+--
+
+ALTER TABLE ONLY public.picata_postseries
+    ADD CONSTRAINT picata_postseries_pkey PRIMARY KEY (page_ptr_id);
 
 
 --
@@ -3436,6 +3456,14 @@ ALTER TABLE ONLY public.picata_pagetagrelation
 
 ALTER TABLE ONLY public.picata_postgrouppage
     ADD CONSTRAINT picata_postgrouppage_page_ptr_id_77d53743_fk_wagtailco FOREIGN KEY (page_ptr_id) REFERENCES public.wagtailcore_page(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: picata_postseries picata_postseries_page_ptr_id_b087a94a_fk_wagtailcore_page_id; Type: FK CONSTRAINT; Schema: public; Owner: wagtail
+--
+
+ALTER TABLE ONLY public.picata_postseries
+    ADD CONSTRAINT picata_postseries_page_ptr_id_b087a94a_fk_wagtailcore_page_id FOREIGN KEY (page_ptr_id) REFERENCES public.wagtailcore_page(id) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
