@@ -17,6 +17,7 @@ repos="picata django"
 declare -A upstreams origins extras
 upstreams=(
     [django]="https://github.com/django/django.git"
+    [picata]="https://github.com/hipikat/picata.git"
     [pre-commit]="https://github.com/pre-commit/pre-commit.git"
     [pygments]="https://github.com/pygments/pygments.git"
     [ruff]="https://github.com/astral-sh/ruff"
