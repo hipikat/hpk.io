@@ -432,7 +432,8 @@ ALTER TABLE public.picata_postgrouppage OWNER TO wagtail;
 
 CREATE TABLE public.picata_postseries (
     page_ptr_id integer NOT NULL,
-    introduction jsonb NOT NULL
+    introduction jsonb NOT NULL,
+    summary text NOT NULL
 );
 
 

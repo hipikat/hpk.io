@@ -548,6 +548,7 @@ COPY public.django_migrations (id, app, name, applied) FROM stdin;
 212	wagtailimages	0001_squashed_0021	2025-01-24 00:34:19.641243+00
 213	wagtailcore	0001_squashed_0016_change_page_url_path_to_text_field	2025-01-24 00:34:19.644137+00
 214	picata	0002_postseries	2025-02-05 01:17:09.472972+00
+215	picata	0003_postseries_summary_alter_postseries_introduction	2025-02-11 02:44:37.071232+00
 \.
 
 
@@ -583,7 +584,7 @@ SELECT pg_catalog.setval('public.django_content_type_id_seq', 52, true);
 -- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: wagtail
 --
 
-SELECT pg_catalog.setval('public.django_migrations_id_seq', 214, true);
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 215, true);
 
 
 --
