@@ -426,7 +426,7 @@ test = [
 [package.metadata]
 requires-dist = [
     { name = "gunicorn", specifier = ">=23.0.0" },
-    { name = "picata", specifier = ">=0.0.12" },
+    { name = "picata", specifier = ">=0.0.13" },
 ]
 
 [package.metadata.requires-dev]
@@ -666,7 +666,7 @@ wheels = [
 
 [[package]]
 name = "picata"
-version = "0.0.12"
+version = "0.0.13"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "lxml" },
@@ -677,9 +677,9 @@ dependencies = [
     { name = "wagtail" },
     { name = "wagtail-modeladmin" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f7/7c/613688b34556192275b2726a5e9b522d5154ad52c7a29016b3f802e321ad/picata-0.0.12.tar.gz", hash = "sha256:a63bbba7ce800e07ba2445819dfe2c3b68016865a5854fc92edf563fb6fc8b2e", size = 2184222 }
+sdist = { url = "https://files.pythonhosted.org/packages/b2/35/3b397ae74691d9d88e2b483924dbaa36b809562a03cde4b5f020a8c47cea/picata-0.0.13.tar.gz", hash = "sha256:2724c3ed4aa30ad64eadccb3df9fb3cc3faf6cb744c2ac48354c35566de86e4f", size = 2184253 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a4/91/c0e577e5390ddf3e2117ebb7619230bdcdfc9bdad46de9c5a768857a8017/picata-0.0.12-py3-none-any.whl", hash = "sha256:762ce95848a580d36e8bdf8f32d0804831c231f06ecc8dd2cc973262ce1e41e2", size = 2639214 },
+    { url = "https://files.pythonhosted.org/packages/90/0d/db643992619daca57f2b13facb92fc89195f5aecbb5664ef44dece4a6a39/picata-0.0.13-py3-none-any.whl", hash = "sha256:07ed0918b53622cc28bd1cdc6693189c7777d16c89e13e5366e6729382030bed", size = 2639270 },
 ]
 
 [[package]]
