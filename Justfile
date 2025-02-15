@@ -6,12 +6,10 @@ set positional-arguments := true
 # Constants/Preferences/shell-setup-scripts
 
 user := "${DEVELOPER}"
-
 test_env := '''
     export HPK_TEST_DB=db-test.sqlite3
     export DJANGO_SETTINGS_MODULE=hpk.settings.test
 '''
-
 editables := '''
 repos="picata django"
 declare -A upstreams origins extras
