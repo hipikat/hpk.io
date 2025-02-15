@@ -22,11 +22,12 @@
   <dd class="preview">
     <h3>{% if post.live %}<a href="{{ post.url }}">{% endif %}{{ post.title }}{% if post.live %}</a>{% endif %}</h3>
     {% if post.summary %}{{ post.summary|richtext }}{% endif %}
-    {% if post.parts %}<ul class="parts">
-      {% for part in post.parts %}<li>
-        <h4>Part {{ forloop.counter }}: {% if part.live %}<a href="{{ part.url }}">{% endif %}{{ part.title }}{% if part.live %}</a>{% endif %}</h4>
-        {% if part.summary %}{{ part.summary|richtext }}{% endif %}
-      </li>{% endfor %}
-    </ul>{% endif %}
+    {% if post.parts %}<div class="join join-vertical border-collapse">
+      {% for part in post.parts %}<div class="collapse collapse-arrow join-item border-2 -mt-2 border-base-300">
+        <input type="radio" name="accordion-{{ forloop.parentloop.counter }}" {% if forloop.last %}{% endif%} />
+        <h4 class="collapse-title">Part {{ forloop.counter }}: {% if part.live %}<a href="{{ part.url }}" style="z-index: 2; position:relative;">{% endif %}{{ part.title }}{% if part.live %}</a>{% endif %}</h4>
+        <div class="collapse-content">{% if part.summary %}{{ part.summary|richtext }}{% endif %}</div>
+      </div>{% endfor %}
+    </div>{% endif %}
   </dd>
 {% endfor %}

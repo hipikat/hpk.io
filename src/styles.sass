@@ -346,6 +346,16 @@ div.pygments
     &::after
       background: linear-gradient(to left, color-mix(in srgb, oklch(var(--b3)), rgb(0 0 0 / 0.17)), transparent)
 
+div.collapse
+  > h1, h2, h3, h4, h5, h6
+    @apply mt-0 py-2 min-h-0
+  > input[type="radio"], .collapse-title
+    @apply min-h-0
+  > .collapse-content
+    @apply pb-0
+    & :first-child
+      @apply -mt-1
+
 
 // Template styles
 main.home-page
