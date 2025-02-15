@@ -91,6 +91,7 @@
     @apply mt-6
 
 
+
   // :where(pre):not(:where([class~="not-prose"], [class~="not-prose"] *))
   //   @apply mt-3
 
@@ -356,6 +357,10 @@ div.collapse
     & :first-child
       @apply -mt-1
 
+.card-body
+  @apply p-5
+  > h1, h2, h3, h4, h5, h6
+    @apply my-0
 
 // Template styles
 main.home-page
@@ -368,13 +373,16 @@ main.home-page
     .meta-data
       @apply w-full text-sm italic
 
-main.post-list
+main.post-list, main.post-series
   .meta-data
     @apply text-xs pt-6
     h2
       @apply font-cursive
     span
       @apply whitespace-nowrap
+    &.part
+      span.number
+        @apply text-lg font-bold font-heading block
   .preview
     @apply pt-5
     h3
@@ -389,10 +397,16 @@ main.post-list
         @apply absolute left-0
         top: 2px
         content: "❯"
+    :where(h2):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+    :where(h3):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+    :where(h4):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+    :where(h5):not(:where([class~="not-prose"], [class~="not-prose"] *)),
+    :where(h6):not(:where([class~="not-prose"], [class~="not-prose"] *))
+      @apply mt-0
   dd.title
     @apply pb-4
 
-main.article
+main.article, main.post-series
   aside
     .tagline
       @apply hidden sm:block text-center text-2xl italic
@@ -414,6 +428,16 @@ main.article
       @apply mb-3
     h2, h3, h4, h5, h6
       @apply mb-2
+
+.series-data.card
+  @apply mt-4 mb-6
+  h2
+    @apply my-0 font-normal text-lg
+  ol
+    @apply mb-0
+  .current
+    @apply font-bold
+
 
 main.search-results
   h1 + h2

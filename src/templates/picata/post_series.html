@@ -1,0 +1,31 @@
+{% extends "picata/dl_view.html" %}
+{% load wagtailcore_tags %}
+
+{% block main_classes %}{{ block.super }} post-series{% endblock %}
+
+{% block content %}
+  <dl>
+    <dt></dt><dd>
+      <article class="prose">
+        <h1>{{ title }}</h1>
+        <ul class="parts">{% for part in parts %}
+          <li>Part {{ forloop.counter }}: {% if part.live %}<a href="{{ part.url }}">{% endif %}{{ part.title}}{% if part.live %}</a>{% endif %}</li>
+        {% endfor %}</ul>
+        {{ introduction }}
+      </article>
+    </dd>
+
+    {% if parts %}{% for part in parts %}
+      <dt class="part meta-data">
+        <span class="number">Part {{ forloop.counter }}</span>
+        {% if part.published %}Published <span>{{ part.published }}</span>{% endif %}
+        {% if part.updated %}Updated <span>{{ part.updated }}</span>{% endif %}
+      </dt>
+      <dd class="part preview prose">
+        <h2>{% if part.live %}<a href="{{ part.url }}" style="z-index: 2; position:relative;">{% endif %}{{ part.title }}{% if part.live %}</a>{% endif %}</h2>
+        {{ part.summary|richtext }}
+      </dd>
+    {% endfor %}{% endif %}
+
+  </dl>
+{% endblock %}

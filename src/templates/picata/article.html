@@ -16,6 +16,16 @@
 
 {% block article %}
   <h1>{{ page.title|killorphans }}</h1>
+  {% if series %}<nav class="series-data card bg-neutral text-neutral-content">
+    <div class="card-body">
+      <h2>Part {{ series.this_part }} of <a href="{{ series.url }}">{{ series.title }}</a></h2>
+      {% if series.parts %}<ol>{% for part in series.parts %}
+        <li{% if forloop.counter == series.this_part %} class="current"{% endif %}>
+          {% if part.live and not forloop.counter == series.this_part %}<a href="{{ part.url }}">{% endif %}{{ part.title }}{% if part.live and not forloop.counter == series.this_part %}</a>{% endif %}
+        </li>
+      {% endfor %}</ol>{% endif %}
+    </div>
+  </nav>{% endif %}
   {{ page.content }}
 {% endblock %}
 
