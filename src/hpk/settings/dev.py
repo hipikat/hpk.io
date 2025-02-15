@@ -1,12 +1,13 @@
 """Django settings for development environments."""
 
-# ruff: noqa: F405 ERA001
+# ruff: noqa: F405 ERA001 F403
 # mypy: disable-error-code="index"
 # pyright: reportCallIssue=false, reportArgumentType=false
 
 import logging
 
-from .base import *  # noqa: F403
+from ._shell_plus_imports import *
+from .base import *
 from .base import LOGGING
 
 # NB: The logging system isn't set up yet; this is the "root" logger, which'll just write to stderr
@@ -30,6 +31,9 @@ with contextlib.suppress(Exception):
 INTERNAL_IPS += CLASS_C_DEVICE_ADDRS
 ALLOWED_HOSTS += CLASS_C_NETWORK_ADDR
 
+
+INSTALLED_APPS += ["django_extensions"]
+
 if getenv("DJANGO_MANAGEMENT_COMMAND", "").startswith("runserver"):
     logger.warning(
         f"Loading hpk.settings.dev…\nINTERNAL_IPS = {INTERNAL_IPS}\nALLOWED_HOSTS = {ALLOWED_HOSTS}"
@@ -52,10 +56,7 @@ if getenv("DJANGO_MANAGEMENT_COMMAND", "").startswith("runserver"):
     ]
 
     # Enable Django Debug Toolbar and runserver_plus
-    INSTALLED_APPS += [
-        "debug_toolbar",
-        "django_extensions",
-    ]
+    INSTALLED_APPS += ["debug_toolbar"]
     MIDDLEWARE = ["debug_toolbar.middleware.DebugToolbarMiddleware", *MIDDLEWARE]
 
 

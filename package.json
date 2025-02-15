@@ -47,7 +47,7 @@
     "eslint-plugin-tailwindcss": "^3.18.0",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "typescript-eslint": "^8.22.0"
+    "typescript-eslint": "^8.23.0"
   },
   "scripts": {
     "webpack": "run-p webpack:prod webpack:debug",

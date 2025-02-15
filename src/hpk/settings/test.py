@@ -1,12 +1,13 @@
 """Django settings for test environments."""
 
-# ruff: noqa: F405 ERA001
+# ruff: noqa: F405 ERA001 F403
 # mypy: disable-error-code="index"
 # pyright: reportCallIssue=false, reportArgumentType=false
 
 import logging
 
-from .base import *  # noqa: F403  # noqa: F403
+from ._shell_plus_imports import *
+from .base import *
 
 # NB: The logging system isn't set up yet; this is the "root" logger, which'll just write to stderr
 logger = logging.getLogger()
@@ -40,5 +41,3 @@ if getenv("DJANGO_MANAGEMENT_COMMAND", "").startswith(("shell", "runserver")):
     INSTALLED_APPS += [
         "django_extensions",
     ]
-
-    SHELL_PLUS_IMPORTS = ["from hpk.tests import fixtures"]

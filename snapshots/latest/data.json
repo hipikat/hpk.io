@@ -209,54 +209,6 @@
 },
 {
   "model": "picata.pagetagrelation",
-  "pk": 74,
-  "fields": {
-    "tag": 11,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 75,
-  "fields": {
-    "tag": 12,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 76,
-  "fields": {
-    "tag": 13,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 77,
-  "fields": {
-    "tag": 14,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 78,
-  "fields": {
-    "tag": 5,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
-  "pk": 79,
-  "fields": {
-    "tag": 6,
-    "content_object": 8
-  }
-},
-{
-  "model": "picata.pagetagrelation",
   "pk": 148,
   "fields": {
     "tag": 16,
@@ -320,6 +272,62 @@
   }
 },
 {
+  "model": "picata.pagetagrelation",
+  "pk": 170,
+  "fields": {
+    "tag": 11,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 171,
+  "fields": {
+    "tag": 12,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 172,
+  "fields": {
+    "tag": 13,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 173,
+  "fields": {
+    "tag": 14,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 174,
+  "fields": {
+    "tag": 19,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 175,
+  "fields": {
+    "tag": 5,
+    "content_object": 8
+  }
+},
+{
+  "model": "picata.pagetagrelation",
+  "pk": 176,
+  "fields": {
+    "tag": 18,
+    "content_object": 8
+  }
+},
+{
   "model": "picata.article",
   "pk": 5,
   "fields": {
@@ -354,8 +362,8 @@
   "pk": 8,
   "fields": {
     "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
-    "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploy a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
-    "content": "[{\"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">Let's see if a <code>cloud-init</code> file will render nicely at all with Pygments\\u2026</p>\"}, {\"id\": \"135e20b3-7c89-4827-8aa2-ff37aed566e8\", \"type\": \"code\", \"value\": {\"code\": \"runcmd:\\r\\n  # Enable systemd journal services\\r\\n  - echo \\\">>> Enabling systemd journal services\\\"\\r\\n  - mkdir -p /var/log/journal\\r\\n  - systemctl restart systemd-journald\\r\\n\\r\\n  # Set the server's timezone\\r\\n  - echo \\\">>> Setting the server's timezone to ${timezone}\", \"language\": \"bash\"}}]",
+    "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploying a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+    "content": "[{\"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">The following is basically a walk-through of what I use to deploy this site. The <i>vast</i> majority of configuration is shared between between development, staging, test &amp; production environments, with features toggled and controlled entirely though settings files &amp; environment variables.</p><blockquote data-block-key=\\\"8dtvl\\\"><a href=\\\"https://github.com/hipikat/hpk.io\\\">This site's code is open source, MIT-licensed and publicly available on GitHub</a>, in case you want to see what I've been doing with it lately, or dig deeper into the code snippets offered below \\u2013\\u00a0but I'll try to keep this article as a \\\"live document\\\", and update it when anything significant changes.</blockquote><h2 data-block-key=\\\"eb9ac\\\">The stack, or In Praise of Simplicity</h2><h3 data-block-key=\\\"dg2\\\">Just</h3><p data-block-key=\\\"6lmld\\\">I use <a href=\\\"https://just.systems\\\">Just</a> as a command runner, with <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/Justfile\\\">one very big Justfile</a>, and I can't recommend it highly enough. Shell scripts are alive and well [okay, well, as well as they've ever been] as the glue that holds all of \\\"computing\\\" and \\\"the internet\\\" together, whether you like it or not. Probably not.</p><p data-block-key=\\\"8o8v4\\\">Embracing Just amalgamates the dozens-to-hundreds of shell scripts any real project needs into a nice, sensible, single source. But if you're not into it or can't install it on that locked-down corporate server for some reason, the code <i>inside</i> my Justfile recipes is more-or-less POSIX-compliant shell script; you might just have to manage their yourself.</p><h3 data-block-key=\\\"28v6o\\\">OpenTofu</h3><p data-block-key=\\\"90hk3\\\">Hopefully you're familiar with <a href=\\\"https://www.terraform.io\\\">Terraform</a>? After HashiCorp changed it to use a Business Source License (BSL), it was <a href=\\\"https://opentofu.org/blog/opentofu-announces-fork-of-terraform/\\\">forked into OpenTofu</a>, which aims to be backwards compatible and retain feature parity. At least for small use-cases such as the one here you can basically just type <code>tofu</code> instead of <code>terraform</code>. Or you could just use Terraform. Either way, \\\"tofu\\\" requires 5 fewer key-strokes.</p><h3 data-block-key=\\\"9viid\\\">cloud-init</h3><p data-block-key=\\\"ddlfl\\\">Don't get me wrong; I <i>love</i> Infrastructure as Code (aka Iac); I've invested countless hours getting to grips with <a href=\\\"https://saltproject.io\\\">Salt</a> in my spare time, and working with <a href=\\\"https://www.puppet.com\\\">Puppet</a> professionally. But when I wanted to start deploying development servers as easily and cheaply as possible\\u00a0I started with a <a href=\\\"https://cloud-init.io\\\">cloud-init</a> script, because even if I wanted to go full-on IaC later, that provided the quickest way to iterate and actually make sure everything was going where it was meant to be.</p><p data-block-key=\\\"eda1d\\\">And it turned out the time-to-deployment was so low (roughly 5 minutes), that it just hasn't been worth re-implementing everything you're about to see before you in higher-level abstractions.</p>\"}]",
     "page_type": null
   }
 },
@@ -366,6 +374,26 @@
     "tagline": "\"Import only what you need to survive\"",
     "summary": "<p data-block-key=\"lh6z1\">Development server running out of memory? Or maybe your <code>runserver</code> process is taking forever to load, and other management commands take too long? Here are some optimisation tips I used to speed up – and slim down – every part of my Django development experience.</p>",
     "content": "[{\"id\": \"5462860b-3278-4e40-bdc0-4d8a2d16d5ea\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"qkuhz\\\">The basics</h2><p data-block-key=\\\"8nbms\\\">Your <a href=\\\"https://docs.djangoproject.com/en/5.1/topics/settings/\\\">Django settings</a> are conceptually fairly simple, and should be <i>kept</i> simple in practice. For most purposes it's generally best to just start with three modules under your <code>(project).settings</code> package\\u2026</p><ul><li data-block-key=\\\"5oef0\\\"><code>base.py</code> for the vast majority of defaults not affected by the environment</li><li data-block-key=\\\"34l3c\\\"><code>dev.py</code>, importing everything from <code>base.py</code> and adding dev/debug settings</li><li data-block-key=\\\"83kac\\\"><code>prod.py</code>, importing everything from <code>base.py</code> and adding production settings</li></ul><p data-block-key=\\\"4ktc2\\\">I'd also go so far as to argue that your concrete settings files are literally the only place in a codebase where it's acceptable to just \\\"import star\\\", though hopefully you're using Ruff or a similar linter, and at least acknowledge the potential folly with an ignore directive\\u2026</p>\"}, {\"id\": \"956e470b-4eb4-4f34-9839-d38f1d7047b4\", \"type\": \"code\", \"value\": {\"code\": \"from .base import *  # noqa: F403\", \"language\": \"python\"}}, {\"id\": \"bc7bb96e-766e-4f2d-bfd2-5503f05e2ce6\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"e8850\\\">Something fishy going on</h2><p data-block-key=\\\"6m1us\\\">Some time into development, after na\\u00efvely adding a lot of \\\"dev-mode-and-debugging\\\" stuff to my <code>dev.py</code>, I noticed a few of things:</p><ul><li data-block-key=\\\"3u0k\\\">My dev servers (which were DigitalOcean droplets with 2cpus &amp; 8 gigs of ram at the time) were running out of memory a lot more often than they should</li><li data-block-key=\\\"4q5un\\\"><code>runserver_plus</code>was taking <i>ages</i> to start serving pages</li><li data-block-key=\\\"bh62j\\\"><code>django-admin</code> commands were taking unusually long to run</li><li data-block-key=\\\"96hss\\\"><code>mypy</code> was taking yonks to do its thing, and <code>mypyd</code> was the main process eating up all of my precious memory</li></ul>\"}, {\"id\": \"1a850079-9156-4e4b-8ec7-46a75d51feb1\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"6npb3\\\">The diagnosis</h2><p data-block-key=\\\"63aaj\\\">So yes, the thing is, if your \\\"dev settings\\\" just turn everything on at the module level then all those things are going to be imported and run whenever <i>any</i> Django management command runs.</p><p data-block-key=\\\"2dkm\\\">If you've moved at all beyond the basics, that might mean you're loading <a href=\\\"https://django-extensions.readthedocs.io/en/latest/\\\"><code>django-extensions</code></a> and the <a href=\\\"https://django-debug-toolbar.readthedocs.io/en/latest/\\\">Django Debug Toolbar</a> into your code with every command, and if you've stepped into the wonderful world of static type-checking you might be letting <a href=\\\"https://github.com/typeddjango/django-stubs\\\"><code>django-stubs</code></a> monkey-patch your code. (Or at least I was\\u2026)</p><p data-block-key=\\\"6ni74\\\">But: I found I don't actually need <code>django-extensions</code> for anything at all besides <code>runserver(_plus)</code>, and monkey-patching type-hints into Django is resource intensive, and only needed for <code>mypy[d]</code>.</p>\"}, {\"id\": \"67e42a76-b7d9-4831-bbbc-3ba28829d167\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"rltrc\\\">The solutions</h2><h3 data-block-key=\\\"akm1c\\\">Conditional settings &amp; discovering the execution context</h3><p data-block-key=\\\"5jd4d\\\">Django doesn't provide an immediately obvious way for you to tell exactly what spawned the code that's currently being imported\\u2026</p><p data-block-key=\\\"73alp\\\">Your <code>manage.py</code> is a simple little file that generally remains untouched, and acts as the entry-point for the <code>django-admin</code> command (assuming you aren't already just running things with <code>python manage.py</code>) \\u2013 but people can and do often augment it for their own purposes and this is an ideal time to add a couple of lines before that final <code>execute_from_command_line(argv)</code> call:</p>\"}, {\"id\": \"eefff5a9-072d-4441-97b7-b1539a202111\", \"type\": \"code\", \"value\": {\"code\": \"if len(argv) >= 2:  # noqa: PLR2004\\r\\n    environ.setdefault(\\\"DJANGO_MANAGEMENT_COMMAND\\\", argv[1])\\r\\n\\r\\nfrom django.core.management import execute_from_command_line\\r\\n\\r\\nexecute_from_command_line(argv)\", \"language\": \"python\"}}, {\"id\": \"a5c6cf0d-2bf2-4a29-ae68-f066f94c5435\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">And now you can selectively and exclusively import <code>django-extensions</code> and all the DJDT stuff when you know you're in a <code>runserver</code> or <code>runserver_plus</code> context with something like like this in your <code>(project).settings.dev</code> module:</p>\"}, {\"id\": \"7240bf41-70ec-479d-9b25-85b556113571\", \"type\": \"code\", \"value\": {\"code\": \"if getenv(\\\"DJANGO_MANAGEMENT_COMMAND\\\", \\\"\\\").startswith(\\\"runserver\\\"):\\r\\n    RUNSERVERPLUS_POLLER_RELOADER_TYPE = \\\"watchdog\\\"\\r\\n    RUNSERVER_PLUS_EXCLUDE_PATTERNS = [\\r\\n        \\\".venv/*\\\",\\r\\n        \\\".vscode/*\\\",\\r\\n        \\\"node_modules/*\\\",\\r\\n        \\\"media/*\\\",\\r\\n        \\\"src/migrations/*\\\",\\r\\n        \\\"static/*\\\",\\r\\n    ]\\r\\n\\r\\n    # Enable Django Debug Toolbar and runserver_plus\\r\\n    INSTALLED_APPS += [\\r\\n        \\\"debug_toolbar\\\",\\r\\n        \\\"django_extensions\\\",\\r\\n    ]\\r\\n    MIDDLEWARE = [\\\"debug_toolbar.middleware.DebugToolbarMiddleware\\\", *MIDDLEWARE]\", \"language\": \"python\"}}, {\"id\": \"95e5f16f-08ba-4c17-9a22-74dd47e8aaa9\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">(and yes there are a few hints for <a href=\\\"https://django-extensions.readthedocs.io/en/latest/runserver_plus.html#io-calls-and-cpu-usage\\\">other optimisations you should consider</a> if you haven't already, embedded in that block of code.)</p>\"}, {\"id\": \"fc562879-e5f4-4ba1-8652-15318e91b3d8\", \"type\": \"rich_text\", \"value\": \"<h3 data-block-key=\\\"x2vz7\\\">Settings exclusive to <code>mypy</code> (or whatever the kids are typing-checking with these days)</h3><p data-block-key=\\\"cbguh\\\">This brings us to the \\\"in 4 parts\\\" bit of this post. I now have a forth settings module in the form of <code>mypy.py</code> which consists entirely of:</p>\"}, {\"id\": \"f9d368d0-1254-4ba7-ba13-24d63bc9a7cd\", \"type\": \"code\", \"value\": {\"code\": \"\\\"\\\"\\\"Django settings for the mypy type-checking daemon.\\\"\\\"\\\"\\r\\n\\r\\nimport django_stubs_ext\\r\\n\\r\\nfrom .dev import *  # noqa: F403\\r\\n\\r\\ndjango_stubs_ext.monkeypatch()\", \"language\": \"python\"}}, {\"id\": \"856e31fe-697d-4b07-a4fd-8da214c55ff4\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"x2vz7\\\">\\u2026\\u00a0and then we can ensure the heavy burden of <a href=\\\"https://github.com/typeddjango/django-stubs\\\">monkey-patching Django with type-hinting stubs</a> happens when (and only when) needed by adding adding to our <code>pyproject.toml</code>:</p>\"}, {\"id\": \"2efa12b4-15bf-4775-b331-1ef58b13dee1\", \"type\": \"code\", \"value\": {\"code\": \"[tool.django-stubs]\\r\\ndjango_settings_module = \\\"(project).settings.mypy\\\"\", \"language\": \"toml\"}}, {\"id\": \"7e354794-1415-4e6e-b049-79ffaac523a8\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"ejdzv\\\">\\u2013 that means:</p><ol><li data-block-key=\\\"4auth\\\">any <code>mypyd</code> processes VS Code might launch if you've got an extension like <code>matangover.mypy</code> installed, and</li><li data-block-key=\\\"1fo9p\\\">the <code>mypy</code> process itself, which is great to run as a <a href=\\\"https://pre-commit.com\\\">pre-commit</a> hook.</li></ol>\"}, {\"id\": \"8ebf1316-b2c0-4e01-9c3d-96b6e017c8c4\", \"type\": \"rich_text\", \"value\": \"<h2 data-block-key=\\\"x2vz7\\\">The result\\u2026</h2><ul><li data-block-key=\\\"1ihcp\\\"><code>runserver[_plus]</code> need not waste your resources on loading Django stubs</li><li data-block-key=\\\"cb7r0\\\"><code>mypy[d]</code> won't be wasting cycles &amp; memory on debug stuff meant only for you</li><li data-block-key=\\\"35kj4\\\">All the other Django management commands aren't bogged down by your debugging code or monkey-patched type-hints</li></ul><p data-block-key=\\\"9b6pl\\\">\\u2026 and you can be happier, and iterate faster, on smaller development boxes. And isn't that what it's <i>really</i> all about?</p>\"}]",
+    "page_type": null
+  }
+},
+{
+  "model": "picata.article",
+  "pk": 11,
+  "fields": {
+    "tagline": "",
+    "summary": "<p data-block-key=\"p5xay\">Step 1: provision your boxes</p>",
+    "content": "[{\"id\": \"785a5567-4d56-42b7-9708-175a4a8762a9\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"gcdx6\\\">Okay let's get started\\u2026</p>\"}]",
+    "page_type": null
+  }
+},
+{
+  "model": "picata.article",
+  "pk": 12,
+  "fields": {
+    "tagline": "",
+    "summary": "",
+    "content": "[]",
     "page_type": null
   }
 },
@@ -393,6 +421,13 @@
   }
 },
 {
+  "model": "picata.postseries",
+  "pk": 10,
+  "fields": {
+    "introduction": "[{\"id\": \"8110632c-348c-4f52-98fa-bfd359249e99\", \"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"xftwa\\\">The following is basically a walk-through of what I use to deploy this site. The <i>vast</i> majority of configuration is shared between between development, staging, test &amp; production environments, with features toggled and controlled entirely though settings files &amp; environment variables.</p><blockquote data-block-key=\\\"3ok7f\\\"><a href=\\\"https://github.com/hipikat/hpk.io\\\">This site's code is open source, MIT-licensed and publicly available on GitHub</a>, in case you want to see what I've been doing with it lately, or dig deeper into the code snippets offered below \\u2013\\u00a0but I'll try to keep this article as a \\\"live document\\\", and update it when anything significant changes.</blockquote><h2 data-block-key=\\\"4irsa\\\">The stack, or In Praise of Simplicity</h2><h3 data-block-key=\\\"6f3m3\\\">Just</h3><p data-block-key=\\\"dard0\\\">I use <a href=\\\"https://just.systems\\\">Just</a> as a command runner, with <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/Justfile\\\">one very big Justfile</a>, and I can't recommend it highly enough. Shell scripts are alive and well [okay, well, as well as they've ever been] as the glue that holds all of \\\"computing\\\" and \\\"the internet\\\" together, whether you like it or not. Probably not.</p><p data-block-key=\\\"70uon\\\">Embracing Just amalgamates the dozens-to-hundreds of shell scripts any real project needs into a nice, sensible, single source. But if you're not into it or can't install it on that locked-down corporate server for some reason, the code <i>inside</i> my Justfile recipes is more-or-less POSIX-compliant shell script; you might just have to manage their yourself.</p><h3 data-block-key=\\\"3jt62\\\">OpenTofu</h3><p data-block-key=\\\"24ilr\\\">Hopefully you're familiar with <a href=\\\"https://www.terraform.io\\\">Terraform</a>? After HashiCorp changed it to use a Business Source License (BSL), it was <a href=\\\"https://opentofu.org/blog/opentofu-announces-fork-of-terraform/\\\">forked into OpenTofu</a>, which aims to be backwards compatible and retain feature parity. At least for small use-cases such as the one here you can basically just type <code>tofu</code> instead of <code>terraform</code>. Or you could just use Terraform. Either way, \\\"tofu\\\" requires 5 fewer key-strokes.</p><h3 data-block-key=\\\"fhani\\\">cloud-init</h3><p data-block-key=\\\"2k2ut\\\">Don't get me wrong; I <i>love</i> Infrastructure as Code (aka Iac); I've invested countless hours getting to grips with <a href=\\\"https://saltproject.io\\\">Salt</a> in my spare time, and working with <a href=\\\"https://www.puppet.com\\\">Puppet</a> professionally. But when I wanted to start deploying development servers as easily and cheaply as possible\\u00a0I started with a <a href=\\\"https://cloud-init.io\\\">cloud-init</a> script, because even if I wanted to go full-on IaC later, that provided the quickest way to iterate and actually make sure everything was going where it was meant to be.</p><p data-block-key=\\\"7js5j\\\">And it turned out the time-to-deployment was so low (roughly 5 minutes), that it just hasn't been worth re-implementing everything you're about to see before you in higher-level abstractions.</p>\"}]"
+  }
+},
+{
   "model": "wagtailredirects.redirect",
   "pk": 1,
   "fields": {
@@ -404,6 +439,20 @@
     "redirect_link": "",
     "automatically_created": true,
     "created_at": "2025-01-31T03:21:50.206Z"
+  }
+},
+{
+  "model": "wagtailredirects.redirect",
+  "pk": 2,
+  "fields": {
+    "old_path": "/blog/deploying-django-all-at-once",
+    "site": 1,
+    "is_permanent": true,
+    "redirect_page": 8,
+    "redirect_page_route_path": "",
+    "redirect_link": "",
+    "automatically_created": true,
+    "created_at": "2025-02-05T01:19:23.225Z"
   }
 },
 {
@@ -470,17 +519,6 @@
     "height": 630,
     "focal_point_key": "2e16d0ba",
     "image": 1
-  }
-},
-{
-  "model": "wagtailadmin.editingsession",
-  "pk": 131,
-  "fields": {
-    "user": 2,
-    "content_type": 1,
-    "object_id": "7",
-    "last_seen_at": "2025-01-31T03:18:59.543Z",
-    "is_editing": false
   }
 },
 {
@@ -766,90 +804,6 @@
 },
 {
   "model": "wagtailcore.referenceindex",
-  "pk": 129,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "14",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.77.tag",
-    "content_path_hash": "3c9c6fd4-24e0-5715-aa2d-83451a75992b"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 130,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "11",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.74.tag",
-    "content_path_hash": "f900db26-586e-58c1-95d7-23afd8f1bb50"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 131,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "13",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.76.tag",
-    "content_path_hash": "5abf45e7-28a2-56e1-90e8-d4285d27bbbb"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 132,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "12",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.75.tag",
-    "content_path_hash": "67fc6be7-fb52-5745-aaa6-c8ecf8cb9258"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 133,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "6",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.79.tag",
-    "content_path_hash": "cf7d4a1b-7323-5deb-ac39-7fc79cef84ef"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
-  "pk": 134,
-  "fields": {
-    "content_type": 34,
-    "base_content_type": 1,
-    "object_id": "8",
-    "to_content_type": 31,
-    "to_object_id": "5",
-    "model_path": "tagged_items.item.tag",
-    "content_path": "tagged_items.78.tag",
-    "content_path_hash": "a9809d34-e28b-5b30-846e-c146f7825cfc"
-  }
-},
-{
-  "model": "wagtailcore.referenceindex",
   "pk": 141,
   "fields": {
     "content_type": 34,
@@ -961,6 +915,104 @@
   }
 },
 {
+  "model": "wagtailcore.referenceindex",
+  "pk": 201,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "11",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.170.tag",
+    "content_path_hash": "69d45be8-41a0-5266-be8c-7c7078d07d21"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 202,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "19",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.174.tag",
+    "content_path_hash": "9b16bdde-9b4e-535a-86e9-c1f0a33e661e"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 203,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "18",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.176.tag",
+    "content_path_hash": "407ad68a-99be-50d0-849a-3135b052b57f"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 204,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "13",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.172.tag",
+    "content_path_hash": "256bd915-b745-5062-95c2-b420fa20645b"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 205,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "5",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.175.tag",
+    "content_path_hash": "0a47c906-82ac-52c8-bcaa-4872266197ec"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 206,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "14",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.173.tag",
+    "content_path_hash": "16cfedf2-87f7-5882-89c5-43c660f6ecdd"
+  }
+},
+{
+  "model": "wagtailcore.referenceindex",
+  "pk": 207,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "to_content_type": 31,
+    "to_object_id": "12",
+    "model_path": "tagged_items.item.tag",
+    "content_path": "tagged_items.171.tag",
+    "content_path_hash": "26251c17-9305-576e-a658-72da1f02adff"
+  }
+},
+{
   "model": "wagtailcore.page",
   "pk": 1,
   "fields": {
@@ -1034,7 +1086,7 @@
   "fields": {
     "path": "000100020001",
     "depth": 3,
-    "numchild": 5,
+    "numchild": 6,
     "translation_key": "8ebae3ed-3893-41e8-bf25-6cff8ecdccaa",
     "locale": 1,
     "latest_revision": 23,
@@ -1173,7 +1225,7 @@
     "numchild": 0,
     "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
     "locale": 1,
-    "latest_revision": 33,
+    "latest_revision": 69,
     "live": false,
     "has_unpublished_changes": true,
     "first_published_at": null,
@@ -1185,16 +1237,16 @@
     "locked": false,
     "locked_at": null,
     "locked_by": null,
-    "title": "Deploying Django all at once",
-    "draft_title": "Deploying Django all at once",
-    "slug": "deploying-django-all-at-once",
+    "title": "XXX Deploying Django all at once",
+    "draft_title": "XXX Deploying Django all at once",
+    "slug": "xxx-deploying-django-all-at-once",
     "content_type": 34,
-    "url_path": "/home/blog/deploying-django-all-at-once/",
+    "url_path": "/home/blog/xxx-deploying-django-all-at-once/",
     "owner": 2,
     "seo_title": "",
     "show_in_menus": false,
     "search_description": "",
-    "latest_revision_created_at": "2025-01-28T03:56:02.895Z",
+    "latest_revision_created_at": "2025-02-05T01:19:23.255Z",
     "alias_of": null
   }
 },
@@ -1229,6 +1281,108 @@
     "show_in_menus": false,
     "search_description": "",
     "latest_revision_created_at": "2025-01-31T03:20:30.164Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 10,
+  "fields": {
+    "path": "0001000200010006",
+    "depth": 4,
+    "numchild": 2,
+    "translation_key": "55d7808c-e0d0-4c92-b41e-46ade98eda23",
+    "locale": 1,
+    "latest_revision": 70,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2025-02-05T01:20:07.847Z",
+    "last_published_at": "2025-02-05T01:20:07.847Z",
+    "live_revision": 70,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "Deploying Django all at once",
+    "draft_title": "Deploying Django all at once",
+    "slug": "deploying-django-all-at-once",
+    "content_type": 52,
+    "url_path": "/home/blog/deploying-django-all-at-once/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-02-05T01:20:07.701Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 11,
+  "fields": {
+    "path": "00010002000100060001",
+    "depth": 5,
+    "numchild": 0,
+    "translation_key": "8519099d-9651-453b-b555-04e52a878b55",
+    "locale": 1,
+    "latest_revision": 74,
+    "live": true,
+    "has_unpublished_changes": false,
+    "first_published_at": "2025-02-10T00:06:29.864Z",
+    "last_published_at": "2025-02-10T00:06:29.864Z",
+    "live_revision": 74,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "OpenTofu to DigitalOcean",
+    "draft_title": "OpenTofu to DigitalOcean",
+    "slug": "opentofu-to-digitalocean",
+    "content_type": 34,
+    "url_path": "/home/blog/deploying-django-all-at-once/opentofu-to-digitalocean/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-02-10T00:06:29.716Z",
+    "alias_of": null
+  }
+},
+{
+  "model": "wagtailcore.page",
+  "pk": 12,
+  "fields": {
+    "path": "00010002000100060002",
+    "depth": 5,
+    "numchild": 0,
+    "translation_key": "38756b2b-7695-4dda-b839-04d924de4ffb",
+    "locale": 1,
+    "latest_revision": 73,
+    "live": false,
+    "has_unpublished_changes": true,
+    "first_published_at": null,
+    "last_published_at": null,
+    "live_revision": null,
+    "go_live_at": null,
+    "expire_at": null,
+    "expired": false,
+    "locked": false,
+    "locked_at": null,
+    "locked_by": null,
+    "title": "The big cloud-init post",
+    "draft_title": "The big cloud-init post",
+    "slug": "the-big-cloud-init-post",
+    "content_type": 34,
+    "url_path": "/home/blog/deploying-django-all-at-once/the-big-cloud-init-post/",
+    "owner": 2,
+    "seo_title": "",
+    "show_in_menus": false,
+    "search_description": "",
+    "latest_revision_created_at": "2025-02-05T22:16:47.990Z",
     "alias_of": null
   }
 },
@@ -1681,6 +1835,510 @@
       "wagtail_admin_comments": [],
       "has_unpublished_changes": false,
       "latest_revision_created_at": "2025-01-31T03:18:57.637Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 67,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-02-03T04:23:00.220Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">The following is basically a walk-through of what I use to deploy this site. The <i>vast</i> majority of configuration is shared between between development, staging, test &amp; production environments, with features toggled and controlled entirely though settings files &amp; environment variables.</p><blockquote data-block-key=\\\"8dtvl\\\"><a href=\\\"https://github.com/hipikat/hpk.io\\\">This site's code is open source, MIT-licensed and publicly available on GitHub</a>, in case you want to see what I've been doing with it lately, or dig deeper into the code snippets offered below \\u2013\\u00a0but I'll try to keep this article as a \\\"live document\\\", and update it when anything significant changes.</blockquote><h2 data-block-key=\\\"eb9ac\\\">The stack, or In Praise of Simplicity</h2><h3 data-block-key=\\\"dg2\\\">Just</h3><p data-block-key=\\\"6lmld\\\">I use <a href=\\\"https://just.systems\\\">Just</a> as a command runner, with <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/Justfile\\\">one very big Justfile</a>, and I can't recommend it highly enough. Shell scripts are alive and well [okay, well, as well as they've ever been] as the glue that holds all of \\\"computing\\\" and \\\"the internet\\\" together, whether you like it or not. Probably not.</p><p data-block-key=\\\"8o8v4\\\">Embracing Just amalgamates the dozens-to-hundreds of shell scripts any real project needs into a nice, sensible, single source. But if you're not into it or can't install it on that locked-down corporate server for some reason, the code <i>inside</i> my Justfile recipes is more-or-less POSIX-compliant shell script; you might just have to manage their yourself.</p><h3 data-block-key=\\\"28v6o\\\">OpenTofu</h3><h3 data-block-key=\\\"9viid\\\">cloud-init</h3><p data-block-key=\\\"ddlfl\\\">Don't get me wrong; I <i>love</i> Infrastructure as Code (aka Iac), and have invested countless hours getting to grips with <a href=\\\"https://saltproject.io\\\">Salt</a> in my spare time, and working with <a href=\\\"https://www.puppet.com\\\">Puppet</a> professionally. But when I wanted to start deploying development servers as easily and cheaply as possible \\u2013 for this very site \\u2013\\u00a0I started with a <a href=\\\"https://cloud-init.io\\\">cloud-init</a> script, because even if I wanted to go full-on IaC later, that provided the quickest way to iterate and actually make sure everything was going where it was meant to be.</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}, {\"type\": \"code\", \"value\": {\"code\": \"# Set the INTERNAL_IPS on the server to your current public IP\\r\\n[group('workflow')]\\r\\n[no-exit-message]\\r\\nset-internal-ips env='':\\r\\n    #!/usr/bin/env bash\\r\\n    env=${env:-$(just -q tofu workspace show)}\\r\\n    public_ip=$(curl -s http://checkip.amazonaws.com)\\r\\n    if [ -z \\\"$public_ip\\\" ]; then\\r\\n      echo \\\"error: Could not fetch public IP.\\\" >&2\\r\\n      exit 1\\r\\n    fi\\r\\n    echo \\\"Setting INTERNAL_IPS=\\\\\\\"$public_ip\\\\\\\" on $env...\\\"\\r\\n    just ssh-in $env \\\"\\\\\\r\\n      sudo sed -i '/^INTERNAL_IPS=/d' /etc/environment && \\\\\\r\\n      echo '\\\\\\\"INTERNAL_IPS=\\\\\\\\\\\\\\\"$public_ip\\\\\\\\\\\\\\\"\\\\\\\"' | sudo tee -a /etc/environment >/dev/null && \\\\\\r\\n      sudo systemctl restart gunicorn-hpk\\\\\\r\\n    \\\"\", \"language\": \"bash\"}, \"id\": \"5227ae3d-8d9f-4980-99bd-2e0feff011c5\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploying a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 156,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 157,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 158,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 159,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 160,
+          "tag": 19,
+          "content_object": 8
+        },
+        {
+          "pk": 161,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 162,
+          "tag": 18,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 33,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-01-28T03:56:02.895Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 68,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-02-03T04:55:42.427Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">The following is basically a walk-through of what I use to deploy this site. The <i>vast</i> majority of configuration is shared between between development, staging, test &amp; production environments, with features toggled and controlled entirely though settings files &amp; environment variables.</p><blockquote data-block-key=\\\"8dtvl\\\"><a href=\\\"https://github.com/hipikat/hpk.io\\\">This site's code is open source, MIT-licensed and publicly available on GitHub</a>, in case you want to see what I've been doing with it lately, or dig deeper into the code snippets offered below \\u2013\\u00a0but I'll try to keep this article as a \\\"live document\\\", and update it when anything significant changes.</blockquote><h2 data-block-key=\\\"eb9ac\\\">The stack, or In Praise of Simplicity</h2><h3 data-block-key=\\\"dg2\\\">Just</h3><p data-block-key=\\\"6lmld\\\">I use <a href=\\\"https://just.systems\\\">Just</a> as a command runner, with <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/Justfile\\\">one very big Justfile</a>, and I can't recommend it highly enough. Shell scripts are alive and well [okay, well, as well as they've ever been] as the glue that holds all of \\\"computing\\\" and \\\"the internet\\\" together, whether you like it or not. Probably not.</p><p data-block-key=\\\"8o8v4\\\">Embracing Just amalgamates the dozens-to-hundreds of shell scripts any real project needs into a nice, sensible, single source. But if you're not into it or can't install it on that locked-down corporate server for some reason, the code <i>inside</i> my Justfile recipes is more-or-less POSIX-compliant shell script; you might just have to manage their yourself.</p><h3 data-block-key=\\\"28v6o\\\">OpenTofu</h3><p data-block-key=\\\"90hk3\\\">Hopefully you're familiar with <a href=\\\"https://www.terraform.io\\\">Terraform</a>? After HashiCorp changed it to use a Business Source License (BSL), it was <a href=\\\"https://opentofu.org/blog/opentofu-announces-fork-of-terraform/\\\">forked into OpenTofu</a>, which aims to be backwards compatible and retain feature parity. At least for small use-cases such as the one here you can basically just type <code>tofu</code> instead of <code>terraform</code>. Or you could just use Terraform. Either way, \\\"tofu\\\" requires 5 fewer key-strokes.</p><h3 data-block-key=\\\"9viid\\\">cloud-init</h3><p data-block-key=\\\"ddlfl\\\">Don't get me wrong; I <i>love</i> Infrastructure as Code (aka Iac); I've invested countless hours getting to grips with <a href=\\\"https://saltproject.io\\\">Salt</a> in my spare time, and working with <a href=\\\"https://www.puppet.com\\\">Puppet</a> professionally. But when I wanted to start deploying development servers as easily and cheaply as possible\\u00a0I started with a <a href=\\\"https://cloud-init.io\\\">cloud-init</a> script, because even if I wanted to go full-on IaC later, that provided the quickest way to iterate and actually make sure everything was going where it was meant to be.</p><p data-block-key=\\\"eda1d\\\">And it turned out the time-to-deployment was so low (roughly 5 minutes), that it just hasn't been worth re-implementing everything you're about to see before you in higher-level abstractions.</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploying a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 163,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 164,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 165,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 166,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 167,
+          "tag": 19,
+          "content_object": 8
+        },
+        {
+          "pk": 168,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 169,
+          "tag": 18,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 67,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-02-03T04:23:00.220Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 69,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "8",
+    "created_at": "2025-02-05T01:19:23.255Z",
+    "user": 2,
+    "object_str": "XXX Deploying Django all at once",
+    "content": {
+      "pk": 8,
+      "live": false,
+      "path": "0001000200010004",
+      "slug": "xxx-deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "XXX Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"c3210\\\">The following is basically a walk-through of what I use to deploy this site. The <i>vast</i> majority of configuration is shared between between development, staging, test &amp; production environments, with features toggled and controlled entirely though settings files &amp; environment variables.</p><blockquote data-block-key=\\\"8dtvl\\\"><a href=\\\"https://github.com/hipikat/hpk.io\\\">This site's code is open source, MIT-licensed and publicly available on GitHub</a>, in case you want to see what I've been doing with it lately, or dig deeper into the code snippets offered below \\u2013\\u00a0but I'll try to keep this article as a \\\"live document\\\", and update it when anything significant changes.</blockquote><h2 data-block-key=\\\"eb9ac\\\">The stack, or In Praise of Simplicity</h2><h3 data-block-key=\\\"dg2\\\">Just</h3><p data-block-key=\\\"6lmld\\\">I use <a href=\\\"https://just.systems\\\">Just</a> as a command runner, with <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/Justfile\\\">one very big Justfile</a>, and I can't recommend it highly enough. Shell scripts are alive and well [okay, well, as well as they've ever been] as the glue that holds all of \\\"computing\\\" and \\\"the internet\\\" together, whether you like it or not. Probably not.</p><p data-block-key=\\\"8o8v4\\\">Embracing Just amalgamates the dozens-to-hundreds of shell scripts any real project needs into a nice, sensible, single source. But if you're not into it or can't install it on that locked-down corporate server for some reason, the code <i>inside</i> my Justfile recipes is more-or-less POSIX-compliant shell script; you might just have to manage their yourself.</p><h3 data-block-key=\\\"28v6o\\\">OpenTofu</h3><p data-block-key=\\\"90hk3\\\">Hopefully you're familiar with <a href=\\\"https://www.terraform.io\\\">Terraform</a>? After HashiCorp changed it to use a Business Source License (BSL), it was <a href=\\\"https://opentofu.org/blog/opentofu-announces-fork-of-terraform/\\\">forked into OpenTofu</a>, which aims to be backwards compatible and retain feature parity. At least for small use-cases such as the one here you can basically just type <code>tofu</code> instead of <code>terraform</code>. Or you could just use Terraform. Either way, \\\"tofu\\\" requires 5 fewer key-strokes.</p><h3 data-block-key=\\\"9viid\\\">cloud-init</h3><p data-block-key=\\\"ddlfl\\\">Don't get me wrong; I <i>love</i> Infrastructure as Code (aka Iac); I've invested countless hours getting to grips with <a href=\\\"https://saltproject.io\\\">Salt</a> in my spare time, and working with <a href=\\\"https://www.puppet.com\\\">Puppet</a> professionally. But when I wanted to start deploying development servers as easily and cheaply as possible\\u00a0I started with a <a href=\\\"https://cloud-init.io\\\">cloud-init</a> script, because even if I wanted to go full-on IaC later, that provided the quickest way to iterate and actually make sure everything was going where it was meant to be.</p><p data-block-key=\\\"eda1d\\\">And it turned out the time-to-deployment was so low (roughly 5 minutes), that it just hasn't been worth re-implementing everything you're about to see before you in higher-level abstractions.</p>\", \"id\": \"015be905-8414-41b0-a707-f35efefb1ab0\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"am29q\">A step-by-step guide to deploying a Django app, for both development and production servers, to a single server in the cloud – using OpenTofu (a fork of Terraform), targeting DigitalOcean, utilising Just to manage the shell-scripting glue, and a <i>hell</i> of a lot of cloud-init.</p>",
+      "tagline": "The \"everything everywhere all at once\" guide to deploying Django in the cloud",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/xxx-deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 34,
+      "tagged_items": [
+        {
+          "pk": 170,
+          "tag": 11,
+          "content_object": 8
+        },
+        {
+          "pk": 171,
+          "tag": 12,
+          "content_object": 8
+        },
+        {
+          "pk": 172,
+          "tag": 13,
+          "content_object": 8
+        },
+        {
+          "pk": 173,
+          "tag": 14,
+          "content_object": 8
+        },
+        {
+          "pk": 174,
+          "tag": 19,
+          "content_object": 8
+        },
+        {
+          "pk": 175,
+          "tag": 5,
+          "content_object": 8
+        },
+        {
+          "pk": 176,
+          "tag": 18,
+          "content_object": 8
+        }
+      ],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 68,
+      "translation_key": "5ac91186-c4be-4bf1-aaf7-934a9bf8c7b0",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-02-03T04:55:42.427Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 70,
+  "fields": {
+    "content_type": 52,
+    "base_content_type": 1,
+    "object_id": "10",
+    "created_at": "2025-02-05T01:20:07.701Z",
+    "user": 2,
+    "object_str": "Deploying Django all at once",
+    "content": {
+      "pk": 10,
+      "live": true,
+      "path": "0001000200010006",
+      "slug": "deploying-django-all-at-once",
+      "depth": 4,
+      "owner": 2,
+      "title": "Deploying Django all at once",
+      "locale": 1,
+      "locked": false,
+      "expired": false,
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "Deploying Django all at once",
+      "content_type": 52,
+      "introduction": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"xftwa\\\">The following is basically a walk-through of what I use to deploy this site. The <i>vast</i> majority of configuration is shared between between development, staging, test &amp; production environments, with features toggled and controlled entirely though settings files &amp; environment variables.</p><blockquote data-block-key=\\\"3ok7f\\\"><a href=\\\"https://github.com/hipikat/hpk.io\\\">This site's code is open source, MIT-licensed and publicly available on GitHub</a>, in case you want to see what I've been doing with it lately, or dig deeper into the code snippets offered below \\u2013\\u00a0but I'll try to keep this article as a \\\"live document\\\", and update it when anything significant changes.</blockquote><h2 data-block-key=\\\"4irsa\\\">The stack, or In Praise of Simplicity</h2><h3 data-block-key=\\\"6f3m3\\\">Just</h3><p data-block-key=\\\"dard0\\\">I use <a href=\\\"https://just.systems\\\">Just</a> as a command runner, with <a href=\\\"https://github.com/hipikat/hpk.io/blob/main/Justfile\\\">one very big Justfile</a>, and I can't recommend it highly enough. Shell scripts are alive and well [okay, well, as well as they've ever been] as the glue that holds all of \\\"computing\\\" and \\\"the internet\\\" together, whether you like it or not. Probably not.</p><p data-block-key=\\\"70uon\\\">Embracing Just amalgamates the dozens-to-hundreds of shell scripts any real project needs into a nice, sensible, single source. But if you're not into it or can't install it on that locked-down corporate server for some reason, the code <i>inside</i> my Justfile recipes is more-or-less POSIX-compliant shell script; you might just have to manage their yourself.</p><h3 data-block-key=\\\"3jt62\\\">OpenTofu</h3><p data-block-key=\\\"24ilr\\\">Hopefully you're familiar with <a href=\\\"https://www.terraform.io\\\">Terraform</a>? After HashiCorp changed it to use a Business Source License (BSL), it was <a href=\\\"https://opentofu.org/blog/opentofu-announces-fork-of-terraform/\\\">forked into OpenTofu</a>, which aims to be backwards compatible and retain feature parity. At least for small use-cases such as the one here you can basically just type <code>tofu</code> instead of <code>terraform</code>. Or you could just use Terraform. Either way, \\\"tofu\\\" requires 5 fewer key-strokes.</p><h3 data-block-key=\\\"fhani\\\">cloud-init</h3><p data-block-key=\\\"2k2ut\\\">Don't get me wrong; I <i>love</i> Infrastructure as Code (aka Iac); I've invested countless hours getting to grips with <a href=\\\"https://saltproject.io\\\">Salt</a> in my spare time, and working with <a href=\\\"https://www.puppet.com\\\">Puppet</a> professionally. But when I wanted to start deploying development servers as easily and cheaply as possible\\u00a0I started with a <a href=\\\"https://cloud-init.io\\\">cloud-init</a> script, because even if I wanted to go full-on IaC later, that provided the quickest way to iterate and actually make sure everything was going where it was meant to be.</p><p data-block-key=\\\"7js5j\\\">And it turned out the time-to-deployment was so low (roughly 5 minutes), that it just hasn't been worth re-implementing everything you're about to see before you in higher-level abstractions.</p>\", \"id\": \"8110632c-348c-4f52-98fa-bfd359249e99\"}]",
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "55d7808c-e0d0-4c92-b41e-46ade98eda23",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 71,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "11",
+    "created_at": "2025-02-05T01:22:33.338Z",
+    "user": 2,
+    "object_str": "OpenTofu to DigitalOcean",
+    "content": {
+      "pk": 11,
+      "live": false,
+      "path": "00010002000100060001",
+      "slug": "opentofu-to-digitalocean",
+      "depth": 5,
+      "owner": 2,
+      "title": "OpenTofu to DigitalOcean",
+      "locale": 1,
+      "locked": false,
+      "content": "[]",
+      "expired": false,
+      "summary": "<p data-block-key=\"p5xay\">Step 1: provision your boxes</p>",
+      "tagline": "",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/opentofu-to-digitalocean/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "OpenTofu to DigitalOcean",
+      "content_type": 34,
+      "tagged_items": [],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "8519099d-9651-453b-b555-04e52a878b55",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 72,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "11",
+    "created_at": "2025-02-05T01:22:55.103Z",
+    "user": 2,
+    "object_str": "OpenTofu to DigitalOcean",
+    "content": {
+      "pk": 11,
+      "live": false,
+      "path": "00010002000100060001",
+      "slug": "opentofu-to-digitalocean",
+      "depth": 5,
+      "owner": 2,
+      "title": "OpenTofu to DigitalOcean",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"gcdx6\\\">Okay let's get started\\u2026</p>\", \"id\": \"785a5567-4d56-42b7-9708-175a4a8762a9\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"p5xay\">Step 1: provision your boxes</p>",
+      "tagline": "",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/opentofu-to-digitalocean/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "OpenTofu to DigitalOcean",
+      "content_type": 34,
+      "tagged_items": [],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 71,
+      "translation_key": "8519099d-9651-453b-b555-04e52a878b55",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-02-05T01:22:33.338Z"
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 73,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "12",
+    "created_at": "2025-02-05T22:16:47.990Z",
+    "user": 2,
+    "object_str": "The big cloud-init post",
+    "content": {
+      "pk": 12,
+      "live": false,
+      "path": "00010002000100060002",
+      "slug": "the-big-cloud-init-post",
+      "depth": 5,
+      "owner": 2,
+      "title": "The big cloud-init post",
+      "locale": 1,
+      "locked": false,
+      "content": "[]",
+      "expired": false,
+      "summary": "",
+      "tagline": "",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/the-big-cloud-init-post/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "The big cloud-init post",
+      "content_type": 34,
+      "tagged_items": [],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": null,
+      "translation_key": "38756b2b-7695-4dda-b839-04d924de4ffb",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": false,
+      "latest_revision_created_at": null
+    },
+    "approved_go_live_at": null
+  }
+},
+{
+  "model": "wagtailcore.revision",
+  "pk": 74,
+  "fields": {
+    "content_type": 34,
+    "base_content_type": 1,
+    "object_id": "11",
+    "created_at": "2025-02-10T00:06:29.716Z",
+    "user": 2,
+    "object_str": "OpenTofu to DigitalOcean",
+    "content": {
+      "pk": 11,
+      "live": false,
+      "path": "00010002000100060001",
+      "slug": "opentofu-to-digitalocean",
+      "depth": 5,
+      "owner": 2,
+      "title": "OpenTofu to DigitalOcean",
+      "locale": 1,
+      "locked": false,
+      "content": "[{\"type\": \"rich_text\", \"value\": \"<p data-block-key=\\\"gcdx6\\\">Okay let's get started\\u2026</p>\", \"id\": \"785a5567-4d56-42b7-9708-175a4a8762a9\"}]",
+      "expired": false,
+      "summary": "<p data-block-key=\"p5xay\">Step 1: provision your boxes</p>",
+      "tagline": "",
+      "alias_of": null,
+      "numchild": 0,
+      "url_path": "/home/blog/deploying-django-all-at-once/opentofu-to-digitalocean/",
+      "expire_at": null,
+      "locked_at": null,
+      "locked_by": null,
+      "page_type": null,
+      "seo_title": "",
+      "go_live_at": null,
+      "draft_title": "OpenTofu to DigitalOcean",
+      "content_type": 34,
+      "tagged_items": [],
+      "live_revision": null,
+      "show_in_menus": false,
+      "latest_revision": 72,
+      "translation_key": "8519099d-9651-453b-b555-04e52a878b55",
+      "last_published_at": null,
+      "first_published_at": null,
+      "search_description": "",
+      "wagtail_admin_comments": [],
+      "has_unpublished_changes": true,
+      "latest_revision_created_at": "2025-02-05T01:22:55.103Z"
     },
     "approved_go_live_at": null
   }
@@ -3722,6 +4380,227 @@
   }
 },
 {
+  "model": "wagtailcore.pagelogentry",
+  "pk": 114,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-03T04:23:00.287Z",
+    "uuid": "3f84b868-8960-4c95-a138-3880df42256f",
+    "user": 2,
+    "revision": 67,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 115,
+  "fields": {
+    "content_type": 34,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-03T04:55:42.482Z",
+    "uuid": "7325efd4-75c1-4c9d-af5b-d591e1f79faa",
+    "user": 2,
+    "revision": 68,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 116,
+  "fields": {
+    "content_type": 34,
+    "label": "XXX Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-05T01:19:23.363Z",
+    "uuid": "01fa3227-3c9b-4379-85be-8c47d169e50e",
+    "user": 2,
+    "revision": 69,
+    "content_changed": true,
+    "deleted": false,
+    "page": 8
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 117,
+  "fields": {
+    "content_type": 52,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-02-05T01:20:07.628Z",
+    "uuid": "2077550d-3066-4850-a1fe-88f9a6e25164",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 10
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 118,
+  "fields": {
+    "content_type": 52,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-05T01:20:07.767Z",
+    "uuid": "2077550d-3066-4850-a1fe-88f9a6e25164",
+    "user": 2,
+    "revision": 70,
+    "content_changed": true,
+    "deleted": false,
+    "page": 10
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 119,
+  "fields": {
+    "content_type": 52,
+    "label": "Deploying Django all at once",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-02-05T01:20:07.996Z",
+    "uuid": "2077550d-3066-4850-a1fe-88f9a6e25164",
+    "user": 2,
+    "revision": 70,
+    "content_changed": true,
+    "deleted": false,
+    "page": 10
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 120,
+  "fields": {
+    "content_type": 34,
+    "label": "OpenTofu to DigitalOcean",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-02-05T01:22:33.272Z",
+    "uuid": "e174e74e-e7ea-4268-b0e1-4b748ffede21",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 121,
+  "fields": {
+    "content_type": 34,
+    "label": "OpenTofu to DigitalOcean",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-05T01:22:33.390Z",
+    "uuid": "e174e74e-e7ea-4268-b0e1-4b748ffede21",
+    "user": 2,
+    "revision": 71,
+    "content_changed": true,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 122,
+  "fields": {
+    "content_type": 34,
+    "label": "OpenTofu to DigitalOcean",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-05T01:22:55.184Z",
+    "uuid": "9c4bdd68-1af3-4cb8-a7b5-6ee761357e6e",
+    "user": 2,
+    "revision": 72,
+    "content_changed": true,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 123,
+  "fields": {
+    "content_type": 34,
+    "label": "The big cloud-init post",
+    "action": "wagtail.create",
+    "data": {},
+    "timestamp": "2025-02-05T22:16:47.858Z",
+    "uuid": "e609ac28-f932-4210-98dc-7168e1ae7116",
+    "user": 2,
+    "revision": null,
+    "content_changed": true,
+    "deleted": false,
+    "page": 12
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 124,
+  "fields": {
+    "content_type": 34,
+    "label": "The big cloud-init post",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-05T22:16:48.036Z",
+    "uuid": "e609ac28-f932-4210-98dc-7168e1ae7116",
+    "user": 2,
+    "revision": 73,
+    "content_changed": true,
+    "deleted": false,
+    "page": 12
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 125,
+  "fields": {
+    "content_type": 34,
+    "label": "OpenTofu to DigitalOcean",
+    "action": "wagtail.edit",
+    "data": {},
+    "timestamp": "2025-02-10T00:06:29.764Z",
+    "uuid": "624e6a18-3ed6-4dc7-b04f-bfd31bb18662",
+    "user": 2,
+    "revision": 74,
+    "content_changed": true,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
+  "model": "wagtailcore.pagelogentry",
+  "pk": 126,
+  "fields": {
+    "content_type": 34,
+    "label": "OpenTofu to DigitalOcean",
+    "action": "wagtail.publish",
+    "data": {},
+    "timestamp": "2025-02-10T00:06:29.961Z",
+    "uuid": "624e6a18-3ed6-4dc7-b04f-bfd31bb18662",
+    "user": 2,
+    "revision": 74,
+    "content_changed": false,
+    "deleted": false,
+    "page": 11
+  }
+},
+{
   "model": "wagtailcore.pagesubscription",
   "pk": 1,
   "fields": {
@@ -3781,6 +4660,33 @@
   "fields": {
     "user": 2,
     "page": 9,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 8,
+  "fields": {
+    "user": 2,
+    "page": 10,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 9,
+  "fields": {
+    "user": 2,
+    "page": 11,
+    "comment_notifications": true
+  }
+},
+{
+  "model": "wagtailcore.pagesubscription",
+  "pk": 10,
+  "fields": {
+    "user": 2,
+    "page": 12,
     "comment_notifications": true
   }
 },
@@ -4207,6 +5113,14 @@
   "fields": {
     "app_label": "sessions",
     "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 52,
+  "fields": {
+    "app_label": "picata",
+    "model": "postseries"
   }
 }
 ]
