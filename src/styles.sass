@@ -369,6 +369,16 @@ main.post-list
     @apply pt-5
     h3
       @apply text-2xl
+    ul.parts
+      @apply list-inside list-none relative
+      li
+        @apply relative
+        h4
+          @apply inline-block ml-4
+      li:before
+        @apply absolute left-0
+        top: 2px
+        content: "❯"
   dd.title
     @apply pb-4
 

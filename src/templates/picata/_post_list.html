@@ -4,7 +4,9 @@
   <dt class="meta-data">
     {% if year and forloop.counter == 1 %}<h2>{{ year }}</h2>{% endif %}
     {% if post.published %}
-      Published <span>{{ post.published }}</span>
+      {% if not post.parts %}Published{% else %}<span>Latest post</span>{% endif %}
+
+      <span>{{ post.published }}</span>
       {% if post.updated %}
         <br />Updated <span>{{ post.updated }}</span><br />
       {% endif %}
@@ -20,5 +22,11 @@
   <dd class="preview">
     <h3>{% if post.live %}<a href="{{ post.url }}">{% endif %}{{ post.title }}{% if post.live %}</a>{% endif %}</h3>
     {% if post.summary %}{{ post.summary|richtext }}{% endif %}
+    {% if post.parts %}<ul class="parts">
+      {% for part in post.parts %}<li>
+        <h4>Part {{ forloop.counter }}: {% if part.live %}<a href="{{ part.url }}">{% endif %}{{ part.title }}{% if part.live %}</a>{% endif %}</h4>
+        {% if part.summary %}{{ part.summary|richtext }}{% endif %}
+      </li>{% endfor %}
+    </ul>{% endif %}
   </dd>
 {% endfor %}
