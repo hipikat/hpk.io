@@ -107,7 +107,7 @@ _dotenv-for-tofu:
       }'
     } > infra/dot_env.tfvars
 
-# Run an OpenTofu command; uses applicabletfvar files, gets raw output
+# Run an OpenTofu command; uses applicable tfvar files, gets raw output
 [group('infra')]
 [no-exit-message]
 tofu *args='': _dotenv-for-tofu
