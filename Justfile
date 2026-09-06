@@ -10,41 +10,72 @@ test_env := '''
     export HPK_TEST_DB=db-test.sqlite3
     export DJANGO_SETTINGS_MODULE=hpk.settings.test
 '''
+development_editables := "django picata pre-commit pygments ruff wagtail"
 editables := '''
-repos="picata django"
-declare -A upstreams origins extras
-upstreams=(
-    [django]="https://github.com/django/django.git"
-    [picata]="https://github.com/hipikat/picata.git"
-    [pre-commit]="https://github.com/pre-commit/pre-commit.git"
-    [pygments]="https://github.com/pygments/pygments.git"
-    [ruff]="https://github.com/astral-sh/ruff"
-    [wagtail]="https://github.com/wagtail/wagtail.git"
-)
-origins=(
-    [django]="git@github.com:hipikat/django.git"
-    [wagtail]="git@github.com:hipikat/wagtail.git"
-    [picata]="git@github.com:hipikat/picata.git"
-    [pre-commit]="git@github.com:hipikat/pre-commit.git"
-)
-extras=(
-    [wagtail]="[testing, docs]"
-)
-post_install_picata() {
-    uv sync --all-groups
-    pre-commit install
+editable_upstream() {
+    case "$1" in
+        django) printf '%s\n' "https://github.com/django/django.git" ;;
+        picata) printf '%s\n' "https://github.com/hipikat/picata.git" ;;
+        pre-commit) printf '%s\n' "https://github.com/pre-commit/pre-commit.git" ;;
+        pygments) printf '%s\n' "https://github.com/pygments/pygments.git" ;;
+        ruff) printf '%s\n' "https://github.com/astral-sh/ruff" ;;
+        wagtail) printf '%s\n' "https://github.com/wagtail/wagtail.git" ;;
+    esac
 }
+
+editable_origin() {
+    case "$1" in
+        django) printf '%s\n' "git@github.com:hipikat/django.git" ;;
+        picata) printf '%s\n' "git@github.com:hipikat/picata.git" ;;
+        pre-commit) printf '%s\n' "git@github.com:hipikat/pre-commit.git" ;;
+        wagtail) printf '%s\n' "git@github.com:hipikat/wagtail.git" ;;
+    esac
+}
+
+editable_config_setting() {
+    case "$1" in
+        django|wagtail) printf '%s\n' "editable_mode=strict" ;;
+    esac
+}
+
+editable_path() {
+    local package="$1"
+
+    if [ "$package" = "picata" ] && [ -e ../picata/.git ]; then
+        printf '%s\n' ../picata
+    else
+        printf 'lib/%s\n' "$package"
+    fi
+}
+
+locked_version() {
+    local package="$1"
+
+    awk -v package="$package" '
+        /^\[\[package\]\]/ { in_package = 0 }
+        $1 == "name" && $3 == "\"" package "\"" { in_package = 1 }
+        in_package && $1 == "version" { gsub(/"/, "", $3); print $3; exit }
+    ' uv.lock
+}
+
 pre_install_wagtail() {
     echo "Removing previously built editable directories..."
-    rm -rf build/*
+    if [ -d build ]; then
+        find build -mindepth 1 -maxdepth 1 -name '__editable__.*' -exec rm -rf -- {} +
+    fi
     echo "Installing Node toolchain for Wagtail..."
     npm ci
     echo "Compiling assets for Wagtail..."
     npm run build
 }
 post_install_wagtail() {
-    uv pip install ruff --upgrade
-    editable_path=$(echo build/__editable__.*)
+    shopt -s nullglob
+    editable_paths=(build/__editable__.*)
+    if [ "${#editable_paths[@]}" -ne 1 ]; then
+        echo "Error: Expected one strict editable build directory; found ${#editable_paths[@]}." >&2
+        return 1
+    fi
+    editable_path="${editable_paths[0]}"
     static_dirs=(
         "wagtail/admin/static_src/"
         "wagtail/documents/static_src/"
@@ -56,14 +87,14 @@ post_install_wagtail() {
     for dir in "${static_dirs[@]}"; do
         dest="$editable_path/$dir"
         if [ -d "$dir" ]; then
-            echo "In $(pwd); linking static files under $dir to $dest..."
+            echo "In $(pwd); copying static files under $dir to $dest..."
             mkdir -p "$dest"
-            cp -rf $dir* "$dest"
+            cp -Rf "$dir". "$dest"
         else
             echo "Warning: Source directory $dir does not exist. Skipping..."
         fi
     done
-    echo "Static files symlinked successfully."
+    echo "Static files copied successfully."
 }
 '''
 
@@ -547,74 +578,131 @@ compose-fresh:
 compose-migrate:
     docker compose exec app-dev just migrate
 
-### Editable package control
+### Local package source control
 
-# Clone the upstream repositories of packages we want editable into lib/
+# Prevent future Just commands from automatically syncing the Python environment
 [group('editables')]
-clone-editables:
+disable-auto-sync:
     #!/usr/bin/env bash
-    mkdir -p lib
-    {{ editables }}
-    for repo in $repos; do
-        repo_path="lib/$repo"
-        upstream_url="${upstreams[$repo]}"
-        origin_url="${origins[$repo]}"
-        if [ -d "$repo_path/.git" ]; then
-            echo "Repository '$repo' already exists at $repo_path. Skipping clone..."
-            if ! git config --get-all safe.directory | grep -Fxq "$repo_path"; then
-                echo "Marking $repo_path as a safe directory..."
-                git config --add safe.directory "$repo_path"
-            fi
-            continue
-        fi
-        if [ -n "$upstream_url" ] || [ -n "$origin_url" ]; then
-            clone_url=${upstream_url:-$origin_url}
-            default_remote=${upstream_url:+upstream}
-            default_remote=${default_remote:-origin}
-            echo "Cloning $repo from $default_remote repo $clone_url..."
-            git clone --origin "$default_remote" "$clone_url" "$repo_path"
+    set -euo pipefail
+    dotenv_file=.env
+    if [ "${UV_NO_SYNC:-false}" = true ] &&
+        ! grep -Eq '^[[:space:]]*(export[[:space:]]+)?UV_NO_SYNC[[:space:]]*=' "$dotenv_file" 2> /dev/null; then
+        echo "uv auto-sync is already disabled by the surrounding environment; .env is unchanged."
+        exit
+    fi
+    dotenv_tmp="$(mktemp "${dotenv_file}.XXXXXX")"
+    trap 'rm -f "$dotenv_tmp"' EXIT
+    if [ -f "$dotenv_file" ]; then
+        cp -p "$dotenv_file" "$dotenv_tmp"
+        awk '!/^[[:space:]]*(export[[:space:]]+)?UV_NO_SYNC[[:space:]]*=/' \
+            "$dotenv_file" > "$dotenv_tmp"
+    fi
+    if [ -s "$dotenv_tmp" ] && [ -n "$(tail -c 1 "$dotenv_tmp")" ]; then
+        printf '\n' >> "$dotenv_tmp"
+    fi
+    printf 'UV_NO_SYNC=true\n' >> "$dotenv_tmp"
+    mv "$dotenv_tmp" "$dotenv_file"
+    trap - EXIT
+    echo "Disabled uv auto-sync for future Just commands."
+
+# Allow future Just commands to synchronize the Python environment with uv.lock
+[group('editables')]
+enable-auto-sync:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    dotenv_file=.env
+    if [ ! -f "$dotenv_file" ]; then
+        if [ "${UV_NO_SYNC:-false}" = true ]; then
+            echo "No .env override exists; uv auto-sync remains disabled by the surrounding environment."
         else
-            echo "Error: No upstream or origin remote defined for $repo" >&2
+            echo "uv auto-sync is already enabled for future Just commands."
+        fi
+        exit
+    fi
+    dotenv_tmp="$(mktemp "${dotenv_file}.XXXXXX")"
+    trap 'rm -f "$dotenv_tmp"' EXIT
+    cp -p "$dotenv_file" "$dotenv_tmp"
+    awk '!/^[[:space:]]*(export[[:space:]]+)?UV_NO_SYNC[[:space:]]*=/' \
+        "$dotenv_file" > "$dotenv_tmp"
+    if [ -s "$dotenv_tmp" ]; then
+        mv "$dotenv_tmp" "$dotenv_file"
+    else
+        rm -f "$dotenv_file" "$dotenv_tmp"
+    fi
+    trap - EXIT
+    echo "Enabled uv auto-sync for future Just commands."
+
+# Clone a package repository for local editable use, unless its checkout already exists
+[group('editables')]
+clone-editable package:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    package="{{ package }}"
+    {{ editables }}
+    repo_path="$(editable_path "$package")"
+    upstream_url="$(editable_upstream "$package")"
+    origin_url="$(editable_origin "$package")"
+    if [ -e "$repo_path/.git" ]; then
+        echo "Repository '$package' already exists at $repo_path. Skipping clone..."
+        absolute_repo_path="$(cd "$repo_path" && pwd -P)"
+        if ! git_output="$(git -C "$repo_path" status --short 2>&1)"; then
+            if grep -Fq 'detected dubious ownership' <<< "$git_output"; then
+                echo "Trusting existing checkout $absolute_repo_path for the current user..."
+                git config --global --add safe.directory "$absolute_repo_path"
+            else
+                printf '%s\n' "$git_output" >&2
+                exit 1
+            fi
+        fi
+    else
+        if [ -z "$upstream_url" ] && [ -z "$origin_url" ]; then
+            echo "Error: No upstream or origin remote defined for $package." >&2
             exit 1
         fi
-        [ -n "$upstream_url" ] && ! git -C "$repo_path" remote | grep -q '^upstream$' && {
-            echo "Adding upstream remote for $repo: $upstream_url"
-            git -C "$repo_path" remote add upstream "$upstream_url"
-        }
-        [ -n "$origin_url" ] && ! git -C "$repo_path" remote | grep -q '^origin$' && {
-            echo "Adding origin remote for $repo: $origin_url"
-            git -C "$repo_path" remote add origin "$origin_url"
-        }
-    done
+        mkdir -p "$(dirname "$repo_path")"
+        clone_url="${upstream_url:-$origin_url}"
+        default_remote="${upstream_url:+upstream}"
+        default_remote="${default_remote:-origin}"
+        echo "Cloning $package from $default_remote repository $clone_url..."
+        git clone --origin "$default_remote" "$clone_url" "$repo_path"
+    fi
+    if [ -n "$upstream_url" ] && ! git -C "$repo_path" remote | grep -q '^upstream$'; then
+        echo "Adding upstream remote for $package: $upstream_url"
+        git -C "$repo_path" remote add upstream "$upstream_url"
+    fi
+    if [ -n "$origin_url" ] && ! git -C "$repo_path" remote | grep -q '^origin$'; then
+        echo "Adding origin remote for $package: $origin_url"
+        git -C "$repo_path" remote add origin "$origin_url"
+    fi
 
-# Checkout the version of an editable package read from uv.lock
+# Checkout the release version of a local package recorded in uv.lock
 [group('editables')]
 set-editable-version package version='':
     #!/usr/bin/env bash
-    package_path="lib/{{ package }}"
+    set -euo pipefail
+    package="{{ package }}"
+    {{ editables }}
+    package_path="$(editable_path "$package")"
     if [ ! -d "$package_path" ]; then
-      echo "Error: Package '$package_path' not found. Did you clone it into 'lib/'?" >&2
-      exit 1
+        echo "Error: Package checkout '$package_path' not found." >&2
+        exit 1
     fi
     if [ -n "{{ version }}" ]; then
         version="{{ version }}"
     else
-        version=$(awk '\
-           /^\[\[package\]\]/ { in_package = 0 }\
-           $1 == "name" && $3 == "\"{{ package }}\"" { in_package = 1 }\
-           in_package && $1 == "version" { gsub(/"/, "", $3); print $3; exit }\
-        ' uv.lock)
+        version="$(locked_version "$package")"
         if [ -z "$version" ]; then
-           echo "Error: Could not find version for package '{{ package }}' in 'uv.lock'." >&2
-           exit 1
+            echo "Error: Could not find version for package '$package' in uv.lock." >&2
+            exit 1
         fi
-        echo "Found version $version for package '{{ package }}'."
+        echo "Found version $version for package '$package'."
     fi
     cd "$package_path"
     git fetch upstream --tags
     tag_name=$(git tag | grep -E "^v?$version$" || echo "")
     if [ -z "$tag_name" ]; then
-        echo "Error: Neither '$version' nor 'v$version' tag exists for '{{ package }}'." >&2
+        echo "Error: Neither '$version' nor 'v$version' tag exists for '$package'." >&2
         exit 1
     fi
     branch_name="v$version"
@@ -625,71 +713,106 @@ set-editable-version package version='':
         echo "Creating and checking out branch '$branch_name' from tag '$tag_name'..."
         git checkout -b "$branch_name" "$tag_name"
     fi
-    echo "Package '{{ package }}' is now set to editable version $version on branch '$branch_name'."
+    echo "Package '$package' is now on branch '$branch_name' at release version $version."
 
-# Set all checked-out editable repos to the version in uv.lock
+# Use a local package checkout in the hpk.io environment, without changing its dependencies
 [group('editables')]
-set-editable-versions:
+use-editable package:
     #!/usr/bin/env bash
+    set -euo pipefail
+    package="{{ package }}"
     {{ editables }}
-    for repo in $repos; do
-        if [ -d ./lib/$repo ]; then
-            just set-editable-version $repo
-        fi
-    done
-
-# Install a single repository checked out under lib/ as "editable"
-[group('editables')]
-install-editable package:
-    #!/usr/bin/env bash
-    package={{ package }}
-    {{ editables }}
-    repo_path="lib/$package"
-    if [ ! -d "$repo_path" ]; then
-        echo "Error: Package '$package' not found in 'lib/'. Did you clone it first?" >&2
+    repo_path="$(editable_path "$package")"
+    if [ ! -f "$repo_path/pyproject.toml" ] &&
+        [ ! -f "$repo_path/setup.py" ] &&
+        [ ! -f "$repo_path/setup.cfg" ]; then
+        echo "Error: Package checkout '$repo_path' has no Python build configuration." >&2
         exit 1
     fi
-    uv pip uninstall "$package"
     pre_install_function="pre_install_$package"
     if declare -f "$pre_install_function" > /dev/null; then
         echo "Running pre-install steps for $package in $repo_path..."
         (cd "$repo_path" && "$pre_install_function")
     fi
-    package_extras="${extras[$package]:-}"
-    if [ -n "$package_extras" ]; then
-        echo "Installing $package with extras $package_extras..."
-        uv pip install --config-settings editable_mode=strict -e "$package$package_extras @ ./$repo_path"
-    else
-        echo "Installing $package..."
-        uv pip install --config-settings editable_mode=strict -e "$package @ ./$repo_path"
+    install_options=(--reinstall --no-deps)
+    config_setting="$(editable_config_setting "$package")"
+    if [ -n "$config_setting" ]; then
+        install_options+=(--config-setting "$config_setting")
     fi
+    echo "Using editable $package from $repo_path..."
+    uv pip install "${install_options[@]}" --editable "$repo_path"
+    just disable-auto-sync
     post_install_function="post_install_$package"
     if declare -f "$post_install_function" > /dev/null; then
         echo "Running post-install steps for $package in $repo_path..."
-        (cd "$repo_path" && echo "*** RUNNING $post_install_function FROM $(pwd)" && "$post_install_function")
+        (cd "$repo_path" && "$post_install_function")
     fi
-    if declare -f "finalise_install" > /dev/null; then
-        echo "Running finalise_install..."
-        finalise_install
-    fi
+    uv pip show "$package"
 
-# Install all repositories checked out under lib/ as "editable"
+# Restore a package to the published version recorded in uv.lock
 [group('editables')]
-install-editables:
+use-release package:
     #!/usr/bin/env bash
+    set -euo pipefail
+    package="{{ package }}"
     {{ editables }}
-    for repo in $repos; do
-        if [ -d ./lib/$repo ]; then
-            just install-editable $repo
-        fi
+    version="$(locked_version "$package")"
+    if [ -z "$version" ]; then
+        echo "Error: Could not find version for package '$package' in uv.lock." >&2
+        exit 1
+    fi
+    echo "Using published $package==$version from uv.lock..."
+    uv pip install --reinstall --no-deps "$package==$version"
+    if ! uv pip list --editable --format=freeze | grep -q .; then
+        just enable-auto-sync
+    fi
+    uv pip show "$package"
+
+# Use every configured development editable in the hpk.io environment
+[group('editables')]
+use-editables:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    {{ editables }}
+    for package in {{ development_editables }}; do
+        just use-editable "$package"
     done
 
-# Clone editables, set checkout versions in uv.lock, and install in .venv
+# Restore every editable package to its published version recorded in uv.lock
 [group('editables')]
-init-editables:
-    just clone-editables
-    just set-editable-versions
-    just install-editables
+use-released:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    editable_packages="$(uv pip list --editable --format=freeze)"
+    if [ -z "$editable_packages" ]; then
+        echo "No editable packages are installed."
+        just enable-auto-sync
+        exit
+    fi
+    while IFS='=' read -r package _; do
+        just use-release "$package"
+    done <<< "$editable_packages"
+
+# Provision every development editable without changing existing checkout branches
+[group('editables')]
+provision-editables:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    {{ editables }}
+    for package in {{ development_editables }}; do
+        repo_path="$(editable_path "$package")"
+        checkout_existed=false
+        if [ -e "$repo_path/.git" ]; then
+            checkout_existed=true
+        fi
+        just clone-editable "$package"
+        if [ "$checkout_existed" = false ]; then
+            just set-editable-version "$package"
+        else
+            echo "Preserving the current branch in existing checkout $repo_path."
+        fi
+    done
+    just use-editables
 
 ### Workflow
 
@@ -837,7 +960,7 @@ load-emergency-dump:
 [group('workflow')]
 check:
     just dj check
-    uv run pre-commit run --all-files
+    uv run {{ uv_sync }} pre-commit run --all-files
 
 # Upload ~/.ssh/ephemeral-* keys and ~/.ssh/config to the environment's server
 [group('workflow')]
@@ -860,10 +983,10 @@ sync-remote remote='origin':
     just load || true
     sudo systemctl restart nginx gunicorn-hpk
 
-# Install development packages and set up editables
+# Install development packages and provision every configured editable
 [group('workflow')]
 dev-mode:
-    just init-python init-node init-editables
+    just init-python init-node provision-editables
 
 # Run 'sync-remote' on the specified environment's server
 [group('workflow')]

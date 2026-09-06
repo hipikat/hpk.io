@@ -29,6 +29,7 @@ resource "digitalocean_droplet" "hpk_server" {
     timezone          = var.timezone
     fqdn              = terraform.workspace == "prod" ? var.tld : format("%s.for.%s", terraform.workspace, var.tld)
     node_version      = var.node_version
+    rust_version      = var.rust_version
     admin_django_user = var.admin_django_user
     admin_email       = format("%s@%s", var.admin_email_name, var.tld)
     admin_password    = var.admin_password

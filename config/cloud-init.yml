@@ -117,6 +117,20 @@ runcmd:
     curl -LsSf https://astral.sh/uv/install.sh |
     UV_UNMANAGED_INSTALL="/usr/local/bin" HOME="/root" sh
 
+  # Install Rust where development editables require native builds
+  - |
+    if ${development}; then
+      echo ">>> Installing Rust ${rust_version}"
+      mkdir -p /opt/cargo /opt/rustup
+      curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs |
+        env CARGO_HOME=/opt/cargo RUSTUP_HOME=/opt/rustup sh -s -- \
+          -y --no-modify-path --profile minimal --default-toolchain ${rust_version}
+      for binary in cargo rustc rustup; do
+        ln -s "/opt/cargo/bin/$binary" "/usr/local/bin/$binary"
+      done
+      printf 'RUSTUP_HOME="/opt/rustup"\n' >> /etc/environment
+    fi
+
   # Install Node
   - echo ">>> Installing Node.js"
   - >-
@@ -149,8 +163,11 @@ runcmd:
       cd /app && sudo -u wagtail npm install --omit=dev --no-audit --no-fund --no-progress --loglevel=info && cd -
     fi
 
-  # Git-clone editable packages, checkout the correct versions, and install them
-  - ${development} && sudo -u wagtail just -E /etc/environment -f /app/Justfile clone-editables set-editable-versions install-editables
+  # Provision every editable package in development environments
+  - |
+    if ${development}; then
+      sudo -u wagtail just -E /etc/environment -f /app/Justfile provision-editables
+    fi
 
   # Install pre-commit hooks, and bootstrap the hooks for ada with a (known-empty) commit
   - echo ">>> Installing pre-commit hooks and bootstrapping environment for ada"

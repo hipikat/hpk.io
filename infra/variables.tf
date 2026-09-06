@@ -96,6 +96,11 @@ variable "node_version" {
   type        = string
 }
 
+variable "rust_version" {
+  description = "Rust version to install in development environments"
+  type        = string
+}
+
 variable "admin_django_user" {
   description = "Admin user name for Django"
   type        = string
